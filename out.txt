@@ -1,0 +1,18 @@
+======================================================================
+🌍 CROP SEGMENTATION - Prithvi-100M (4GB GPU Optimized)
+======================================================================
+✓ Device: CUDA
+✓ GPU: NVIDIA T1000
+✓ VRAM Total: 3.90 GB
+✓ Batch Size: 1 x 16 = 16
+✓ Mixed Precision: True
+======================================================================
+
+
+🚀 INIZIO TRAINING Prithvi-100M + Decoder
+
+[WARN] Mask mancante per worker1_task9_class8_chip7.tif, salto.
+Totale chip con mask: 33017
+Train: 26413 | Val: 6604
+🔧 Carico backbone Prithvi-EO-2.0 Tiny-TL (TerraTorch)...
+✓ Parametri totali modello: 6.0M

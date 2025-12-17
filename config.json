@@ -42,7 +42,7 @@
         "batch_size": 2,
         "gradient_accumulation_steps": 8,
         "effective_batch_size_note": "Reale = 2 * 8 = 16",
-        "num_epochs": 50,
+        "num_epochs": 75,
         "learning_rate": 2e-05,
         "weight_decay": 0.01,
         "num_workers": 4,
