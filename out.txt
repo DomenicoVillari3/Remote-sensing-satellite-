@@ -639,3 +639,173 @@ Epoch 30/75
 ======================================================================
 
 ⚠ Nessun miglioramento per 4 epoche.
+
+======================================================================
+Epoch 31/75
+  Train Loss: 0.4756
+  Val Loss:   0.5848
+  mIoU:       0.1843
+  LR:         1.00e-05
+  Per-class IoU:
+    Class 0: 0.2422
+    Class 1: 0.1523
+    Class 2: 0.1921
+    Class 3: 0.3038
+    Class 4: 0.1438
+    Class 5: 0.2812
+    Class 6: 0.1493
+    Class 7: 0.0691
+    Class 8: 0.1247
+======================================================================
+
+✓ Nuovo best model salvato (ValLoss=0.5848, mIoU=0.1843)
+
+
+======================================================================
+Epoch 32/75
+  Train Loss: 0.4725
+  Val Loss:   0.6058
+  mIoU:       0.1842
+  LR:         1.00e-05
+  Per-class IoU:
+    Class 0: 0.2462
+    Class 1: 0.1472
+    Class 2: 0.2120
+    Class 3: 0.3030
+    Class 4: 0.1293
+    Class 5: 0.2713
+    Class 6: 0.1510
+    Class 7: 0.0718
+    Class 8: 0.1259
+======================================================================
+
+⚠ Nessun miglioramento per 1 epoche.
+
+======================================================================
+Epoch 33/75
+  Train Loss: 0.4699
+  Val Loss:   0.6229
+  mIoU:       0.1849
+  LR:         1.00e-05
+  Per-class IoU:
+    Class 0: 0.2631
+    Class 1: 0.1467
+    Class 2: 0.2165
+    Class 3: 0.3043
+    Class 4: 0.1269
+    Class 5: 0.2646
+    Class 6: 0.1473
+    Class 7: 0.0629
+    Class 8: 0.1321
+======================================================================
+
+⚠ Nessun miglioramento per 2 epoche.
+
+======================================================================
+Epoch 34/75
+  Train Loss: 0.4676
+  Val Loss:   0.6007
+  mIoU:       0.1818
+  LR:         1.00e-05
+  Per-class IoU:
+    Class 0: 0.2236
+    Class 1: 0.1556
+    Class 2: 0.2019
+    Class 3: 0.2986
+    Class 4: 0.1260
+    Class 5: 0.2814
+    Class 6: 0.1518
+    Class 7: 0.0680
+    Class 8: 0.1291
+======================================================================
+
+⚠ Nessun miglioramento per 3 epoche.
+
+======================================================================
+Epoch 35/75
+  Train Loss: 0.4648
+  Val Loss:   0.6129
+  mIoU:       0.1820
+  LR:         5.00e-06
+  Per-class IoU:
+    Class 0: 0.2449
+    Class 1: 0.1550
+    Class 2: 0.2082
+    Class 3: 0.3012
+    Class 4: 0.1379
+    Class 5: 0.2452
+    Class 6: 0.1481
+    Class 7: 0.0696
+    Class 8: 0.1279
+======================================================================
+
+⚠ Nessun miglioramento per 4 epoche.
+
+======================================================================
+Epoch 36/75
+  Train Loss: 0.4597
+  Val Loss:   0.5927
+  mIoU:       0.1836
+  LR:         5.00e-06
+  Per-class IoU:
+    Class 0: 0.2355
+    Class 1: 0.1524
+    Class 2: 0.1832
+    Class 3: 0.3027
+    Class 4: 0.1292
+    Class 5: 0.2873
+    Class 6: 0.1591
+    Class 7: 0.0717
+    Class 8: 0.1316
+======================================================================
+
+⚠ Nessun miglioramento per 5 epoche.
+
+======================================================================
+Epoch 37/75
+  Train Loss: 0.4573
+  Val Loss:   0.5936
+  mIoU:       0.1888
+  LR:         5.00e-06
+  Per-class IoU:
+    Class 0: 0.2546
+    Class 1: 0.1579
+    Class 2: 0.2120
+    Class 3: 0.3080
+    Class 4: 0.1327
+    Class 5: 0.2844
+    Class 6: 0.1395
+    Class 7: 0.0768
+    Class 8: 0.1333
+======================================================================
+
+⚠ Nessun miglioramento per 6 epoche.
+
+======================================================================
+Epoch 38/75
+  Train Loss: 0.4549
+  Val Loss:   0.5925
+  mIoU:       0.1892
+  LR:         5.00e-06
+  Per-class IoU:
+    Class 0: 0.2437
+    Class 1: 0.1544
+    Class 2: 0.2209
+    Class 3: 0.3058
+    Class 4: 0.1284
+    Class 5: 0.2930
+    Class 6: 0.1553
+    Class 7: 0.0710
+    Class 8: 0.1307
+======================================================================
+
+⚠ Nessun miglioramento per 7 epoche.
+
+⏹ Early stopping dopo 7 epoche senza miglioramento.
+✓ Metriche salvate in /export/mimmo/models/training_metrics.csv
+✓ Curve di loss e mIoU salvate come PNG
+
+✅ TRAINING COMPLETATO
+Best mIoU: 0.1892
+Best Val Loss: 0.5848
+['terratorch_prithvi_eo_tiny', 'terratorch_prithvi_eo_v1_100', 'terratorch_prithvi_eo_v2_tiny_tl', 'terratorch_prithvi_eo_v2_100_tl', 'terratorch_prithvi_eo_v2_300', 'terratorch_prithvi_eo_v2_600', 'terratorch_prithvi_eo_v2_300_tl', 'terratorch_prithvi_eo_v2_600_tl', 'timm_prithvi_swin_B', 'timm_prithvi_swin_L']
