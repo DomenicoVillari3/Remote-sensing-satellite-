@@ -126,7 +126,7 @@ def train():
                             batch_size=params["batch_size"], shuffle=False, num_workers=params["num_workers"], pin_memory=True)
 
     # Modello & Ottimizzazione
-    backbone = BACKBONE_REGISTRY.build("terratorch_prithvi_eo_v2_tiny_tl", pretrained=True)
+    backbone = BACKBONE_REGISTRY.build("terratorch_prithvi_eo_v2_base_tl", pretrained=True)
     model = PrithviSegmentation4090(backbone, CONFIG_JSON["data_specs"]["num_classes"]).to(device)
     if params["compile"]: model = torch.compile(model)
 
