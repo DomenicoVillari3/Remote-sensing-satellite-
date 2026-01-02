@@ -1,51 +1,32 @@
 {
     "project_meta": {
         "pyversion": "3.12.3",
-        "project_name": "sentinel2_segmentation_edge",
-        "description": "Fine-tuning Prithvi-100M on 10-band Sentinel-2 data"
+        "project_name": "sentinel2_segmentation_4090",
+        "description": "Fine-tuning Prithvi-2.0 on Multi-temporal (T=4) Sentinel-2 data"
     },
-    
     "paths": {
         "input_dir": "/export/mimmo/output",
-        "images_dir": "/export/mimmo/output/images",
-        "masks_dir": "/export/mimmo/output/masks",
-        "model_save_path": "/export/mimmo/models/satellite_model.pth",
-        "logs_dir": "/export/mimmo/logs",
-        "files_extension": ".tif",
-        "output_dir": "/export/mimmo/output_results"
+        "model_save_path": "/export/mimmo/models/prithvi_4090_best.pth"
     },
-
     "data_specs": {
-        
-        "img_size": 224,
+        "img_size": 256,
         "num_classes": 9,
-        "num_channels": 10,
-        "channel_names": [
-            "blue", "green", "red", "nir", 
-            "rededge1", "rededge2", "rededge3", 
-            "nir08", "swir16", "swir22"
-        ],
+        "num_channels": 6,
         "normalization": {
-            "_comment": "Sostituisci questi valori con l'output di calculate_stats.py",
-            "means": [867.7125, 1231.0215, 1543.6707, 2885.9093, 1923.9377, 2509.7022, 2746.4171, 2936.5452, 3066.0805, 2402.2556],
-            "stds":  [908.1966, 918.6142, 1087.9514, 1109.6611, 1092.8631, 1027.6976, 1069.1535, 1077.6171, 1258.3124, 1190.5524]
+            "means": [867.71, 1231.02, 1543.67, 2936.54, 3066.08, 2402.25],
+            "stds":  [908.19, 918.61, 1087.95, 1077.61, 1258.31, 1190.55]
         }
     },
-
-    "model_config": {
-        "model_name": "ibm-nasa-geospatial/Prithvi-EO-2.0-100M-TL",
-        "pretrained": true,
-        "use_mixed_precision": true
-    },
-
     "training_params": {
-        "batch_size": 2,
-        "gradient_accumulation_steps": 8,
-        "effective_batch_size_note": "Reale = 2 * 8 = 16",
-        "num_epochs": 75,
-        "learning_rate": 2e-05,
-        "weight_decay": 0.01,
-        "num_workers": 4,
-        "seed": 42
+        "batch_size": 16,
+        "num_epochs": 150,
+        "learning_rate": 1e-4,
+        "weight_decay": 0.05,
+        "num_workers": 12,
+        "precision": "bf16",
+        "compile": true,
+        "early_stop_patience": 15,
+        "plateau_patience": 5,
+        "min_lr": 1e-7
     }
 }
