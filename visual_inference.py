@@ -12,7 +12,7 @@ from PIL import Image
 from train import PrithviSegmentation4090
 
 # ==========================================
-# CONFIGURAZIONE COLORI E CLASSI
+# CONFIGURAZIONE COLORI AD ALTO CONTRASTO
 # ==========================================
 CLASS_COLORS = [
     [0, 0, 0],       # 0: Sfondo (Trasparente)
@@ -22,39 +22,50 @@ CLASS_COLORS = [
     [0, 102, 255],   # 4: Frutteto (Blu Elettrico)
     [255, 255, 0],   # 5: Grano (Giallo)
     [0, 255, 255],   # 6: Legumi (Cyan)
-    [255, 0, 0],     # 7: Ortaggi (Rosso)
+    [255, 0, 0],     # 7: Ortaggi (Rosso vivo)
     [255, 255, 255]  # 8: Incolto (Bianco)
 ]
 
 CLASS_NAMES = ["Sfondo", "Olivo", "Vite", "Agrumi", "Frutteto", "Grano", "Legumi", "Ortaggi", "Incolto"]
 
 def colorize_mask_rgb(mask):
-    """Trasforma indici in RGB solido"""
     h, w = mask.shape
     rgb = np.zeros((h, w, 3), dtype=np.uint8)
     for i, color in enumerate(CLASS_COLORS):
         rgb[mask == i] = color
     return rgb
 
-def colorize_mask_rgba(mask, opacity=0.6):
-    """Trasforma indici in RGBA per overlay"""
+def colorize_mask_rgba(mask, opacity=0.7):
     h, w = mask.shape
     rgba = np.zeros((h, w, 4), dtype=np.float32)
     for i, color in enumerate(CLASS_COLORS):
-        if i == 0: continue # Sfondo resta trasparente
+        if i == 0: continue 
         norm_color = [c / 255.0 for c in color]
         class_mask = (mask == i)
         rgba[class_mask, 0:3] = norm_color
         rgba[class_mask, 3] = opacity
     return rgba
 
-def run_pro_inference(num_samples=10):
+def run_pro_inference(num_samples=20):
     # 1. Setup
     with open('config.json', 'r') as f: config = json.load(f)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     data_dir = Path(config["paths"]["input_dir"])
     model_path = config["paths"]["model_save_path"]
     
+    # --- NUOVA LOGICA: CARICAMENTO DA VAL_FILES.TXT ---
+    val_list_path = Path("val_files.txt")
+    if not val_list_path.exists():
+        print(f"❌ Errore: {val_list_path} non trovato. Esegui prima lo script di split.")
+        return
+    
+    with open(val_list_path, "r") as f:
+        val_filenames = [line.strip() for line in f.readlines()]
+    
+    # Seleziona campioni casuali dalla lista di validazione
+    selected_fnames = np.random.choice(val_filenames, min(num_samples, len(val_filenames)), replace=False)
+    # --------------------------------------------------
+
     # 2. Caricamento Modello
     print(f"🔄 Caricamento modello da: {model_path}")
     backbone = BACKBONE_REGISTRY.build(config["project_meta"]["backbone_model"], pretrained=False)
@@ -68,14 +79,11 @@ def run_pro_inference(num_samples=10):
     means = torch.tensor(config["data_specs"]["normalization"]["means"]).view(1, 1, 6, 1, 1).to(device).float()
     stds = torch.tensor(config["data_specs"]["normalization"]["stds"]).view(1, 1, 6, 1, 1).to(device).float()
 
-    img_files = list((data_dir / "images").glob("*.npy"))
-    selected_files = np.random.choice(img_files, num_samples, replace=False)
     os.makedirs("inference_img", exist_ok=True)
+    print(f"🚀 Generazione pannelli per {len(selected_fnames)} file di validazione...")
 
-    print(f"🚀 Generazione di {num_samples} pannelli a 4 colonne...")
-
-    for idx, img_path in enumerate(selected_files):
-        fname = img_path.stem
+    for idx, fname in enumerate(selected_fnames):
+        img_path = data_dir / "images" / f"{fname}.npy"
         mask_path = data_dir / "masks" / f"{fname}.tif"
         
         # Caricamento
@@ -104,34 +112,30 @@ def run_pro_inference(num_samples=10):
         # --- PLOTTING A 4 COLONNE ---
         fig, axes = plt.subplots(1, 4, figsize=(24, 8))
         
-        # 1. Satellite Originale
         axes[0].imshow(base_img)
         axes[0].set_title(f"1. Satellite RGB\n({fname})", fontsize=14)
         
-        # 2. Ground Truth Mask (Solida)
         axes[1].imshow(colorize_mask_rgb(gt_224))
         axes[1].set_title("2. Ground Truth Mask", fontsize=14)
         
-        # 3. GT Overlay (Trasparente su satellite)
         axes[2].imshow(base_img)
         axes[2].imshow(colorize_mask_rgba(gt_224, opacity=0.5))
         axes[2].set_title("3. GT Overlay", fontsize=14)
         
-        # 4. Prediction Overlay (Modello su satellite)
         axes[3].imshow(base_img)
-        axes[3].imshow(colorize_mask_rgba(pred_mask, opacity=0.6))
-        axes[3].set_title("4. Prithvi Prediction Overlay\n(mIoU 80%)", fontsize=14)
+        axes[3].imshow(colorize_mask_rgba(pred_mask, opacity=0.7))
+        axes[3].set_title("4. Prithvi Prediction Overlay\n(mIoU 86%)", fontsize=14)
 
         for ax in axes: ax.axis('off')
 
-        # Legenda in basso
+        # Legenda
         legend_patches = [mpatches.Patch(color=[c/255 for c in CLASS_COLORS[i]], label=CLASS_NAMES[i]) for i in range(1, 9)]
         fig.legend(handles=legend_patches, loc='lower center', ncol=4, fontsize=12, frameon=False)
         
         plt.subplots_adjust(bottom=0.2)
         plt.savefig(f"inference_img/panel_{fname}.png", dpi=150, bbox_inches='tight')
         plt.close()
-        print(f" ✅ Pannello {idx+1}/{num_samples} salvato.")
+        print(f" ✅ {idx+1}/{len(selected_fnames)}: {fname} completato.")
 
 if __name__ == "__main__":
     run_pro_inference(num_samples=20)

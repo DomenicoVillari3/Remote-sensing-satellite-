@@ -5,7 +5,9 @@ import rasterio
 import numpy as np
 from pathlib import Path
 import tqdm
-
+import json
+from pathlib import Path
+from sklearn.model_selection import train_test_split
 
 def analisi_distr():
     mask_path = Path("/home/almadigit/CropSemanticSegmentation/output1/SmartFood/crop_data/masks")
@@ -49,7 +51,41 @@ def analisi_normalizzazione():
     print(f"Means: {final_mean.tolist()}")
     print(f"Stds:  {final_std.tolist()}")
     # ---------------------------------------------------
+    import json
+from pathlib import Path
+from sklearn.model_selection import train_test_split
+
+def recover_lists():
+    # 1. Carica il config per i percorsi
+    with open('config.json', 'r') as f:
+        config = json.load(f)
+    
+    input_dir = Path(config["paths"]["input_dir"])
+    img_dir = input_dir / "images"
+
+    # 2. Recupera i file (esattamente come nel tuo script di training)
+    # NOTA: se vuoi essere sicuro al 100% per il futuro, aggiungi .sort() 
+    # ma per RECUPERARE quello vecchio usiamo la tua logica originale
+    img_files = [f.stem for f in img_dir.glob("*.npy")]
+    
+    # 3. Riesegui lo split con lo stesso random_state
+    print(f"🔄 Rieseguo lo split su {len(img_files)} file...")
+    train_f, val_f = train_test_split(img_files, test_size=0.15, random_state=42)
+
+    # 4. Salva le liste su file
+    with open("train_files.txt", "w") as f:
+        for item in train_f:
+            f.write(f"{item}\n")
+            
+    with open("val_files.txt", "w") as f:
+        for item in val_f:
+            f.write(f"{item}\n")
+
+    print(f"✅ Recupero completato!")
+    print(f"📁 File creati: train_files.txt ({len(train_f)}) e val_files.txt ({len(val_f)})")
+
 
 if __name__=="__main__":
-    analisi_distr()
-    analisi_normalizzazione()
+    #analisi_distr()
+    #analisi_normalizzazione()
+    recover_lists()
