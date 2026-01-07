@@ -19,32 +19,63 @@ from terratorch.registry import BACKBONE_REGISTRY
 warnings.filterwarnings('ignore')
 
 # ==========================================
-# 1. CARICAMENTO CONFIGURAZIONE
+# 1. CLASSI DI SUPPORTO (METRICHE E LOSS)
 # ==========================================
-with open('config.json', 'r') as f:
-    CONFIG_JSON = json.load(f)
 
-# Indici Sentinel-2: [B02, B03, B04, B8A, B11, B12]
-BAND_INDICES = [0, 1, 2, 7, 8, 9]
+class IoUMetric:
+    def __init__(self, num_classes):
+        self.num_classes = num_classes
+        self.reset()
+
+    def reset(self):
+        self.conf_matrix = torch.zeros((self.num_classes, self.num_classes), dtype=torch.int64)
+
+    def update(self, preds, targets):
+        preds = preds.detach().cpu().view(-1)
+        targets = targets.detach().cpu().view(-1)
+        mask = (targets >= 0) & (targets < self.num_classes)
+        self.conf_matrix += torch.bincount(
+            self.num_classes * targets[mask] + preds[mask], 
+            minlength=self.num_classes**2
+        ).reshape(self.num_classes, self.num_classes)
+
+    def compute(self):
+        intersection = torch.diag(self.conf_matrix)
+        union = self.conf_matrix.sum(0) + self.conf_matrix.sum(1) - intersection
+        iou_per_class = intersection.float() / (union.float() + 1e-6)
+        valid_mask = union > 0
+        mean_iou = iou_per_class[valid_mask].mean().item() if valid_mask.any() else 0.0
+        return iou_per_class.tolist(), mean_iou
+
+class DiceLoss(nn.Module):
+    def __init__(self, smooth=1e-6):
+        super().__init__()
+        self.smooth = smooth
+
+    def forward(self, logits, targets):
+        num_classes = logits.size(1)
+        probs = F.softmax(logits, dim=1)
+        targets_one_hot = F.one_hot(targets, num_classes).permute(0, 3, 1, 2).float()
+        dims = (0, 2, 3)
+        intersection = torch.sum(probs * targets_one_hot, dims)
+        cardinality = torch.sum(probs + targets_one_hot, dims)
+        return (1 - (2. * intersection + self.smooth) / (cardinality + self.smooth)).mean()
 
 # ==========================================
-# 2. DATASET MULTI-TEMPORALE (T=4)
+# 2. ARCHITETTURA E DATASET
 # ==========================================
+
 class CropTemporalDataset(Dataset):
     def __init__(self, file_list, data_dir, means, stds, augment=False):
         self.img_dir = Path(data_dir) / "images"
         self.mask_dir = Path(data_dir) / "masks"
         self.files = file_list
-        self.means = np.array(means, dtype=np.float32)[BAND_INDICES].reshape(1, 6, 1, 1)
-        self.stds = np.array(stds, dtype=np.float32)[BAND_INDICES].reshape(1, 6, 1, 1)
-
-        self.transform = A.Compose([
-            A.HorizontalFlip(p=0.5),
-            A.VerticalFlip(p=0.5),
-            A.RandomRotate90(p=0.5),
-            A.Transpose(p=0.5),
-            A.ShiftScaleRotate(shift_limit=0.1, scale_limit=0.1, rotate_limit=15, p=0.5),
-        ]) if augment else None
+        self.means = np.array(means, dtype=np.float32).reshape(1, 6, 1, 1)
+        self.stds = np.array(stds, dtype=np.float32).reshape(1, 6, 1, 1)
+        t = [A.Resize(224, 224)]
+        if augment:
+            t.extend([A.HorizontalFlip(p=0.5), A.VerticalFlip(p=0.5), A.RandomRotate90(p=0.5)])
+        self.transform = A.Compose(t)
 
     def __len__(self): return len(self.files)
 
@@ -53,34 +84,21 @@ class CropTemporalDataset(Dataset):
         image = np.load(self.img_dir / f"{fname}.npy").astype(np.float32)
         with rasterio.open(self.mask_dir / f"{fname}.tif") as src:
             mask = src.read(1).astype(np.int64)
-
         image = (image - self.means) / (self.stds + 1e-6)
+        T, C, H, W = image.shape
+        combined = image.reshape(-1, H, W).transpose(1, 2, 0)
+        aug = self.transform(image=combined, mask=mask)
+        return torch.from_numpy(aug['image'].transpose(2, 0, 1).reshape(T, C, 224, 224)), torch.from_numpy(aug['mask'])
 
-        if self.transform:
-            T, C, H, W = image.shape
-            combined = image.reshape(-1, H, W).transpose(1, 2, 0)
-            augmented = self.transform(image=combined, mask=mask)
-            image = augmented['image'].transpose(2, 0, 1).reshape(T, C, H, W)
-            mask = augmented['mask']
-
-        return torch.from_numpy(image), torch.from_numpy(mask)
-
-# ==========================================
-# 3. MODELLO (PRITHVI + RESIDUAL DECODER)
-# ==========================================
 class ResidualUpBlock(nn.Module):
     def __init__(self, in_ch, out_ch):
         super().__init__()
         self.conv = nn.Sequential(
-            nn.Conv2d(in_ch, out_ch, 3, padding=1),
-            nn.BatchNorm2d(out_ch),
-            nn.ReLU(inplace=True),
-            nn.Conv2d(out_ch, out_ch, 3, padding=1),
-            nn.BatchNorm2d(out_ch)
+            nn.Conv2d(in_ch, out_ch, 3, padding=1), nn.BatchNorm2d(out_ch), nn.ReLU(inplace=True),
+            nn.Conv2d(out_ch, out_ch, 3, padding=1), nn.BatchNorm2d(out_ch)
         )
         self.shortcut = nn.Conv2d(in_ch, out_ch, 1) if in_ch != out_ch else nn.Identity()
         self.up = nn.Upsample(scale_factor=2, mode='bilinear', align_corners=True)
-
     def forward(self, x):
         x = self.up(x)
         return F.relu(self.conv(x) + self.shortcut(x))
@@ -89,117 +107,120 @@ class PrithviSegmentation4090(nn.Module):
     def __init__(self, backbone, num_classes):
         super().__init__()
         self.backbone = backbone
-        d = backbone.out_channels[-1] if isinstance(backbone.out_channels, list) else backbone.out_channels
+        d = backbone.out_channels[-1]
         self.decoder = nn.Sequential(
-            ResidualUpBlock(d, 256),   # 16->32
-            ResidualUpBlock(256, 128), # 32->64
-            ResidualUpBlock(128, 64),  # 64->128
-            ResidualUpBlock(64, 32),   # 128->256
+            ResidualUpBlock(d, 256), ResidualUpBlock(256, 128),
+            ResidualUpBlock(128, 64), ResidualUpBlock(64, 32),
             nn.Conv2d(32, num_classes, kernel_size=1)
         )
-
     def forward(self, x):
-        x = x.permute(0, 2, 1, 3, 4) # [B, C, T, H, W]
-        feats = self.backbone(x)
-        tokens = feats[-1][:, 1:, :] # No CLS
-        B, N, D = tokens.shape
-        x_spat = tokens.reshape(B, -1, 16, 16, D).mean(dim=1).permute(0, 3, 1, 2)
-        return self.decoder(x_spat)
+        B, T, C, H, W = x.shape
+        feats = self.backbone(x.permute(0, 2, 1, 3, 4))
+        tokens = feats[-1][:, 1:, :]
+        grid = int(np.sqrt(tokens.shape[1]))
+        logits = self.decoder(tokens.transpose(1, 2).reshape(B, -1, grid, grid))
+        return F.interpolate(logits, size=(H, W), mode='bilinear', align_corners=True)
 
 # ==========================================
-# 4. TRAINING LOOP CON MONITORING
+# 3. TRAINING LOOP COMPLETO
 # ==========================================
+
 def train():
+    with open('config.json', 'r') as f: config = json.load(f)
     device = torch.device("cuda")
-    torch.backends.cudnn.benchmark = True
-    params = CONFIG_JSON["training_params"]
+    p = config["training_params"]
+    
+    # Dataset
+    img_files = [f.stem for f in (Path(config["paths"]["input_dir"]) / "images").glob("*.npy")]
+    train_f, val_f = train_test_split(img_files, test_size=0.15, random_state=42)
+    ds_kwargs = {"data_dir": config["paths"]["input_dir"], "means": config["data_specs"]["normalization"]["means"], "stds": config["data_specs"]["normalization"]["stds"]}
+    
+    train_loader = DataLoader(CropTemporalDataset(train_f, augment=True, **ds_kwargs), batch_size=p["batch_size"], shuffle=True, num_workers=p["num_workers"], pin_memory=True)
+    val_loader = DataLoader(CropTemporalDataset(val_f, augment=False, **ds_kwargs), batch_size=p["batch_size"], num_workers=p["num_workers"], pin_memory=True)
 
-    print(f"\n🚀 START: RTX 4090 - {params['precision'].upper()} MODE")
-    
-    # Dataloaders
-    img_files = [f.stem for f in (Path(CONFIG_JSON["paths"]["input_dir"]) / "images").glob("*.npy")]
-    train_files, val_files = train_test_split(img_files, test_size=0.15, random_state=42)
-    
-    train_loader = DataLoader(CropTemporalDataset(train_files, CONFIG_JSON["paths"]["input_dir"], CONFIG_JSON["data_specs"]["normalization"]["means"], CONFIG_JSON["data_specs"]["normalization"]["stds"], augment=True),
-                              batch_size=params["batch_size"], shuffle=True, num_workers=params["num_workers"], pin_memory=True)
-    val_loader = DataLoader(CropTemporalDataset(val_files, CONFIG_JSON["paths"]["input_dir"], CONFIG_JSON["data_specs"]["normalization"]["means"], CONFIG_JSON["data_specs"]["normalization"]["stds"], augment=False),
-                            batch_size=params["batch_size"], shuffle=False, num_workers=params["num_workers"], pin_memory=True)
+    # Modello
+    backbone = BACKBONE_REGISTRY.build(config["project_meta"]["backbone_model"], pretrained=True)
+    model = PrithviSegmentation4090(backbone, config["data_specs"]["num_classes"]).to(device)
+    if p["compile"]: model = torch.compile(model)
 
-    # Modello & Ottimizzazione
-    backbone = BACKBONE_REGISTRY.build("terratorch_prithvi_eo_v2_base_tl", pretrained=True)
-    model = PrithviSegmentation4090(backbone, CONFIG_JSON["data_specs"]["num_classes"]).to(device)
-    if params["compile"]: model = torch.compile(model)
+    # Loss & Pesi (Aggiornati sulla tua distribuzione pixel)
+    weights = torch.tensor([0.2, 1.2, 2.5, 2.3, 1.8, 0.6, 4.5, 12.0, 2.2]).to(device)
+    ce_loss = nn.CrossEntropyLoss(weight=weights)
+    dice_loss_fn = DiceLoss()
+    
+    optimizer = torch.optim.AdamW(model.parameters(), lr=p["learning_rate"], weight_decay=p["weight_decay"])
+    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, 'min', factor=0.5, patience=p["plateau_patience"])
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=params["learning_rate"], weight_decay=params["weight_decay"])
-    
-    # --- MONITOR 1: ReduceLROnPlateau ---
-    scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.5, patience=params["plateau_patience"], min_lr=params["min_lr"], verbose=True
-    )
-    
-    weights = torch.tensor([0.1, 1.5, 1.0, 1.5, 1.9, 1.4, 2.9, 4.2, 1.6]).to(device)
-    criterion = nn.CrossEntropyLoss(weight=weights)
-    
-    # --- MONITOR 2: Early Stopping & Checkpoint ---
-    best_val_loss = float('inf')
-    early_stop_counter = 0
-    history = {"epoch": [], "train_loss": [], "val_loss": [], "miou": []}
+    best_miou = 0
+    early_stop_cnt = 0
+    history = []
+    class_names = ["Sfondo", "Olivo", "Vite", "Agrumi", "Frutteto", "Grano", "Legumi", "Ortaggi", "Incolto"]
+    iou_tracker = IoUMetric(config["data_specs"]["num_classes"])
 
-    for epoch in range(params["num_epochs"]):
+    print(f"\n🚀 START TRAINING: RTX 4090 - {p['precision'].upper()} MODE")
+
+    for epoch in range(p["num_epochs"]):
         model.train()
-        train_loss = 0
-        pbar = tqdm.tqdm(train_loader, desc=f"Epoch {epoch+1}/{params['num_epochs']}")
+        train_l = 0
+        pbar = tqdm.tqdm(train_loader, desc=f"Epoch {epoch+1}/{p['num_epochs']}")
         
         for imgs, masks in pbar:
-            imgs, masks = imgs.to(device), masks.to(device)
+            imgs, masks = imgs.to(device, non_blocking=True), masks.to(device, non_blocking=True).long()
             optimizer.zero_grad(set_to_none=True)
+            
             with torch.amp.autocast(device_type='cuda', dtype=torch.bfloat16):
-                logits = model(imgs)
-                loss = criterion(logits, masks)
+                out = model(imgs)
+                loss = ce_loss(out, masks) + dice_loss_fn(out, masks)
+            
             loss.backward()
             optimizer.step()
-            train_loss += loss.item()
+            train_l += loss.item()
             pbar.set_postfix(loss=f"{loss.item():.4f}")
 
         # Validazione
         model.eval()
-        val_loss, ious = 0, []
+        val_l = 0
+        iou_tracker.reset() # FIX: chiamata separata
+        
         with torch.no_grad(), torch.amp.autocast(device_type='cuda', dtype=torch.bfloat16):
             for imgs, masks in val_loader:
-                imgs, masks = imgs.to(device), masks.to(device)
-                logits = model(imgs)
-                val_loss += criterion(logits, masks).item()
-                preds = logits.argmax(dim=1)
-                for c in range(CONFIG_JSON["data_specs"]["num_classes"]):
-                    inter = ((preds == c) & (masks == c)).sum().item()
-                    union = ((preds == c) | (masks == c)).sum().item()
-                    if union > 0: ious.append(inter/union)
-        
-        avg_val_loss = val_loss / len(val_loader)
-        miou = np.mean(ious)
-        current_lr = optimizer.param_groups[0]['lr']
-        
-        print(f"📊 Val Loss: {avg_val_loss:.4f} | mIoU: {miou:.4f} | LR: {current_lr:.2e}")
+                imgs, masks = imgs.to(device), masks.to(device).long()
+                out = model(imgs)
+                val_l += (ce_loss(out, masks) + dice_loss_fn(out, masks)).item()
+                iou_tracker.update(out.argmax(1), masks)
 
-        # Update Scheduler
-        scheduler.step(avg_val_loss)
+        ious, miou = iou_tracker.compute()
+        avg_train_l, avg_val_l = train_l/len(train_loader), val_l/len(val_loader)
+        
+        print(f"\n📊 REPORT EPOCA {epoch+1} | Val Loss: {avg_val_l:.4f} | mIoU: {miou:.4f}")
+        for i, name in enumerate(class_names): print(f"  - {name.ljust(10)}: {ious[i]:.4f}")
 
-        # Early Stopping & Checkpoint Logic
-        if avg_val_loss < best_val_loss:
-            best_val_loss = avg_val_loss
-            early_stop_counter = 0
-            torch.save(model.state_dict(), CONFIG_JSON["paths"]["model_save_path"])
-            print("⭐ Best model saved!")
+        history.append({"epoch": epoch+1, "train_loss": avg_train_l, "val_loss": avg_val_l, "miou": miou})
+        pd.DataFrame(history).to_csv("training_metrics.csv", index=False)
+
+        # Early Stopping & Checkpoint
+        scheduler.step(avg_val_l)
+        if miou > best_miou:
+            best_miou = miou
+            early_stop_cnt = 0
+            torch.save(model.state_dict(), config["paths"]["model_save_path"])
+            print("⭐ NUOVO RECORD mIoU! Modello salvato.")
         else:
-            early_stop_counter += 1
-            print(f"⚠️ No improvement for {early_stop_counter} epochs.")
-
-        if early_stop_counter >= params["early_stop_patience"]:
-            print(f"🛑 Early stopping triggered at epoch {epoch+1}")
-            break
+            early_stop_cnt += 1
+            if early_stop_cnt >= p["early_stop_patience"]:
+                print(f"🛑 EARLY STOPPING attivata all'epoca {epoch+1}")
+                break
 
         gc.collect()
         torch.cuda.empty_cache()
+
+    # Salvataggio Grafici
+    df = pd.DataFrame(history)
+    plt.figure(figsize=(12,5))
+    plt.subplot(1,2,1); plt.plot(df['train_loss'], label='Train'); plt.plot(df['val_loss'], label='Val'); plt.title('Combined Loss'); plt.legend()
+    plt.subplot(1,2,2); plt.plot(df['miou'], label='mIoU', color='green'); plt.title('Mean IoU Performance'); plt.legend()
+    plt.savefig("training_results_plot.png")
+    print("\n✅ Training completato. Grafici salvati in training_results_plot.png")
 
 if __name__ == "__main__":
     train()

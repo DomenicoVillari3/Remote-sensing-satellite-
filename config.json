@@ -2,27 +2,29 @@
     "project_meta": {
         "pyversion": "3.12.3",
         "project_name": "sentinel2_segmentation_4090",
-        "description": "Fine-tuning Prithvi-2.0 on Multi-temporal (T=4) Sentinel-2 data"
+        "description": "Fine-tuning Prithvi-2.0 on Multi-temporal (T=4) Sentinel-2 data",
+        "backbone_model":"terratorch_prithvi_eo_v2_100_tl" 
     },
     "paths": {
-        "input_dir": "/export/mimmo/output",
-        "model_save_path": "/export/mimmo/models/prithvi_4090_best.pth"
+        "input_dir": "/home/almadigit/CropSemanticSegmentation/output1/SmartFood/crop_data",
+        "model_save_path": "/home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth"
     },
     "data_specs": {
-        "img_size": 256,
+        "img_size": 224,
         "num_classes": 9,
         "num_channels": 6,
         "normalization": {
-            "means": [867.71, 1231.02, 1543.67, 2936.54, 3066.08, 2402.25],
-            "stds":  [908.19, 918.61, 1087.95, 1077.61, 1258.31, 1190.55]
+           
+           "means": [724.812806274414, 1070.410831237793, 1344.193027496338, 2834.3394388427732, 2902.6298315429685, 2228.6243228149415],
+           "stds":  [393.21970404052735, 490.4992893676758, 682.7227749023438, 834.264825805664, 937.5322022094726, 874.680620666504]
         }
     },
     "training_params": {
-        "batch_size": 16,
+        "batch_size": 32,
         "num_epochs": 150,
         "learning_rate": 1e-4,
         "weight_decay": 0.05,
-        "num_workers": 12,
+        "num_workers": 8,
         "precision": "bf16",
         "compile": true,
         "early_stop_patience": 15,

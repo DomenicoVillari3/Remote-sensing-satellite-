@@ -809,3 +809,22 @@ Epoch 38/75
 Best mIoU: 0.1892
 Best Val Loss: 0.5848
 ['terratorch_prithvi_eo_tiny', 'terratorch_prithvi_eo_v1_100', 'terratorch_prithvi_eo_v2_tiny_tl', 'terratorch_prithvi_eo_v2_100_tl', 'terratorch_prithvi_eo_v2_300', 'terratorch_prithvi_eo_v2_600', 'terratorch_prithvi_eo_v2_300_tl', 'terratorch_prithvi_eo_v2_600_tl', 'timm_prithvi_swin_B', 'timm_prithvi_swin_L']
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🚀 Generazione mappe di predizione...
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🚀 Generazione mappe di predizione...
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🔄 Caricamento modello da: /home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth
+🚀 Generazione di 10 mappe...
+ ✅ 1/10 salvato.
+ ✅ 2/10 salvato.
+ ✅ 3/10 salvato.
+ ✅ 4/10 salvato.
+ ✅ 5/10 salvato.
+ ✅ 6/10 salvato.
+ ✅ 7/10 salvato.
+ ✅ 8/10 salvato.
+ ✅ 9/10 salvato.
+ ✅ 10/10 salvato.

@@ -1,11 +1,18 @@
 import os
 import numpy as np
 from tqdm import tqdm
+import json
 
 # ==========================================
 # CONFIGURAZIONE PERCORSI
 # ==========================================
 IMAGES_DIR = "/export/mimmo/output/images"
+with open('config.json', 'r') as f:
+    json_config = json.load(f)
+
+IMAGES_DIR= json_config["paths"]['input_dir']
+IMAGES_DIR=os.path.join(IMAGES_DIR,"images")
+
 EXT = ".npy"
 
 def calculate_temporal_stats():
