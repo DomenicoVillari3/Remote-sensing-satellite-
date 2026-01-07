@@ -70,7 +70,7 @@ def run_pro_inference(num_samples=10):
 
     img_files = list((data_dir / "images").glob("*.npy"))
     selected_files = np.random.choice(img_files, num_samples, replace=False)
-    os.makedirs("inference_pro_panels", exist_ok=True)
+    os.makedirs("inference_img", exist_ok=True)
 
     print(f"🚀 Generazione di {num_samples} pannelli a 4 colonne...")
 
@@ -120,7 +120,7 @@ def run_pro_inference(num_samples=10):
         # 4. Prediction Overlay (Modello su satellite)
         axes[3].imshow(base_img)
         axes[3].imshow(colorize_mask_rgba(pred_mask, opacity=0.6))
-        axes[3].set_title("4. Prithvi Prediction Overlay\n(mIoU 86%)", fontsize=14)
+        axes[3].set_title("4. Prithvi Prediction Overlay\n(mIoU 80%)", fontsize=14)
 
         for ax in axes: ax.axis('off')
 
@@ -129,9 +129,9 @@ def run_pro_inference(num_samples=10):
         fig.legend(handles=legend_patches, loc='lower center', ncol=4, fontsize=12, frameon=False)
         
         plt.subplots_adjust(bottom=0.2)
-        plt.savefig(f"inference_pro_panels/panel_{fname}.png", dpi=150, bbox_inches='tight')
+        plt.savefig(f"inference_img/panel_{fname}.png", dpi=150, bbox_inches='tight')
         plt.close()
         print(f" ✅ Pannello {idx+1}/{num_samples} salvato.")
 
 if __name__ == "__main__":
-    run_pro_inference(num_samples=10)
+    run_pro_inference(num_samples=20)

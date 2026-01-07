@@ -1,2 +1,3 @@
 .venv
 output1
+*.pth
