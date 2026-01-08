@@ -23,7 +23,7 @@ def run_evaluation():
     with open('config.json', 'r') as f: config = json.load(f)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    val_list_path = Path("val_files.txt")
+    val_list_path = Path("test_files.txt")
     if not val_list_path.exists():
         print("❌ Errore: val_files.txt non trovato!")
         return

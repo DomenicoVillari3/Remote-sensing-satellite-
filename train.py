@@ -121,9 +121,69 @@ class PrithviSegmentation4090(nn.Module):
         logits = self.decoder(tokens.transpose(1, 2).reshape(B, -1, grid, grid))
         return F.interpolate(logits, size=(H, W), mode='bilinear', align_corners=True)
 
-# ==========================================
-# 3. TRAINING LOOP COMPLETO
-# ==========================================
+
+
+def get_stratified_split():
+    with open('config.json', 'r') as f: config = json.load(f)
+    mask_dir = Path(config["paths"]["input_dir"]) / "masks"
+    all_files = sorted([f.stem for f in mask_dir.glob("*.tif")])
+    
+    print(f"🔍 Analisi di {len(all_files)} maschere per stratificazione...")
+    
+    # Ordine di priorità per le classi rare
+    rarity_order = [7, 6, 2, 3, 8, 4, 1, 5, 0] 
+    
+    stratify_labels = []
+    for fname in tqdm.tqdm(all_files, desc="Estrazione etichette"):
+        with rasterio.open(mask_dir / f"{fname}.tif") as src:
+            mask = src.read(1)
+            present_classes = np.unique(mask)
+            
+            # Assegniamo l'etichetta della classe più rara presente
+            label = 0
+            for r_cls in rarity_order:
+                if r_cls in present_classes:
+                    label = r_cls
+                    break
+            stratify_labels.append(label)
+
+    stratify_labels = np.array(stratify_labels)
+    
+    # --- FIX: Raggruppamento classi troppo rare ---
+    unique, counts = np.unique(stratify_labels, return_counts=True)
+    for u, count in zip(unique, counts):
+        if count < 10: # Se una classe appare in meno di 10 file, la uniamo allo sfondo (0)
+            print(f"⚠️ Classe {u} troppo rara ({count} file), raggruppata nello sfondo per lo split.")
+            stratify_labels[stratify_labels == u] = 0
+
+    try:
+        # 1. Split TEST (15%)
+        train_val_f, test_f, y_train_val, _ = train_test_split(
+            all_files, stratify_labels, 
+            test_size=0.15, 
+            stratify=stratify_labels, 
+            random_state=42
+        )
+
+        # 2. Split VALIDATION (15% del totale -> 0.176 del rimanente)
+        train_f, val_f = train_test_split(
+            train_val_f, 
+            test_size=0.15, 
+            stratify=y_train_val, 
+            random_state=42
+        )
+        print("✅ Split Stratificato completato con successo.")
+    except ValueError as e:
+        print(f"⚠️ Stratificazione fallita ({e}). Procedo con split casuale semplice.")
+        train_val_f, test_f = train_test_split(all_files, test_size=0.15, random_state=42)
+        train_f, val_f = train_test_split(train_val_f, test_size=0.176, random_state=42)
+
+    # Salvataggio fisico su file
+    for name, lista in zip(["train", "val", "test"], [train_f, val_f, test_f]):
+        with open(f"{name}_files.txt", "w") as f:
+            for item in lista: f.write(f"{item}\n")
+
+    return train_f, val_f, test_f
 
 def train():
     with open('config.json', 'r') as f: config = json.load(f)
@@ -131,8 +191,25 @@ def train():
     p = config["training_params"]
     
     # Dataset
-    img_files = [f.stem for f in (Path(config["paths"]["input_dir"]) / "images").glob("*.npy")]
-    train_f, val_f = train_test_split(img_files, test_size=0.15, random_state=42)
+    #img_files = [f.stem for f in (Path(config["paths"]["input_dir"]) / "images").glob("*.npy")]
+    files_exist = all(os.path.exists(f"{x}_files.txt") for x in ["train", "val", "test"])
+    
+    if files_exist:
+        print("📁 Caricamento split esistenti da file .txt...")
+        with open("train_files.txt", "r") as f: train_f = [l.strip() for l in f]
+        with open("val_files.txt", "r") as f: val_f = [l.strip() for l in f]
+        with open("test_files.txt", "r") as f: test_f = [l.strip() for l in f]
+    else:
+        train_f, val_f, test_f = get_stratified_split()
+  
+    for name, filenames in zip(["train", "val", "test"], [train_f, val_f, test_f]):
+        with open(f"{name}_files.txt", "w") as f:
+            for fname in filenames:
+                f.write(f"{fname}\n")
+    
+    print(f"✅ Split completato e salvato: Train({len(train_f)}), Val({len(val_f)}), Test({len(test_f)})")
+
+
     ds_kwargs = {"data_dir": config["paths"]["input_dir"], "means": config["data_specs"]["normalization"]["means"], "stds": config["data_specs"]["normalization"]["stds"]}
     
     train_loader = DataLoader(CropTemporalDataset(train_f, augment=True, **ds_kwargs), batch_size=p["batch_size"], shuffle=True, num_workers=p["num_workers"], pin_memory=True)
