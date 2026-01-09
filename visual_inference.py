@@ -54,7 +54,7 @@ def run_pro_inference(num_samples=20):
     model_path = config["paths"]["model_save_path"]
     
     # --- NUOVA LOGICA: CARICAMENTO DA VAL_FILES.TXT ---
-    val_list_path = Path("val_files.txt")
+    val_list_path = Path("test_files.txt")
     if not val_list_path.exists():
         print(f"❌ Errore: {val_list_path} non trovato. Esegui prima lo script di split.")
         return
