@@ -1,0 +1,1356 @@
+2026-01-30 16:13:37,762 - INFO - 🚀 Starting Satellite Downloader -> MinIO ...
+2026-01-30 16:13:37,762 - INFO - Area Bounds (Sicilia): (12.4, 36.6, 15.7, 38.3)
+2026-01-30 16:13:37,762 - INFO - Grid: 33x17 = 561 celle da processare.
+2026-01-30 16:13:37,762 - INFO - 📍 Processing Cell 0 (12.4, 36.6, 12.5, 36.7)
+2026-01-30 16:15:19,377 - INFO - 🚀 Starting Satellite Downloader -> MinIO ...
+2026-01-30 16:15:19,377 - INFO - Area Bounds (Sicilia): (12.4, 36.6, 15.7, 38.3)
+2026-01-30 16:15:19,377 - INFO - Grid: 33x17 = 561 celle da processare.
+2026-01-30 16:15:19,377 - INFO - 📍 Processing Cell 0 (12.4, 36.6, 12.5, 36.7)
+2026-01-30 16:15:42,778 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.4500_task0.npy
+2026-01-30 16:15:42,781 - INFO - 📍 Processing Cell 1 (12.4, 36.7, 12.5, 36.800000000000004)
+2026-01-30 16:16:01,919 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.4500_task1.npy
+2026-01-30 16:16:01,922 - INFO - 📍 Processing Cell 2 (12.4, 36.800000000000004, 12.5, 36.900000000000006)
+2026-01-30 16:16:20,844 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.4500_task2.npy
+2026-01-30 16:16:20,847 - INFO - 📍 Processing Cell 3 (12.4, 36.900000000000006, 12.5, 37.00000000000001)
+2026-01-30 16:16:44,286 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.4500_task3.npy
+2026-01-30 16:16:44,289 - INFO - 📍 Processing Cell 4 (12.4, 37.00000000000001, 12.5, 37.10000000000001)
+2026-01-30 16:17:09,727 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.4500_task4.npy
+2026-01-30 16:17:09,729 - INFO - 📍 Processing Cell 5 (12.4, 37.10000000000001, 12.5, 37.20000000000001)
+2026-01-30 16:17:33,550 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.4500_task5.npy
+2026-01-30 16:17:33,552 - INFO - 📍 Processing Cell 6 (12.4, 37.20000000000001, 12.5, 37.30000000000001)
+2026-01-30 16:17:54,590 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.4500_task6.npy
+2026-01-30 16:17:54,593 - INFO - 📍 Processing Cell 7 (12.4, 37.30000000000001, 12.5, 37.40000000000001)
+2026-01-30 16:18:16,573 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.4500_task7.npy
+2026-01-30 16:18:16,576 - INFO - 📍 Processing Cell 8 (12.4, 37.40000000000001, 12.5, 37.500000000000014)
+2026-01-30 16:18:36,135 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.4500_task8.npy
+2026-01-30 16:18:36,138 - INFO - 📍 Processing Cell 9 (12.4, 37.500000000000014, 12.5, 37.600000000000016)
+2026-01-30 16:18:57,638 - INFO -   📤 Upload completato: raw_cubes/lat_37.5500_lon_12.4500_task9.npy
+2026-01-30 16:18:57,641 - INFO - --- Progress: 10/561 cells. Cubes Saved: 10 ---
+2026-01-30 16:18:57,642 - INFO - 📍 Processing Cell 10 (12.4, 37.600000000000016, 12.5, 37.70000000000002)
+2026-01-30 16:19:16,856 - INFO -   📤 Upload completato: raw_cubes/lat_37.6500_lon_12.4500_task10.npy
+2026-01-30 16:19:16,859 - INFO - 📍 Processing Cell 11 (12.4, 37.70000000000002, 12.5, 37.80000000000002)
+2026-01-30 16:19:37,045 - INFO -   📤 Upload completato: raw_cubes/lat_37.7500_lon_12.4500_task11.npy
+2026-01-30 16:19:37,048 - INFO - 📍 Processing Cell 12 (12.4, 37.80000000000002, 12.5, 37.90000000000002)
+2026-01-30 16:20:03,324 - INFO -   📤 Upload completato: raw_cubes/lat_37.8500_lon_12.4500_task12.npy
+2026-01-30 16:20:03,327 - INFO - 📍 Processing Cell 13 (12.4, 37.90000000000002, 12.5, 38.00000000000002)
+2026-01-30 16:20:25,306 - INFO -   📤 Upload completato: raw_cubes/lat_37.9500_lon_12.4500_task13.npy
+2026-01-30 16:20:25,309 - INFO - 📍 Processing Cell 14 (12.4, 38.00000000000002, 12.5, 38.10000000000002)
+2026-01-30 16:20:47,232 - INFO -   📤 Upload completato: raw_cubes/lat_38.0500_lon_12.4500_task14.npy
+2026-01-30 16:20:47,235 - INFO - 📍 Processing Cell 15 (12.4, 38.10000000000002, 12.5, 38.200000000000024)
+2026-01-30 16:21:07,018 - INFO -   📤 Upload completato: raw_cubes/lat_38.1500_lon_12.4500_task15.npy
+2026-01-30 16:21:07,024 - INFO - 📍 Processing Cell 16 (12.4, 38.200000000000024, 12.5, 38.300000000000026)
+2026-01-30 16:21:29,556 - INFO -   📤 Upload completato: raw_cubes/lat_38.2500_lon_12.4500_task16.npy
+2026-01-30 16:21:29,559 - INFO - 📍 Processing Cell 17 (12.5, 36.6, 12.6, 36.7)
+2026-01-30 16:21:54,137 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.5500_task17.npy
+2026-01-30 16:21:54,140 - INFO - 📍 Processing Cell 18 (12.5, 36.7, 12.6, 36.800000000000004)
+2026-01-30 16:22:15,289 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.5500_task18.npy
+2026-01-30 16:22:15,292 - INFO - 📍 Processing Cell 19 (12.5, 36.800000000000004, 12.6, 36.900000000000006)
+2026-01-30 16:22:36,531 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.5500_task19.npy
+2026-01-30 16:22:36,534 - INFO - --- Progress: 20/561 cells. Cubes Saved: 20 ---
+2026-01-30 16:22:36,534 - INFO - 📍 Processing Cell 20 (12.5, 36.900000000000006, 12.6, 37.00000000000001)
+2026-01-30 16:22:55,250 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.5500_task20.npy
+2026-01-30 16:22:55,253 - INFO - 📍 Processing Cell 21 (12.5, 37.00000000000001, 12.6, 37.10000000000001)
+2026-01-30 16:23:17,302 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.5500_task21.npy
+2026-01-30 16:23:17,305 - INFO - 📍 Processing Cell 22 (12.5, 37.10000000000001, 12.6, 37.20000000000001)
+2026-01-30 16:23:36,778 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.5500_task22.npy
+2026-01-30 16:23:36,782 - INFO - 📍 Processing Cell 23 (12.5, 37.20000000000001, 12.6, 37.30000000000001)
+2026-01-30 16:23:56,489 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.5500_task23.npy
+2026-01-30 16:23:56,492 - INFO - 📍 Processing Cell 24 (12.5, 37.30000000000001, 12.6, 37.40000000000001)
+2026-01-30 16:24:15,401 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.5500_task24.npy
+2026-01-30 16:24:15,404 - INFO - 📍 Processing Cell 25 (12.5, 37.40000000000001, 12.6, 37.500000000000014)
+2026-01-30 16:24:33,625 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.5500_task25.npy
+2026-01-30 16:24:33,628 - INFO - 📍 Processing Cell 26 (12.5, 37.500000000000014, 12.6, 37.600000000000016)
+2026-01-30 16:24:54,238 - INFO -   📤 Upload completato: raw_cubes/lat_37.5500_lon_12.5500_task26.npy
+2026-01-30 16:24:54,241 - INFO - 📍 Processing Cell 27 (12.5, 37.600000000000016, 12.6, 37.70000000000002)
+2026-01-30 16:25:14,504 - INFO -   📤 Upload completato: raw_cubes/lat_37.6500_lon_12.5500_task27.npy
+2026-01-30 16:25:14,507 - INFO - 📍 Processing Cell 28 (12.5, 37.70000000000002, 12.6, 37.80000000000002)
+2026-01-30 16:25:35,610 - INFO -   📤 Upload completato: raw_cubes/lat_37.7500_lon_12.5500_task28.npy
+2026-01-30 16:25:35,613 - INFO - 📍 Processing Cell 29 (12.5, 37.80000000000002, 12.6, 37.90000000000002)
+2026-01-30 16:25:58,829 - INFO -   📤 Upload completato: raw_cubes/lat_37.8500_lon_12.5500_task29.npy
+2026-01-30 16:25:58,832 - INFO - --- Progress: 30/561 cells. Cubes Saved: 30 ---
+2026-01-30 16:25:58,832 - INFO - 📍 Processing Cell 30 (12.5, 37.90000000000002, 12.6, 38.00000000000002)
+2026-01-30 16:26:19,630 - INFO -   📤 Upload completato: raw_cubes/lat_37.9500_lon_12.5500_task30.npy
+2026-01-30 16:26:19,633 - INFO - 📍 Processing Cell 31 (12.5, 38.00000000000002, 12.6, 38.10000000000002)
+2026-01-30 16:26:39,520 - INFO -   📤 Upload completato: raw_cubes/lat_38.0500_lon_12.5500_task31.npy
+2026-01-30 16:26:39,523 - INFO - 📍 Processing Cell 32 (12.5, 38.10000000000002, 12.6, 38.200000000000024)
+2026-01-30 16:26:55,152 - INFO -   📤 Upload completato: raw_cubes/lat_38.1500_lon_12.5500_task32.npy
+2026-01-30 16:26:55,155 - INFO - 📍 Processing Cell 33 (12.5, 38.200000000000024, 12.6, 38.300000000000026)
+2026-01-30 16:27:05,588 - INFO -   📤 Upload completato: raw_cubes/lat_38.2500_lon_12.5500_task33.npy
+2026-01-30 16:27:05,591 - INFO - 📍 Processing Cell 34 (12.6, 36.6, 12.7, 36.7)
+2026-01-30 16:27:28,482 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.6500_task34.npy
+2026-01-30 16:27:28,484 - INFO - 📍 Processing Cell 35 (12.6, 36.7, 12.7, 36.800000000000004)
+2026-01-30 16:27:49,831 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.6500_task35.npy
+2026-01-30 16:27:49,833 - INFO - 📍 Processing Cell 36 (12.6, 36.800000000000004, 12.7, 36.900000000000006)
+2026-01-30 16:28:10,922 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.6500_task36.npy
+2026-01-30 16:28:10,924 - INFO - 📍 Processing Cell 37 (12.6, 36.900000000000006, 12.7, 37.00000000000001)
+2026-01-30 16:28:30,369 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.6500_task37.npy
+2026-01-30 16:28:30,372 - INFO - 📍 Processing Cell 38 (12.6, 37.00000000000001, 12.7, 37.10000000000001)
+2026-01-30 16:28:51,661 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.6500_task38.npy
+2026-01-30 16:28:51,664 - INFO - 📍 Processing Cell 39 (12.6, 37.10000000000001, 12.7, 37.20000000000001)
+2026-01-30 16:29:11,571 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.6500_task39.npy
+2026-01-30 16:29:11,574 - INFO - --- Progress: 40/561 cells. Cubes Saved: 40 ---
+2026-01-30 16:29:11,574 - INFO - 📍 Processing Cell 40 (12.6, 37.20000000000001, 12.7, 37.30000000000001)
+2026-01-30 16:29:31,590 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.6500_task40.npy
+2026-01-30 16:29:31,593 - INFO - 📍 Processing Cell 41 (12.6, 37.30000000000001, 12.7, 37.40000000000001)
+2026-01-30 16:29:51,798 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.6500_task41.npy
+2026-01-30 16:29:51,801 - INFO - 📍 Processing Cell 42 (12.6, 37.40000000000001, 12.7, 37.500000000000014)
+2026-01-30 16:30:11,133 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.6500_task42.npy
+2026-01-30 16:30:11,136 - INFO - 📍 Processing Cell 43 (12.6, 37.500000000000014, 12.7, 37.600000000000016)
+2026-01-30 16:30:29,940 - INFO -   📤 Upload completato: raw_cubes/lat_37.5500_lon_12.6500_task43.npy
+2026-01-30 16:30:29,943 - INFO - 📍 Processing Cell 44 (12.6, 37.600000000000016, 12.7, 37.70000000000002)
+2026-01-30 16:30:50,535 - INFO -   📤 Upload completato: raw_cubes/lat_37.6500_lon_12.6500_task44.npy
+2026-01-30 16:30:50,538 - INFO - 📍 Processing Cell 45 (12.6, 37.70000000000002, 12.7, 37.80000000000002)
+2026-01-30 16:31:10,895 - INFO -   📤 Upload completato: raw_cubes/lat_37.7500_lon_12.6500_task45.npy
+2026-01-30 16:31:10,899 - INFO - 📍 Processing Cell 46 (12.6, 37.80000000000002, 12.7, 37.90000000000002)
+2026-01-30 16:31:32,493 - INFO -   📤 Upload completato: raw_cubes/lat_37.8500_lon_12.6500_task46.npy
+2026-01-30 16:31:32,496 - INFO - 📍 Processing Cell 47 (12.6, 37.90000000000002, 12.7, 38.00000000000002)
+2026-01-30 16:31:53,475 - INFO -   📤 Upload completato: raw_cubes/lat_37.9500_lon_12.6500_task47.npy
+2026-01-30 16:31:53,478 - INFO - 📍 Processing Cell 48 (12.6, 38.00000000000002, 12.7, 38.10000000000002)
+2026-01-30 16:32:15,971 - INFO -   📤 Upload completato: raw_cubes/lat_38.0500_lon_12.6500_task48.npy
+2026-01-30 16:32:15,974 - INFO - 📍 Processing Cell 49 (12.6, 38.10000000000002, 12.7, 38.200000000000024)
+2026-01-30 16:32:34,346 - INFO -   📤 Upload completato: raw_cubes/lat_38.1500_lon_12.6500_task49.npy
+2026-01-30 16:32:34,349 - INFO - --- Progress: 50/561 cells. Cubes Saved: 50 ---
+2026-01-30 16:32:34,349 - INFO - 📍 Processing Cell 50 (12.6, 38.200000000000024, 12.7, 38.300000000000026)
+2026-01-30 16:32:52,821 - INFO -   📤 Upload completato: raw_cubes/lat_38.2500_lon_12.6500_task50.npy
+2026-01-30 16:32:52,824 - INFO - 📍 Processing Cell 51 (12.7, 36.6, 12.799999999999999, 36.7)
+2026-01-30 16:33:16,191 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.7500_task51.npy
+2026-01-30 16:33:16,193 - INFO - 📍 Processing Cell 52 (12.7, 36.7, 12.799999999999999, 36.800000000000004)
+2026-01-30 16:33:36,929 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.7500_task52.npy
+2026-01-30 16:33:36,932 - INFO - 📍 Processing Cell 53 (12.7, 36.800000000000004, 12.799999999999999, 36.900000000000006)
+2026-01-30 16:33:59,652 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.7500_task53.npy
+2026-01-30 16:33:59,655 - INFO - 📍 Processing Cell 54 (12.7, 36.900000000000006, 12.799999999999999, 37.00000000000001)
+2026-01-30 16:34:23,769 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.7500_task54.npy
+2026-01-30 16:34:23,772 - INFO - 📍 Processing Cell 55 (12.7, 37.00000000000001, 12.799999999999999, 37.10000000000001)
+2026-01-30 16:34:49,430 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.7500_task55.npy
+2026-01-30 16:34:49,433 - INFO - 📍 Processing Cell 56 (12.7, 37.10000000000001, 12.799999999999999, 37.20000000000001)
+2026-01-30 16:35:14,152 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.7500_task56.npy
+2026-01-30 16:35:14,155 - INFO - 📍 Processing Cell 57 (12.7, 37.20000000000001, 12.799999999999999, 37.30000000000001)
+2026-01-30 16:35:35,360 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.7500_task57.npy
+2026-01-30 16:35:35,364 - INFO - 📍 Processing Cell 58 (12.7, 37.30000000000001, 12.799999999999999, 37.40000000000001)
+2026-01-30 16:35:58,274 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.7500_task58.npy
+2026-01-30 16:35:58,277 - INFO - 📍 Processing Cell 59 (12.7, 37.40000000000001, 12.799999999999999, 37.500000000000014)
+2026-01-30 16:36:19,881 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.7500_task59.npy
+2026-01-30 16:36:19,884 - INFO - --- Progress: 60/561 cells. Cubes Saved: 60 ---
+2026-01-30 16:36:19,884 - INFO - 📍 Processing Cell 60 (12.7, 37.500000000000014, 12.799999999999999, 37.600000000000016)
+2026-01-30 16:36:43,155 - INFO -   📤 Upload completato: raw_cubes/lat_37.5500_lon_12.7500_task60.npy
+2026-01-30 16:36:43,158 - INFO - 📍 Processing Cell 61 (12.7, 37.600000000000016, 12.799999999999999, 37.70000000000002)
+2026-01-30 16:37:09,242 - INFO -   📤 Upload completato: raw_cubes/lat_37.6500_lon_12.7500_task61.npy
+2026-01-30 16:37:09,244 - INFO - 📍 Processing Cell 62 (12.7, 37.70000000000002, 12.799999999999999, 37.80000000000002)
+2026-01-30 16:37:35,917 - INFO -   📤 Upload completato: raw_cubes/lat_37.7500_lon_12.7500_task62.npy
+2026-01-30 16:37:35,920 - INFO - 📍 Processing Cell 63 (12.7, 37.80000000000002, 12.799999999999999, 37.90000000000002)
+2026-01-30 16:37:59,065 - INFO -   📤 Upload completato: raw_cubes/lat_37.8500_lon_12.7500_task63.npy
+2026-01-30 16:37:59,069 - INFO - 📍 Processing Cell 64 (12.7, 37.90000000000002, 12.799999999999999, 38.00000000000002)
+2026-01-30 16:38:22,802 - INFO -   📤 Upload completato: raw_cubes/lat_37.9500_lon_12.7500_task64.npy
+2026-01-30 16:38:22,806 - INFO - 📍 Processing Cell 65 (12.7, 38.00000000000002, 12.799999999999999, 38.10000000000002)
+2026-01-30 16:38:45,540 - INFO -   📤 Upload completato: raw_cubes/lat_38.0500_lon_12.7500_task65.npy
+2026-01-30 16:38:45,542 - INFO - 📍 Processing Cell 66 (12.7, 38.10000000000002, 12.799999999999999, 38.200000000000024)
+2026-01-30 16:39:05,209 - INFO -   📤 Upload completato: raw_cubes/lat_38.1500_lon_12.7500_task66.npy
+2026-01-30 16:39:05,212 - INFO - 📍 Processing Cell 67 (12.7, 38.200000000000024, 12.799999999999999, 38.300000000000026)
+2026-01-30 16:39:25,168 - INFO -   📤 Upload completato: raw_cubes/lat_38.2500_lon_12.7500_task67.npy
+2026-01-30 16:39:25,171 - INFO - 📍 Processing Cell 68 (12.799999999999999, 36.6, 12.899999999999999, 36.7)
+2026-01-30 16:39:44,939 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.8500_task68.npy
+2026-01-30 16:39:44,942 - INFO - 📍 Processing Cell 69 (12.799999999999999, 36.7, 12.899999999999999, 36.800000000000004)
+2026-01-30 16:40:03,786 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.8500_task69.npy
+2026-01-30 16:40:03,789 - INFO - --- Progress: 70/561 cells. Cubes Saved: 70 ---
+2026-01-30 16:40:03,789 - INFO - 📍 Processing Cell 70 (12.799999999999999, 36.800000000000004, 12.899999999999999, 36.900000000000006)
+2026-01-30 16:40:23,996 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.8500_task70.npy
+2026-01-30 16:40:24,001 - INFO - 📍 Processing Cell 71 (12.799999999999999, 36.900000000000006, 12.899999999999999, 37.00000000000001)
+2026-01-30 16:40:45,732 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.8500_task71.npy
+2026-01-30 16:40:45,735 - INFO - 📍 Processing Cell 72 (12.799999999999999, 37.00000000000001, 12.899999999999999, 37.10000000000001)
+2026-01-30 16:41:08,008 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.8500_task72.npy
+2026-01-30 16:41:08,011 - INFO - 📍 Processing Cell 73 (12.799999999999999, 37.10000000000001, 12.899999999999999, 37.20000000000001)
+2026-01-30 16:41:27,118 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.8500_task73.npy
+2026-01-30 16:41:27,121 - INFO - 📍 Processing Cell 74 (12.799999999999999, 37.20000000000001, 12.899999999999999, 37.30000000000001)
+2026-01-30 16:41:45,766 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.8500_task74.npy
+2026-01-30 16:41:45,769 - INFO - 📍 Processing Cell 75 (12.799999999999999, 37.30000000000001, 12.899999999999999, 37.40000000000001)
+2026-01-30 16:42:05,723 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.8500_task75.npy
+2026-01-30 16:42:05,726 - INFO - 📍 Processing Cell 76 (12.799999999999999, 37.40000000000001, 12.899999999999999, 37.500000000000014)
+2026-01-30 16:42:24,143 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.8500_task76.npy
+2026-01-30 16:42:24,146 - INFO - 📍 Processing Cell 77 (12.799999999999999, 37.500000000000014, 12.899999999999999, 37.600000000000016)
+2026-01-30 16:42:40,721 - INFO -   📤 Upload completato: raw_cubes/lat_37.5500_lon_12.8500_task77.npy
+2026-01-30 16:42:40,724 - INFO - 📍 Processing Cell 78 (12.799999999999999, 37.600000000000016, 12.899999999999999, 37.70000000000002)
+2026-01-30 16:43:00,455 - INFO -   📤 Upload completato: raw_cubes/lat_37.6500_lon_12.8500_task78.npy
+2026-01-30 16:43:00,458 - INFO - 📍 Processing Cell 79 (12.799999999999999, 37.70000000000002, 12.899999999999999, 37.80000000000002)
+2026-01-30 16:43:20,698 - INFO -   📤 Upload completato: raw_cubes/lat_37.7500_lon_12.8500_task79.npy
+2026-01-30 16:43:20,701 - INFO - --- Progress: 80/561 cells. Cubes Saved: 80 ---
+2026-01-30 16:43:20,701 - INFO - 📍 Processing Cell 80 (12.799999999999999, 37.80000000000002, 12.899999999999999, 37.90000000000002)
+2026-01-30 16:43:42,705 - INFO -   📤 Upload completato: raw_cubes/lat_37.8500_lon_12.8500_task80.npy
+2026-01-30 16:43:42,708 - INFO - 📍 Processing Cell 81 (12.799999999999999, 37.90000000000002, 12.899999999999999, 38.00000000000002)
+2026-01-30 16:44:06,631 - INFO -   📤 Upload completato: raw_cubes/lat_37.9500_lon_12.8500_task81.npy
+2026-01-30 16:44:06,634 - INFO - 📍 Processing Cell 82 (12.799999999999999, 38.00000000000002, 12.899999999999999, 38.10000000000002)
+2026-01-30 16:44:27,346 - INFO -   📤 Upload completato: raw_cubes/lat_38.0500_lon_12.8500_task82.npy
+2026-01-30 16:44:27,349 - INFO - 📍 Processing Cell 83 (12.799999999999999, 38.10000000000002, 12.899999999999999, 38.200000000000024)
+2026-01-30 16:44:46,909 - INFO -   📤 Upload completato: raw_cubes/lat_38.1500_lon_12.8500_task83.npy
+2026-01-30 16:44:46,912 - INFO - 📍 Processing Cell 84 (12.799999999999999, 38.200000000000024, 12.899999999999999, 38.300000000000026)
+2026-01-30 16:45:05,704 - INFO -   📤 Upload completato: raw_cubes/lat_38.2500_lon_12.8500_task84.npy
+2026-01-30 16:45:05,706 - INFO - 📍 Processing Cell 85 (12.899999999999999, 36.6, 12.999999999999998, 36.7)
+2026-01-30 16:45:30,004 - INFO -   📤 Upload completato: raw_cubes/lat_36.6500_lon_12.9500_task85.npy
+2026-01-30 16:45:30,006 - INFO - 📍 Processing Cell 86 (12.899999999999999, 36.7, 12.999999999999998, 36.800000000000004)
+2026-01-30 16:45:49,209 - INFO -   📤 Upload completato: raw_cubes/lat_36.7500_lon_12.9500_task86.npy
+2026-01-30 16:45:49,212 - INFO - 📍 Processing Cell 87 (12.899999999999999, 36.800000000000004, 12.999999999999998, 36.900000000000006)
+2026-01-30 16:46:11,931 - INFO -   📤 Upload completato: raw_cubes/lat_36.8500_lon_12.9500_task87.npy
+2026-01-30 16:46:11,934 - INFO - 📍 Processing Cell 88 (12.899999999999999, 36.900000000000006, 12.999999999999998, 37.00000000000001)
+2026-01-30 16:46:30,879 - INFO -   📤 Upload completato: raw_cubes/lat_36.9500_lon_12.9500_task88.npy
+2026-01-30 16:46:30,882 - INFO - 📍 Processing Cell 89 (12.899999999999999, 37.00000000000001, 12.999999999999998, 37.10000000000001)
+2026-01-30 16:46:51,982 - INFO -   📤 Upload completato: raw_cubes/lat_37.0500_lon_12.9500_task89.npy
+2026-01-30 16:46:51,985 - INFO - --- Progress: 90/561 cells. Cubes Saved: 90 ---
+2026-01-30 16:46:51,985 - INFO - 📍 Processing Cell 90 (12.899999999999999, 37.10000000000001, 12.999999999999998, 37.20000000000001)
+2026-01-30 16:47:13,090 - INFO -   📤 Upload completato: raw_cubes/lat_37.1500_lon_12.9500_task90.npy
+2026-01-30 16:47:13,093 - INFO - 📍 Processing Cell 91 (12.899999999999999, 37.20000000000001, 12.999999999999998, 37.30000000000001)
+2026-01-30 16:47:31,320 - INFO -   📤 Upload completato: raw_cubes/lat_37.2500_lon_12.9500_task91.npy
+2026-01-30 16:47:31,323 - INFO - 📍 Processing Cell 92 (12.899999999999999, 37.30000000000001, 12.999999999999998, 37.40000000000001)
+2026-01-30 16:47:49,879 - INFO -   📤 Upload completato: raw_cubes/lat_37.3500_lon_12.9500_task92.npy
+2026-01-30 16:47:49,882 - INFO - 📍 Processing Cell 93 (12.899999999999999, 37.40000000000001, 12.999999999999998, 37.500000000000014)
+2026-01-30 16:48:08,195 - INFO -   📤 Upload completato: raw_cubes/lat_37.4500_lon_12.9500_task93.npy
+2026-01-30 16:48:08,197 - INFO - 📍 Processing Cell 94 (12.899999999999999, 37.500000000000014, 12.999999999999998, 37.600000000000016)
+2026-01-30 17:11:44,076 - INFO - 🚀 Starting Satellite Downloader -> MinIO ...
+2026-01-30 17:11:44,076 - INFO - Area Bounds (Sicilia): (12.4, 36.6, 15.7, 38.3)
+2026-01-30 17:11:44,076 - INFO - Grid: 33x17 = 561 celle da processare.
+2026-01-30 17:11:44,076 - INFO - 📍 Processing Cell 0 (12.4, 36.6, 12.5, 36.7)
+2026-01-30 21:13:45,707 - INFO - 🚀 Avvio Download Regionale Sicilia -> MinIO
+2026-01-30 21:13:45,712 - INFO - 🗺️ Griglia generata: 561 tiles totali.
+2026-01-30 21:13:45,712 - INFO - 📍 Processing Tile 1/561: [12.4, 36.6, 12.5, 36.7]
+2026-01-30 21:14:10,056 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:14:10,056 - INFO - 📍 Processing Tile 2/561: [12.4, 36.7, 12.5, 36.8]
+2026-01-30 21:14:29,002 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:14:29,002 - INFO - 📍 Processing Tile 3/561: [12.4, 36.8, 12.5, 36.9]
+2026-01-30 21:14:48,314 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:14:48,314 - INFO - 📍 Processing Tile 4/561: [12.4, 36.9, 12.5, 37.0]
+2026-01-30 21:15:12,148 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:15:12,148 - INFO - 📍 Processing Tile 5/561: [12.4, 37.0, 12.5, 37.1]
+2026-01-30 21:15:36,773 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:15:36,773 - INFO - 📍 Processing Tile 6/561: [12.4, 37.1, 12.5, 37.2]
+2026-01-30 21:15:59,565 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:15:59,565 - INFO - 📍 Processing Tile 7/561: [12.4, 37.2, 12.5, 37.3]
+2026-01-30 21:16:19,882 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:16:19,883 - INFO - 📍 Processing Tile 8/561: [12.4, 37.3, 12.5, 37.4]
+2026-01-30 21:16:41,704 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:16:41,704 - INFO - 📍 Processing Tile 9/561: [12.4, 37.4, 12.5, 37.5]
+2026-01-30 21:17:02,734 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:17:02,734 - INFO - 📍 Processing Tile 10/561: [12.4, 37.5, 12.5, 37.6]
+2026-01-30 21:17:41,547 - INFO - 🚀 Avvio Download Regionale Sicilia -> MinIO
+2026-01-30 21:17:41,552 - INFO - 🗺️ Griglia generata: 561 tiles totali.
+2026-01-30 21:17:41,558 - INFO - 📍 Processing Tile 1/561: [12.4, 36.6, 12.5, 36.7]
+2026-01-30 21:18:06,095 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:18:06,095 - INFO - 📍 Processing Tile 2/561: [12.4, 36.7, 12.5, 36.8]
+2026-01-30 21:18:24,278 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:18:24,278 - INFO - 📍 Processing Tile 3/561: [12.4, 36.8, 12.5, 36.9]
+2026-01-30 21:18:43,277 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:18:43,277 - INFO - 📍 Processing Tile 4/561: [12.4, 36.9, 12.5, 37.0]
+2026-01-30 21:19:06,773 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:19:06,774 - INFO - 📍 Processing Tile 5/561: [12.4, 37.0, 12.5, 37.1]
+2026-01-30 21:19:29,590 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:19:29,590 - INFO - 📍 Processing Tile 6/561: [12.4, 37.1, 12.5, 37.2]
+2026-01-30 21:19:50,546 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:19:50,546 - INFO - 📍 Processing Tile 7/561: [12.4, 37.2, 12.5, 37.3]
+2026-01-30 21:20:11,017 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:20:11,017 - INFO - 📍 Processing Tile 8/561: [12.4, 37.3, 12.5, 37.4]
+2026-01-30 21:20:32,050 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:20:32,050 - INFO - 📍 Processing Tile 9/561: [12.4, 37.4, 12.5, 37.5]
+2026-01-30 21:20:52,227 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:20:52,227 - INFO - 📍 Processing Tile 10/561: [12.4, 37.5, 12.5, 37.6]
+2026-01-30 21:21:12,945 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:21:12,945 - INFO - 📍 Processing Tile 11/561: [12.4, 37.6, 12.5, 37.7]
+2026-01-30 21:21:32,674 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:21:32,674 - INFO - 📍 Processing Tile 12/561: [12.4, 37.7, 12.5, 37.8]
+2026-01-30 21:21:53,418 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.4500_task11.npy
+2026-01-30 21:21:53,422 - INFO - 📍 Processing Tile 13/561: [12.4, 37.8, 12.5, 37.9]
+2026-01-30 21:22:17,655 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.4500_task12.npy
+2026-01-30 21:22:17,658 - INFO - 📍 Processing Tile 14/561: [12.4, 37.9, 12.5, 38.0]
+2026-01-30 21:22:38,697 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:22:38,697 - INFO - 📍 Processing Tile 15/561: [12.4, 38.0, 12.5, 38.1]
+2026-01-30 21:22:59,771 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:22:59,771 - INFO - 📍 Processing Tile 16/561: [12.4, 38.1, 12.5, 38.2]
+2026-01-30 21:23:17,885 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:23:17,885 - INFO - 📍 Processing Tile 17/561: [12.4, 38.2, 12.5, 38.3]
+2026-01-30 21:23:36,485 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:23:36,485 - INFO - 📍 Processing Tile 18/561: [12.5, 36.6, 12.6, 36.7]
+2026-01-30 21:24:00,678 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:24:00,678 - INFO - 📍 Processing Tile 19/561: [12.5, 36.7, 12.6, 36.8]
+2026-01-30 21:24:22,558 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:24:22,558 - INFO - 📍 Processing Tile 20/561: [12.5, 36.8, 12.6, 36.9]
+2026-01-30 21:24:44,885 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:24:44,885 - INFO - 📍 Processing Tile 21/561: [12.5, 36.9, 12.6, 37.0]
+2026-01-30 21:25:03,029 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:25:03,029 - INFO - 📍 Processing Tile 22/561: [12.5, 37.0, 12.6, 37.1]
+2026-01-30 21:25:24,488 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:25:24,488 - INFO - 📍 Processing Tile 23/561: [12.5, 37.1, 12.6, 37.2]
+2026-01-30 21:25:43,714 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:25:43,714 - INFO - 📍 Processing Tile 24/561: [12.5, 37.2, 12.6, 37.3]
+2026-01-30 21:26:02,680 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:26:02,680 - INFO - 📍 Processing Tile 25/561: [12.5, 37.3, 12.6, 37.4]
+2026-01-30 21:26:23,184 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:26:23,184 - INFO - 📍 Processing Tile 26/561: [12.5, 37.4, 12.6, 37.5]
+2026-01-30 21:26:41,804 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:26:41,804 - INFO - 📍 Processing Tile 27/561: [12.5, 37.5, 12.6, 37.6]
+2026-01-30 21:27:00,960 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:27:00,961 - INFO - 📍 Processing Tile 28/561: [12.5, 37.6, 12.6, 37.7]
+2026-01-30 21:27:19,977 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_12.5500_task27.npy
+2026-01-30 21:27:19,980 - INFO - 📍 Processing Tile 29/561: [12.5, 37.7, 12.6, 37.8]
+2026-01-30 21:27:42,376 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.5500_task28.npy
+2026-01-30 21:27:42,378 - INFO - 📍 Processing Tile 30/561: [12.5, 37.8, 12.6, 37.9]
+2026-01-30 21:28:05,223 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.5500_task29.npy
+2026-01-30 21:28:05,225 - INFO - 📍 Processing Tile 31/561: [12.5, 37.9, 12.6, 38.0]
+2026-01-30 21:28:26,011 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_12.5500_task30.npy
+2026-01-30 21:28:26,014 - INFO - 📍 Processing Tile 32/561: [12.5, 38.0, 12.6, 38.1]
+2026-01-30 21:28:46,580 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:28:46,580 - INFO - 📍 Processing Tile 33/561: [12.5, 38.1, 12.6, 38.2]
+2026-01-30 21:29:01,630 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:29:01,631 - INFO - 📍 Processing Tile 34/561: [12.5, 38.2, 12.6, 38.3]
+2026-01-30 21:29:13,396 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:29:13,397 - INFO - 📍 Processing Tile 35/561: [12.6, 36.6, 12.7, 36.7]
+2026-01-30 21:29:36,706 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:29:36,706 - INFO - 📍 Processing Tile 36/561: [12.6, 36.7, 12.7, 36.8]
+2026-01-30 21:29:58,419 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:29:58,420 - INFO - 📍 Processing Tile 37/561: [12.6, 36.8, 12.7, 36.9]
+2026-01-30 21:30:19,067 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:30:19,067 - INFO - 📍 Processing Tile 38/561: [12.6, 36.9, 12.7, 37.0]
+2026-01-30 21:30:38,142 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:30:38,142 - INFO - 📍 Processing Tile 39/561: [12.6, 37.0, 12.7, 37.1]
+2026-01-30 21:31:00,695 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:31:00,695 - INFO - 📍 Processing Tile 40/561: [12.6, 37.1, 12.7, 37.2]
+2026-01-30 21:31:22,134 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:31:22,134 - INFO - 📍 Processing Tile 41/561: [12.6, 37.2, 12.7, 37.3]
+2026-01-30 21:31:41,748 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:31:41,748 - INFO - 📍 Processing Tile 42/561: [12.6, 37.3, 12.7, 37.4]
+2026-01-30 21:32:01,781 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:32:01,781 - INFO - 📍 Processing Tile 43/561: [12.6, 37.4, 12.7, 37.5]
+2026-01-30 21:32:20,149 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:32:20,149 - INFO - 📍 Processing Tile 44/561: [12.6, 37.5, 12.7, 37.6]
+2026-01-30 21:32:39,626 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_12.6500_task43.npy
+2026-01-30 21:32:39,631 - INFO - 📍 Processing Tile 45/561: [12.6, 37.6, 12.7, 37.7]
+2026-01-30 21:33:00,700 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_12.6500_task44.npy
+2026-01-30 21:33:00,703 - INFO - 📍 Processing Tile 46/561: [12.6, 37.7, 12.7, 37.8]
+2026-01-30 21:33:23,605 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.6500_task45.npy
+2026-01-30 21:33:23,608 - INFO - 📍 Processing Tile 47/561: [12.6, 37.8, 12.7, 37.9]
+2026-01-30 21:33:45,213 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.6500_task46.npy
+2026-01-30 21:33:45,216 - INFO - 📍 Processing Tile 48/561: [12.6, 37.9, 12.7, 38.0]
+2026-01-30 21:34:06,428 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_12.6500_task47.npy
+2026-01-30 21:34:06,431 - INFO - 📍 Processing Tile 49/561: [12.6, 38.0, 12.7, 38.1]
+2026-01-30 21:34:30,761 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_12.6500_task48.npy
+2026-01-30 21:34:30,764 - INFO - 📍 Processing Tile 50/561: [12.6, 38.1, 12.7, 38.2]
+2026-01-30 21:34:50,403 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_12.6500_task49.npy
+2026-01-30 21:34:50,406 - INFO - 📍 Processing Tile 51/561: [12.6, 38.2, 12.7, 38.3]
+2026-01-30 21:35:10,003 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:35:10,004 - INFO - 📍 Processing Tile 52/561: [12.7, 36.6, 12.8, 36.7]
+2026-01-30 21:35:33,318 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:35:33,318 - INFO - 📍 Processing Tile 53/561: [12.7, 36.7, 12.8, 36.8]
+2026-01-30 21:35:53,936 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:35:53,936 - INFO - 📍 Processing Tile 54/561: [12.7, 36.8, 12.8, 36.9]
+2026-01-30 21:36:15,642 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:36:15,642 - INFO - 📍 Processing Tile 55/561: [12.7, 36.9, 12.8, 37.0]
+2026-01-30 21:36:39,952 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:36:39,952 - INFO - 📍 Processing Tile 56/561: [12.7, 37.0, 12.8, 37.1]
+2026-01-30 21:37:04,778 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:37:04,779 - INFO - 📍 Processing Tile 57/561: [12.7, 37.1, 12.8, 37.2]
+2026-01-30 21:37:29,388 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:37:29,388 - INFO - 📍 Processing Tile 58/561: [12.7, 37.2, 12.8, 37.3]
+2026-01-30 21:37:51,372 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:37:51,373 - INFO - 📍 Processing Tile 59/561: [12.7, 37.3, 12.8, 37.4]
+2026-01-30 21:38:13,686 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:38:13,687 - INFO - 📍 Processing Tile 60/561: [12.7, 37.4, 12.8, 37.5]
+2026-01-30 21:38:36,715 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:38:36,715 - INFO - 📍 Processing Tile 61/561: [12.7, 37.5, 12.8, 37.6]
+2026-01-30 21:38:59,438 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_12.7500_task60.npy
+2026-01-30 21:38:59,441 - INFO - 📍 Processing Tile 62/561: [12.7, 37.6, 12.8, 37.7]
+2026-01-30 21:39:23,907 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_12.7500_task61.npy
+2026-01-30 21:39:23,909 - INFO - 📍 Processing Tile 63/561: [12.7, 37.7, 12.8, 37.8]
+2026-01-30 21:39:49,067 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.7500_task62.npy
+2026-01-30 21:39:49,070 - INFO - 📍 Processing Tile 64/561: [12.7, 37.8, 12.8, 37.9]
+2026-01-30 21:40:11,321 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.7500_task63.npy
+2026-01-30 21:40:11,323 - INFO - 📍 Processing Tile 65/561: [12.7, 37.9, 12.8, 38.0]
+2026-01-30 21:40:33,933 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_12.7500_task64.npy
+2026-01-30 21:40:33,936 - INFO - 📍 Processing Tile 66/561: [12.7, 38.0, 12.8, 38.1]
+2026-01-30 21:40:57,314 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_12.7500_task65.npy
+2026-01-30 21:40:57,317 - INFO - 📍 Processing Tile 67/561: [12.7, 38.1, 12.8, 38.2]
+2026-01-30 21:41:17,896 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_12.7500_task66.npy
+2026-01-30 21:41:17,898 - INFO - 📍 Processing Tile 68/561: [12.7, 38.2, 12.8, 38.3]
+2026-01-30 21:41:36,281 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:41:36,281 - INFO - 📍 Processing Tile 69/561: [12.8, 36.6, 12.9, 36.7]
+2026-01-30 21:41:55,048 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:41:55,049 - INFO - 📍 Processing Tile 70/561: [12.8, 36.7, 12.9, 36.8]
+2026-01-30 21:42:12,827 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:42:12,828 - INFO - 📍 Processing Tile 71/561: [12.8, 36.8, 12.9, 36.9]
+2026-01-30 21:42:33,480 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:42:33,480 - INFO - 📍 Processing Tile 72/561: [12.8, 36.9, 12.9, 37.0]
+2026-01-30 21:42:56,382 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:42:56,382 - INFO - 📍 Processing Tile 73/561: [12.8, 37.0, 12.9, 37.1]
+2026-01-30 21:43:18,601 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:43:18,601 - INFO - 📍 Processing Tile 74/561: [12.8, 37.1, 12.9, 37.2]
+2026-01-30 21:43:39,080 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:43:39,080 - INFO - 📍 Processing Tile 75/561: [12.8, 37.2, 12.9, 37.3]
+2026-01-30 21:44:00,299 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:44:00,299 - INFO - 📍 Processing Tile 76/561: [12.8, 37.3, 12.9, 37.4]
+2026-01-30 21:44:19,023 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:44:19,023 - INFO - 📍 Processing Tile 77/561: [12.8, 37.4, 12.9, 37.5]
+2026-01-30 21:44:37,122 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:44:37,122 - INFO - 📍 Processing Tile 78/561: [12.8, 37.5, 12.9, 37.6]
+2026-01-30 21:44:55,449 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:44:55,449 - INFO - 📍 Processing Tile 79/561: [12.8, 37.6, 12.9, 37.7]
+2026-01-30 21:45:15,501 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_12.8500_task78.npy
+2026-01-30 21:45:15,503 - INFO - 📍 Processing Tile 80/561: [12.8, 37.7, 12.9, 37.8]
+2026-01-30 21:45:35,686 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.8500_task79.npy
+2026-01-30 21:45:35,689 - INFO - 📍 Processing Tile 81/561: [12.8, 37.8, 12.9, 37.9]
+2026-01-30 21:45:57,884 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.8500_task80.npy
+2026-01-30 21:45:57,886 - INFO - 📍 Processing Tile 82/561: [12.8, 37.9, 12.9, 38.0]
+2026-01-30 21:46:20,607 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_12.8500_task81.npy
+2026-01-30 21:46:20,610 - INFO - 📍 Processing Tile 83/561: [12.8, 38.0, 12.9, 38.1]
+2026-01-30 21:46:41,384 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_12.8500_task82.npy
+2026-01-30 21:46:41,386 - INFO - 📍 Processing Tile 84/561: [12.8, 38.1, 12.9, 38.2]
+2026-01-30 21:46:59,856 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:46:59,856 - INFO - 📍 Processing Tile 85/561: [12.8, 38.2, 12.9, 38.3]
+2026-01-30 21:47:19,172 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:47:19,172 - INFO - 📍 Processing Tile 86/561: [12.9, 36.6, 13.0, 36.7]
+2026-01-30 21:47:42,553 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:47:42,553 - INFO - 📍 Processing Tile 87/561: [12.9, 36.7, 13.0, 36.8]
+2026-01-30 21:48:01,392 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:48:01,392 - INFO - 📍 Processing Tile 88/561: [12.9, 36.8, 13.0, 36.9]
+2026-01-30 21:48:23,534 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:48:23,534 - INFO - 📍 Processing Tile 89/561: [12.9, 36.9, 13.0, 37.0]
+2026-01-30 21:48:42,520 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:48:42,520 - INFO - 📍 Processing Tile 90/561: [12.9, 37.0, 13.0, 37.1]
+2026-01-30 21:49:02,402 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:49:02,402 - INFO - 📍 Processing Tile 91/561: [12.9, 37.1, 13.0, 37.2]
+2026-01-30 21:49:21,886 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:49:21,886 - INFO - 📍 Processing Tile 92/561: [12.9, 37.2, 13.0, 37.3]
+2026-01-30 21:49:39,221 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:49:39,221 - INFO - 📍 Processing Tile 93/561: [12.9, 37.3, 13.0, 37.4]
+2026-01-30 21:49:56,951 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:49:56,951 - INFO - 📍 Processing Tile 94/561: [12.9, 37.4, 13.0, 37.5]
+2026-01-30 21:50:17,061 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:50:17,061 - INFO - 📍 Processing Tile 95/561: [12.9, 37.5, 13.0, 37.6]
+2026-01-30 21:50:39,551 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_12.9500_task94.npy
+2026-01-30 21:50:39,554 - INFO - 📍 Processing Tile 96/561: [12.9, 37.6, 13.0, 37.7]
+2026-01-30 21:51:04,923 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_12.9500_task95.npy
+2026-01-30 21:51:04,925 - INFO - 📍 Processing Tile 97/561: [12.9, 37.7, 13.0, 37.8]
+2026-01-30 21:51:31,025 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_12.9500_task96.npy
+2026-01-30 21:51:31,027 - INFO - 📍 Processing Tile 98/561: [12.9, 37.8, 13.0, 37.9]
+2026-01-30 21:51:50,405 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_12.9500_task97.npy
+2026-01-30 21:51:50,407 - INFO - 📍 Processing Tile 99/561: [12.9, 37.9, 13.0, 38.0]
+2026-01-30 21:52:17,780 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_12.9500_task98.npy
+2026-01-30 21:52:17,785 - INFO - 📍 Processing Tile 100/561: [12.9, 38.0, 13.0, 38.1]
+2026-01-30 21:52:41,700 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_12.9500_task99.npy
+2026-01-30 21:52:41,702 - INFO - 📍 Processing Tile 101/561: [12.9, 38.1, 13.0, 38.2]
+2026-01-30 21:52:58,868 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:52:58,868 - INFO - 📍 Processing Tile 102/561: [12.9, 38.2, 13.0, 38.3]
+2026-01-30 21:53:16,114 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:53:16,114 - INFO - 📍 Processing Tile 103/561: [13.0, 36.6, 13.1, 36.7]
+2026-01-30 21:53:33,428 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:53:33,428 - INFO - 📍 Processing Tile 104/561: [13.0, 36.7, 13.1, 36.8]
+2026-01-30 21:53:52,467 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:53:52,467 - INFO - 📍 Processing Tile 105/561: [13.0, 36.8, 13.1, 36.9]
+2026-01-30 21:54:08,267 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:54:08,267 - INFO - 📍 Processing Tile 106/561: [13.0, 36.9, 13.1, 37.0]
+2026-01-30 21:54:25,070 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:54:25,070 - INFO - 📍 Processing Tile 107/561: [13.0, 37.0, 13.1, 37.1]
+2026-01-30 21:54:42,792 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:54:42,792 - INFO - 📍 Processing Tile 108/561: [13.0, 37.1, 13.1, 37.2]
+2026-01-30 21:55:01,488 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:55:01,488 - INFO - 📍 Processing Tile 109/561: [13.0, 37.2, 13.1, 37.3]
+2026-01-30 21:55:18,527 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:55:18,527 - INFO - 📍 Processing Tile 110/561: [13.0, 37.3, 13.1, 37.4]
+2026-01-30 21:55:36,540 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:55:36,540 - INFO - 📍 Processing Tile 111/561: [13.0, 37.4, 13.1, 37.5]
+2026-01-30 21:55:55,035 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:55:55,035 - INFO - 📍 Processing Tile 112/561: [13.0, 37.5, 13.1, 37.6]
+2026-01-30 21:56:17,277 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.0500_task111.npy
+2026-01-30 21:56:17,280 - INFO - 📍 Processing Tile 113/561: [13.0, 37.6, 13.1, 37.7]
+2026-01-30 21:56:41,011 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.0500_task112.npy
+2026-01-30 21:56:41,014 - INFO - 📍 Processing Tile 114/561: [13.0, 37.7, 13.1, 37.8]
+2026-01-30 21:57:04,115 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.0500_task113.npy
+2026-01-30 21:57:04,118 - INFO - 📍 Processing Tile 115/561: [13.0, 37.8, 13.1, 37.9]
+2026-01-30 21:57:21,622 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.0500_task114.npy
+2026-01-30 21:57:21,625 - INFO - 📍 Processing Tile 116/561: [13.0, 37.9, 13.1, 38.0]
+2026-01-30 21:57:45,601 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.0500_task115.npy
+2026-01-30 21:57:45,603 - INFO - 📍 Processing Tile 117/561: [13.0, 38.0, 13.1, 38.1]
+2026-01-30 21:58:10,281 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.0500_task116.npy
+2026-01-30 21:58:10,284 - INFO - 📍 Processing Tile 118/561: [13.0, 38.1, 13.1, 38.2]
+2026-01-30 21:58:27,692 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_13.0500_task117.npy
+2026-01-30 21:58:27,694 - INFO - 📍 Processing Tile 119/561: [13.0, 38.2, 13.1, 38.3]
+2026-01-30 21:58:47,137 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:58:47,137 - INFO - 📍 Processing Tile 120/561: [13.1, 36.6, 13.2, 36.7]
+2026-01-30 21:59:04,949 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:59:04,949 - INFO - 📍 Processing Tile 121/561: [13.1, 36.7, 13.2, 36.8]
+2026-01-30 21:59:22,917 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:59:22,917 - INFO - 📍 Processing Tile 122/561: [13.1, 36.8, 13.2, 36.9]
+2026-01-30 21:59:39,516 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:59:39,516 - INFO - 📍 Processing Tile 123/561: [13.1, 36.9, 13.2, 37.0]
+2026-01-30 21:59:54,726 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 21:59:54,726 - INFO - 📍 Processing Tile 124/561: [13.1, 37.0, 13.2, 37.1]
+2026-01-30 22:00:10,253 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:00:10,253 - INFO - 📍 Processing Tile 125/561: [13.1, 37.1, 13.2, 37.2]
+2026-01-30 22:00:23,681 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:00:23,681 - INFO - 📍 Processing Tile 126/561: [13.1, 37.2, 13.2, 37.3]
+2026-01-30 22:00:35,507 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:00:35,507 - INFO - 📍 Processing Tile 127/561: [13.1, 37.3, 13.2, 37.4]
+2026-01-30 22:00:47,073 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:00:47,073 - INFO - 📍 Processing Tile 128/561: [13.1, 37.4, 13.2, 37.5]
+2026-01-30 22:01:00,748 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:01:00,748 - INFO - 📍 Processing Tile 129/561: [13.1, 37.5, 13.2, 37.6]
+2026-01-30 22:01:26,896 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.1500_task128.npy
+2026-01-30 22:01:26,901 - INFO - 📍 Processing Tile 130/561: [13.1, 37.6, 13.2, 37.7]
+2026-01-30 22:01:52,733 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.1500_task129.npy
+2026-01-30 22:01:52,735 - INFO - 📍 Processing Tile 131/561: [13.1, 37.7, 13.2, 37.8]
+2026-01-30 22:02:18,680 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.1500_task130.npy
+2026-01-30 22:02:18,683 - INFO - 📍 Processing Tile 132/561: [13.1, 37.8, 13.2, 37.9]
+2026-01-30 22:02:37,169 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.1500_task131.npy
+2026-01-30 22:02:37,172 - INFO - 📍 Processing Tile 133/561: [13.1, 37.9, 13.2, 38.0]
+2026-01-30 22:03:02,283 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.1500_task132.npy
+2026-01-30 22:03:02,285 - INFO - 📍 Processing Tile 134/561: [13.1, 38.0, 13.2, 38.1]
+2026-01-30 22:03:29,969 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.1500_task133.npy
+2026-01-30 22:03:29,971 - INFO - 📍 Processing Tile 135/561: [13.1, 38.1, 13.2, 38.2]
+2026-01-30 22:03:52,264 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_13.1500_task134.npy
+2026-01-30 22:03:52,267 - INFO - 📍 Processing Tile 136/561: [13.1, 38.2, 13.2, 38.3]
+2026-01-30 22:04:12,757 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:04:12,757 - INFO - 📍 Processing Tile 137/561: [13.2, 36.6, 13.3, 36.7]
+2026-01-30 22:04:31,984 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:04:31,985 - INFO - 📍 Processing Tile 138/561: [13.2, 36.7, 13.3, 36.8]
+2026-01-30 22:04:50,037 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:04:50,037 - INFO - 📍 Processing Tile 139/561: [13.2, 36.8, 13.3, 36.9]
+2026-01-30 22:05:09,273 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:05:09,273 - INFO - 📍 Processing Tile 140/561: [13.2, 36.9, 13.3, 37.0]
+2026-01-30 22:05:24,053 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:05:24,053 - INFO - 📍 Processing Tile 141/561: [13.2, 37.0, 13.3, 37.1]
+2026-01-30 22:05:40,081 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:05:40,081 - INFO - 📍 Processing Tile 142/561: [13.2, 37.1, 13.3, 37.2]
+2026-01-30 22:05:59,005 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:05:59,006 - INFO - 📍 Processing Tile 143/561: [13.2, 37.2, 13.3, 37.3]
+2026-01-30 22:06:13,019 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:06:13,019 - INFO - 📍 Processing Tile 144/561: [13.2, 37.3, 13.3, 37.4]
+2026-01-30 22:06:33,141 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:06:33,141 - INFO - 📍 Processing Tile 145/561: [13.2, 37.4, 13.3, 37.5]
+2026-01-30 22:06:54,196 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.2500_task144.npy
+2026-01-30 22:06:54,198 - INFO - 📍 Processing Tile 146/561: [13.2, 37.5, 13.3, 37.6]
+2026-01-30 22:07:17,108 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.2500_task145.npy
+2026-01-30 22:07:17,110 - INFO - 📍 Processing Tile 147/561: [13.2, 37.6, 13.3, 37.7]
+2026-01-30 22:07:35,130 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.2500_task146.npy
+2026-01-30 22:07:35,132 - INFO - 📍 Processing Tile 148/561: [13.2, 37.7, 13.3, 37.8]
+2026-01-30 22:07:52,664 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.2500_task147.npy
+2026-01-30 22:07:52,666 - INFO - 📍 Processing Tile 149/561: [13.2, 37.8, 13.3, 37.9]
+2026-01-30 22:08:08,310 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.2500_task148.npy
+2026-01-30 22:08:08,312 - INFO - 📍 Processing Tile 150/561: [13.2, 37.9, 13.3, 38.0]
+2026-01-30 22:08:26,924 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.2500_task149.npy
+2026-01-30 22:08:26,926 - INFO - 📍 Processing Tile 151/561: [13.2, 38.0, 13.3, 38.1]
+2026-01-30 22:08:45,226 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.2500_task150.npy
+2026-01-30 22:08:45,228 - INFO - 📍 Processing Tile 152/561: [13.2, 38.1, 13.3, 38.2]
+2026-01-30 22:09:00,524 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_13.2500_task151.npy
+2026-01-30 22:09:00,526 - INFO - 📍 Processing Tile 153/561: [13.2, 38.2, 13.3, 38.3]
+2026-01-30 22:09:20,271 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:09:20,271 - INFO - 📍 Processing Tile 154/561: [13.3, 36.6, 13.4, 36.7]
+2026-01-30 22:09:39,686 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:09:39,686 - INFO - 📍 Processing Tile 155/561: [13.3, 36.7, 13.4, 36.8]
+2026-01-30 22:09:56,131 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:09:56,131 - INFO - 📍 Processing Tile 156/561: [13.3, 36.8, 13.4, 36.9]
+2026-01-30 22:10:12,899 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:10:12,899 - INFO - 📍 Processing Tile 157/561: [13.3, 36.9, 13.4, 37.0]
+2026-01-30 22:10:28,766 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:10:28,767 - INFO - 📍 Processing Tile 158/561: [13.3, 37.0, 13.4, 37.1]
+2026-01-30 22:10:44,520 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:10:44,520 - INFO - 📍 Processing Tile 159/561: [13.3, 37.1, 13.4, 37.2]
+2026-01-30 22:11:02,202 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:11:02,202 - INFO - 📍 Processing Tile 160/561: [13.3, 37.2, 13.4, 37.3]
+2026-01-30 22:11:16,297 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:11:16,298 - INFO - 📍 Processing Tile 161/561: [13.3, 37.3, 13.4, 37.4]
+2026-01-30 22:11:35,699 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.3500_task160.npy
+2026-01-30 22:11:35,701 - INFO - 📍 Processing Tile 162/561: [13.3, 37.4, 13.4, 37.5]
+2026-01-30 22:11:57,606 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.3500_task161.npy
+2026-01-30 22:11:57,608 - INFO - 📍 Processing Tile 163/561: [13.3, 37.5, 13.4, 37.6]
+2026-01-30 22:12:18,507 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.3500_task162.npy
+2026-01-30 22:12:18,509 - INFO - 📍 Processing Tile 164/561: [13.3, 37.6, 13.4, 37.7]
+2026-01-30 22:12:39,407 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.3500_task163.npy
+2026-01-30 22:12:39,409 - INFO - 📍 Processing Tile 165/561: [13.3, 37.7, 13.4, 37.8]
+2026-01-30 22:13:01,964 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.3500_task164.npy
+2026-01-30 22:13:01,966 - INFO - 📍 Processing Tile 166/561: [13.3, 37.8, 13.4, 37.9]
+2026-01-30 22:13:19,436 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.3500_task165.npy
+2026-01-30 22:13:19,439 - INFO - 📍 Processing Tile 167/561: [13.3, 37.9, 13.4, 38.0]
+2026-01-30 22:13:41,026 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.3500_task166.npy
+2026-01-30 22:13:41,028 - INFO - 📍 Processing Tile 168/561: [13.3, 38.0, 13.4, 38.1]
+2026-01-30 22:14:06,505 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.3500_task167.npy
+2026-01-30 22:14:06,508 - INFO - 📍 Processing Tile 169/561: [13.3, 38.1, 13.4, 38.2]
+2026-01-30 22:14:23,458 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_13.3500_task168.npy
+2026-01-30 22:14:23,463 - INFO - 📍 Processing Tile 170/561: [13.3, 38.2, 13.4, 38.3]
+2026-01-30 22:14:41,755 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_13.3500_task169.npy
+2026-01-30 22:14:41,757 - INFO - 📍 Processing Tile 171/561: [13.4, 36.6, 13.5, 36.7]
+2026-01-30 22:15:01,184 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:15:01,184 - INFO - 📍 Processing Tile 172/561: [13.4, 36.7, 13.5, 36.8]
+2026-01-30 22:15:19,681 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:15:19,681 - INFO - 📍 Processing Tile 173/561: [13.4, 36.8, 13.5, 36.9]
+2026-01-30 22:15:38,105 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:15:38,105 - INFO - 📍 Processing Tile 174/561: [13.4, 36.9, 13.5, 37.0]
+2026-01-30 22:15:54,530 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:15:54,530 - INFO - 📍 Processing Tile 175/561: [13.4, 37.0, 13.5, 37.1]
+2026-01-30 22:16:10,550 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:16:10,550 - INFO - 📍 Processing Tile 176/561: [13.4, 37.1, 13.5, 37.2]
+2026-01-30 22:16:30,506 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:16:30,507 - INFO - 📍 Processing Tile 177/561: [13.4, 37.2, 13.5, 37.3]
+2026-01-30 22:16:48,484 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:16:48,484 - INFO - 📍 Processing Tile 178/561: [13.4, 37.3, 13.5, 37.4]
+2026-01-30 22:17:11,583 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.4500_task177.npy
+2026-01-30 22:17:11,585 - INFO - 📍 Processing Tile 179/561: [13.4, 37.4, 13.5, 37.5]
+2026-01-30 22:17:33,086 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.4500_task178.npy
+2026-01-30 22:17:33,088 - INFO - 📍 Processing Tile 180/561: [13.4, 37.5, 13.5, 37.6]
+2026-01-30 22:17:57,161 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.4500_task179.npy
+2026-01-30 22:17:57,163 - INFO - 📍 Processing Tile 181/561: [13.4, 37.6, 13.5, 37.7]
+2026-01-30 22:18:21,306 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.4500_task180.npy
+2026-01-30 22:18:21,308 - INFO - 📍 Processing Tile 182/561: [13.4, 37.7, 13.5, 37.8]
+2026-01-30 22:18:43,937 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.4500_task181.npy
+2026-01-30 22:18:43,940 - INFO - 📍 Processing Tile 183/561: [13.4, 37.8, 13.5, 37.9]
+2026-01-30 22:18:59,036 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.4500_task182.npy
+2026-01-30 22:18:59,039 - INFO - 📍 Processing Tile 184/561: [13.4, 37.9, 13.5, 38.0]
+2026-01-30 22:19:20,960 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.4500_task183.npy
+2026-01-30 22:19:20,962 - INFO - 📍 Processing Tile 185/561: [13.4, 38.0, 13.5, 38.1]
+2026-01-30 22:19:47,440 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.4500_task184.npy
+2026-01-30 22:19:47,442 - INFO - 📍 Processing Tile 186/561: [13.4, 38.1, 13.5, 38.2]
+2026-01-30 22:20:07,834 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:20:07,834 - INFO - 📍 Processing Tile 187/561: [13.4, 38.2, 13.5, 38.3]
+2026-01-30 22:20:24,582 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:20:24,582 - INFO - 📍 Processing Tile 188/561: [13.5, 36.6, 13.6, 36.7]
+2026-01-30 22:20:44,737 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:20:44,737 - INFO - 📍 Processing Tile 189/561: [13.5, 36.7, 13.6, 36.8]
+2026-01-30 22:21:05,092 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_13.5500_task188.npy
+2026-01-30 22:21:05,094 - INFO - 📍 Processing Tile 190/561: [13.5, 36.8, 13.6, 36.9]
+2026-01-30 22:21:25,116 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:21:25,116 - INFO - 📍 Processing Tile 191/561: [13.5, 36.9, 13.6, 37.0]
+2026-01-30 22:21:42,137 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:21:42,137 - INFO - 📍 Processing Tile 192/561: [13.5, 37.0, 13.6, 37.1]
+2026-01-30 22:22:01,027 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:22:01,027 - INFO - 📍 Processing Tile 193/561: [13.5, 37.1, 13.6, 37.2]
+2026-01-30 22:22:21,556 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:22:21,556 - INFO - 📍 Processing Tile 194/561: [13.5, 37.2, 13.6, 37.3]
+2026-01-30 22:22:40,138 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_13.5500_task193.npy
+2026-01-30 22:22:40,140 - INFO - 📍 Processing Tile 195/561: [13.5, 37.3, 13.6, 37.4]
+2026-01-30 22:23:01,137 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.5500_task194.npy
+2026-01-30 22:23:01,139 - INFO - 📍 Processing Tile 196/561: [13.5, 37.4, 13.6, 37.5]
+2026-01-30 22:23:21,129 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.5500_task195.npy
+2026-01-30 22:23:21,132 - INFO - 📍 Processing Tile 197/561: [13.5, 37.5, 13.6, 37.6]
+2026-01-30 22:23:42,360 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.5500_task196.npy
+2026-01-30 22:23:42,363 - INFO - 📍 Processing Tile 198/561: [13.5, 37.6, 13.6, 37.7]
+2026-01-30 22:24:02,930 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.5500_task197.npy
+2026-01-30 22:24:02,932 - INFO - 📍 Processing Tile 199/561: [13.5, 37.7, 13.6, 37.8]
+2026-01-30 22:24:23,839 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.5500_task198.npy
+2026-01-30 22:24:23,841 - INFO - 📍 Processing Tile 200/561: [13.5, 37.8, 13.6, 37.9]
+2026-01-30 22:24:38,293 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.5500_task199.npy
+2026-01-30 22:24:38,295 - INFO - 📍 Processing Tile 201/561: [13.5, 37.9, 13.6, 38.0]
+2026-01-30 22:24:57,494 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.5500_task200.npy
+2026-01-30 22:24:57,496 - INFO - 📍 Processing Tile 202/561: [13.5, 38.0, 13.6, 38.1]
+2026-01-30 22:25:19,346 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.5500_task201.npy
+2026-01-30 22:25:19,348 - INFO - 📍 Processing Tile 203/561: [13.5, 38.1, 13.6, 38.2]
+2026-01-30 22:25:39,167 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:25:39,167 - INFO - 📍 Processing Tile 204/561: [13.5, 38.2, 13.6, 38.3]
+2026-01-30 22:25:54,227 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:25:54,227 - INFO - 📍 Processing Tile 205/561: [13.6, 36.6, 13.7, 36.7]
+2026-01-30 22:26:15,304 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_13.6500_task204.npy
+2026-01-30 22:26:15,306 - INFO - 📍 Processing Tile 206/561: [13.6, 36.7, 13.7, 36.8]
+2026-01-30 22:26:35,759 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_13.6500_task205.npy
+2026-01-30 22:26:35,761 - INFO - 📍 Processing Tile 207/561: [13.6, 36.8, 13.7, 36.9]
+2026-01-30 22:26:56,557 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_13.6500_task206.npy
+2026-01-30 22:26:56,559 - INFO - 📍 Processing Tile 208/561: [13.6, 36.9, 13.7, 37.0]
+2026-01-30 22:27:13,472 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:27:13,473 - INFO - 📍 Processing Tile 209/561: [13.6, 37.0, 13.7, 37.1]
+2026-01-30 22:27:32,155 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:27:32,155 - INFO - 📍 Processing Tile 210/561: [13.6, 37.1, 13.7, 37.2]
+2026-01-30 22:27:51,142 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:27:51,142 - INFO - 📍 Processing Tile 211/561: [13.6, 37.2, 13.7, 37.3]
+2026-01-30 22:28:16,580 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_13.6500_task210.npy
+2026-01-30 22:28:16,582 - INFO - 📍 Processing Tile 212/561: [13.6, 37.3, 13.7, 37.4]
+2026-01-30 22:28:42,862 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.6500_task211.npy
+2026-01-30 22:28:42,864 - INFO - 📍 Processing Tile 213/561: [13.6, 37.4, 13.7, 37.5]
+2026-01-30 22:29:07,672 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.6500_task212.npy
+2026-01-30 22:29:07,675 - INFO - 📍 Processing Tile 214/561: [13.6, 37.5, 13.7, 37.6]
+2026-01-30 22:29:33,748 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.6500_task213.npy
+2026-01-30 22:29:33,751 - INFO - 📍 Processing Tile 215/561: [13.6, 37.6, 13.7, 37.7]
+2026-01-30 22:29:58,169 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.6500_task214.npy
+2026-01-30 22:29:58,172 - INFO - 📍 Processing Tile 216/561: [13.6, 37.7, 13.7, 37.8]
+2026-01-30 22:30:22,557 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.6500_task215.npy
+2026-01-30 22:30:22,560 - INFO - 📍 Processing Tile 217/561: [13.6, 37.8, 13.7, 37.9]
+2026-01-30 22:30:39,666 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.6500_task216.npy
+2026-01-30 22:30:39,669 - INFO - 📍 Processing Tile 218/561: [13.6, 37.9, 13.7, 38.0]
+2026-01-30 22:30:59,114 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.6500_task217.npy
+2026-01-30 22:30:59,117 - INFO - 📍 Processing Tile 219/561: [13.6, 38.0, 13.7, 38.1]
+2026-01-30 22:31:19,443 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.6500_task218.npy
+2026-01-30 22:31:19,446 - INFO - 📍 Processing Tile 220/561: [13.6, 38.1, 13.7, 38.2]
+2026-01-30 22:31:38,516 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:31:38,516 - INFO - 📍 Processing Tile 221/561: [13.6, 38.2, 13.7, 38.3]
+2026-01-30 22:31:54,062 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:31:54,062 - INFO - 📍 Processing Tile 222/561: [13.7, 36.6, 13.8, 36.7]
+2026-01-30 22:32:15,208 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_13.7500_task221.npy
+2026-01-30 22:32:15,210 - INFO - 📍 Processing Tile 223/561: [13.7, 36.7, 13.8, 36.8]
+2026-01-30 22:32:34,509 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_13.7500_task222.npy
+2026-01-30 22:32:34,511 - INFO - 📍 Processing Tile 224/561: [13.7, 36.8, 13.8, 36.9]
+2026-01-30 22:32:54,206 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_13.7500_task223.npy
+2026-01-30 22:32:54,208 - INFO - 📍 Processing Tile 225/561: [13.7, 36.9, 13.8, 37.0]
+2026-01-30 22:33:11,621 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:33:11,621 - INFO - 📍 Processing Tile 226/561: [13.7, 37.0, 13.8, 37.1]
+2026-01-30 22:33:30,749 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_13.7500_task225.npy
+2026-01-30 22:33:30,752 - INFO - 📍 Processing Tile 227/561: [13.7, 37.1, 13.8, 37.2]
+2026-01-30 22:33:50,848 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_13.7500_task226.npy
+2026-01-30 22:33:50,852 - INFO - 📍 Processing Tile 228/561: [13.7, 37.2, 13.8, 37.3]
+2026-01-30 22:34:14,963 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_13.7500_task227.npy
+2026-01-30 22:34:14,966 - INFO - 📍 Processing Tile 229/561: [13.7, 37.3, 13.8, 37.4]
+2026-01-30 22:34:36,691 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.7500_task228.npy
+2026-01-30 22:34:36,693 - INFO - 📍 Processing Tile 230/561: [13.7, 37.4, 13.8, 37.5]
+2026-01-30 22:34:59,778 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.7500_task229.npy
+2026-01-30 22:34:59,781 - INFO - 📍 Processing Tile 231/561: [13.7, 37.5, 13.8, 37.6]
+2026-01-30 22:35:21,920 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.7500_task230.npy
+2026-01-30 22:35:21,922 - INFO - 📍 Processing Tile 232/561: [13.7, 37.6, 13.8, 37.7]
+2026-01-30 22:35:45,180 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.7500_task231.npy
+2026-01-30 22:35:45,182 - INFO - 📍 Processing Tile 233/561: [13.7, 37.7, 13.8, 37.8]
+2026-01-30 22:36:09,101 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.7500_task232.npy
+2026-01-30 22:36:09,104 - INFO - 📍 Processing Tile 234/561: [13.7, 37.8, 13.8, 37.9]
+2026-01-30 22:36:25,054 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.7500_task233.npy
+2026-01-30 22:36:25,056 - INFO - 📍 Processing Tile 235/561: [13.7, 37.9, 13.8, 38.0]
+2026-01-30 22:36:45,766 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.7500_task234.npy
+2026-01-30 22:36:45,769 - INFO - 📍 Processing Tile 236/561: [13.7, 38.0, 13.8, 38.1]
+2026-01-30 22:37:05,654 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:37:05,654 - INFO - 📍 Processing Tile 237/561: [13.7, 38.1, 13.8, 38.2]
+2026-01-30 22:37:23,972 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:37:23,973 - INFO - 📍 Processing Tile 238/561: [13.7, 38.2, 13.8, 38.3]
+2026-01-30 22:37:39,471 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:37:39,471 - INFO - 📍 Processing Tile 239/561: [13.8, 36.6, 13.9, 36.7]
+2026-01-30 22:37:57,356 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:37:57,356 - INFO - 📍 Processing Tile 240/561: [13.8, 36.7, 13.9, 36.8]
+2026-01-30 22:38:14,280 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:38:14,280 - INFO - 📍 Processing Tile 241/561: [13.8, 36.8, 13.9, 36.9]
+2026-01-30 22:38:30,449 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:38:30,449 - INFO - 📍 Processing Tile 242/561: [13.8, 36.9, 13.9, 37.0]
+2026-01-30 22:38:46,777 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:38:46,777 - INFO - 📍 Processing Tile 243/561: [13.8, 37.0, 13.9, 37.1]
+2026-01-30 22:39:02,517 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_13.8500_task242.npy
+2026-01-30 22:39:02,520 - INFO - 📍 Processing Tile 244/561: [13.8, 37.1, 13.9, 37.2]
+2026-01-30 22:39:20,120 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_13.8500_task243.npy
+2026-01-30 22:39:20,123 - INFO - 📍 Processing Tile 245/561: [13.8, 37.2, 13.9, 37.3]
+2026-01-30 22:39:40,152 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_13.8500_task244.npy
+2026-01-30 22:39:40,155 - INFO - 📍 Processing Tile 246/561: [13.8, 37.3, 13.9, 37.4]
+2026-01-30 22:39:59,281 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.8500_task245.npy
+2026-01-30 22:39:59,284 - INFO - 📍 Processing Tile 247/561: [13.8, 37.4, 13.9, 37.5]
+2026-01-30 22:40:19,358 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.8500_task246.npy
+2026-01-30 22:40:19,361 - INFO - 📍 Processing Tile 248/561: [13.8, 37.5, 13.9, 37.6]
+2026-01-30 22:40:38,827 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.8500_task247.npy
+2026-01-30 22:40:38,829 - INFO - 📍 Processing Tile 249/561: [13.8, 37.6, 13.9, 37.7]
+2026-01-30 22:40:58,758 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.8500_task248.npy
+2026-01-30 22:40:58,760 - INFO - 📍 Processing Tile 250/561: [13.8, 37.7, 13.9, 37.8]
+2026-01-30 22:41:19,004 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.8500_task249.npy
+2026-01-30 22:41:19,007 - INFO - 📍 Processing Tile 251/561: [13.8, 37.8, 13.9, 37.9]
+2026-01-30 22:41:37,747 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.8500_task250.npy
+2026-01-30 22:41:37,750 - INFO - 📍 Processing Tile 252/561: [13.8, 37.9, 13.9, 38.0]
+2026-01-30 22:41:57,958 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.8500_task251.npy
+2026-01-30 22:41:57,960 - INFO - 📍 Processing Tile 253/561: [13.8, 38.0, 13.9, 38.1]
+2026-01-30 22:42:18,585 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:42:18,585 - INFO - 📍 Processing Tile 254/561: [13.8, 38.1, 13.9, 38.2]
+2026-01-30 22:42:37,957 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:42:37,958 - INFO - 📍 Processing Tile 255/561: [13.8, 38.2, 13.9, 38.3]
+2026-01-30 22:42:54,178 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:42:54,178 - INFO - 📍 Processing Tile 256/561: [13.9, 36.6, 14.0, 36.7]
+2026-01-30 22:43:13,859 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:43:13,860 - INFO - 📍 Processing Tile 257/561: [13.9, 36.7, 14.0, 36.8]
+2026-01-30 22:43:32,283 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:43:32,283 - INFO - 📍 Processing Tile 258/561: [13.9, 36.8, 14.0, 36.9]
+2026-01-30 22:43:53,197 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:43:53,197 - INFO - 📍 Processing Tile 259/561: [13.9, 36.9, 14.0, 37.0]
+2026-01-30 22:44:09,497 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:44:09,498 - INFO - 📍 Processing Tile 260/561: [13.9, 37.0, 14.0, 37.1]
+2026-01-30 22:44:30,386 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_13.9500_task259.npy
+2026-01-30 22:44:30,389 - INFO - 📍 Processing Tile 261/561: [13.9, 37.1, 14.0, 37.2]
+2026-01-30 22:44:52,778 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_13.9500_task260.npy
+2026-01-30 22:44:52,781 - INFO - 📍 Processing Tile 262/561: [13.9, 37.2, 14.0, 37.3]
+2026-01-30 22:45:18,682 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_13.9500_task261.npy
+2026-01-30 22:45:18,684 - INFO - 📍 Processing Tile 263/561: [13.9, 37.3, 14.0, 37.4]
+2026-01-30 22:45:40,533 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_13.9500_task262.npy
+2026-01-30 22:45:40,536 - INFO - 📍 Processing Tile 264/561: [13.9, 37.4, 14.0, 37.5]
+2026-01-30 22:46:02,217 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_13.9500_task263.npy
+2026-01-30 22:46:02,220 - INFO - 📍 Processing Tile 265/561: [13.9, 37.5, 14.0, 37.6]
+2026-01-30 22:46:24,664 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_13.9500_task264.npy
+2026-01-30 22:46:24,666 - INFO - 📍 Processing Tile 266/561: [13.9, 37.6, 14.0, 37.7]
+2026-01-30 22:46:47,784 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_13.9500_task265.npy
+2026-01-30 22:46:47,786 - INFO - 📍 Processing Tile 267/561: [13.9, 37.7, 14.0, 37.8]
+2026-01-30 22:47:10,535 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_13.9500_task266.npy
+2026-01-30 22:47:10,537 - INFO - 📍 Processing Tile 268/561: [13.9, 37.8, 14.0, 37.9]
+2026-01-30 22:47:32,545 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_13.9500_task267.npy
+2026-01-30 22:47:32,547 - INFO - 📍 Processing Tile 269/561: [13.9, 37.9, 14.0, 38.0]
+2026-01-30 22:47:54,843 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_13.9500_task268.npy
+2026-01-30 22:47:54,845 - INFO - 📍 Processing Tile 270/561: [13.9, 38.0, 14.0, 38.1]
+2026-01-30 22:48:11,995 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_13.9500_task269.npy
+2026-01-30 22:48:11,997 - INFO - 📍 Processing Tile 271/561: [13.9, 38.1, 14.0, 38.2]
+2026-01-30 22:48:28,200 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:48:28,201 - INFO - 📍 Processing Tile 272/561: [13.9, 38.2, 14.0, 38.3]
+2026-01-30 22:48:42,011 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:48:42,012 - INFO - 📍 Processing Tile 273/561: [14.0, 36.6, 14.1, 36.7]
+2026-01-30 22:49:04,134 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_14.0500_task272.npy
+2026-01-30 22:49:04,136 - INFO - 📍 Processing Tile 274/561: [14.0, 36.7, 14.1, 36.8]
+2026-01-30 22:49:22,429 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.0500_task273.npy
+2026-01-30 22:49:22,431 - INFO - 📍 Processing Tile 275/561: [14.0, 36.8, 14.1, 36.9]
+2026-01-30 22:49:38,231 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:49:38,231 - INFO - 📍 Processing Tile 276/561: [14.0, 36.9, 14.1, 37.0]
+2026-01-30 22:49:50,666 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:49:50,666 - INFO - 📍 Processing Tile 277/561: [14.0, 37.0, 14.1, 37.1]
+2026-01-30 22:50:03,670 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.0500_task276.npy
+2026-01-30 22:50:03,673 - INFO - 📍 Processing Tile 278/561: [14.0, 37.1, 14.1, 37.2]
+2026-01-30 22:50:18,520 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.0500_task277.npy
+2026-01-30 22:50:18,522 - INFO - 📍 Processing Tile 279/561: [14.0, 37.2, 14.1, 37.3]
+2026-01-30 22:50:35,496 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.0500_task278.npy
+2026-01-30 22:50:35,499 - INFO - 📍 Processing Tile 280/561: [14.0, 37.3, 14.1, 37.4]
+2026-01-30 22:50:51,122 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.0500_task279.npy
+2026-01-30 22:50:51,125 - INFO - 📍 Processing Tile 281/561: [14.0, 37.4, 14.1, 37.5]
+2026-01-30 22:51:15,485 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.0500_task280.npy
+2026-01-30 22:51:15,489 - INFO - 📍 Processing Tile 282/561: [14.0, 37.5, 14.1, 37.6]
+2026-01-30 22:51:40,386 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.0500_task281.npy
+2026-01-30 22:51:40,388 - INFO - 📍 Processing Tile 283/561: [14.0, 37.6, 14.1, 37.7]
+2026-01-30 22:52:03,946 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.0500_task282.npy
+2026-01-30 22:52:03,949 - INFO - 📍 Processing Tile 284/561: [14.0, 37.7, 14.1, 37.8]
+2026-01-30 22:52:30,251 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.0500_task283.npy
+2026-01-30 22:52:30,253 - INFO - 📍 Processing Tile 285/561: [14.0, 37.8, 14.1, 37.9]
+2026-01-30 22:52:52,595 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.0500_task284.npy
+2026-01-30 22:52:52,597 - INFO - 📍 Processing Tile 286/561: [14.0, 37.9, 14.1, 38.0]
+2026-01-30 22:53:14,482 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.0500_task285.npy
+2026-01-30 22:53:14,484 - INFO - 📍 Processing Tile 287/561: [14.0, 38.0, 14.1, 38.1]
+2026-01-30 22:53:46,054 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.0500_task286.npy
+2026-01-30 22:53:46,056 - INFO - 📍 Processing Tile 288/561: [14.0, 38.1, 14.1, 38.2]
+2026-01-30 22:54:07,515 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.0500_task287.npy
+2026-01-30 22:54:07,517 - INFO - 📍 Processing Tile 289/561: [14.0, 38.2, 14.1, 38.3]
+2026-01-30 22:54:25,855 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.0500_task288.npy
+2026-01-30 22:54:25,858 - INFO - 📍 Processing Tile 290/561: [14.1, 36.6, 14.2, 36.7]
+2026-01-30 22:54:48,391 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_14.1500_task289.npy
+2026-01-30 22:54:48,394 - INFO - 📍 Processing Tile 291/561: [14.1, 36.7, 14.2, 36.8]
+2026-01-30 22:55:07,540 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.1500_task290.npy
+2026-01-30 22:55:07,543 - INFO - 📍 Processing Tile 292/561: [14.1, 36.8, 14.2, 36.9]
+2026-01-30 22:55:27,274 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.1500_task291.npy
+2026-01-30 22:55:27,276 - INFO - 📍 Processing Tile 293/561: [14.1, 36.9, 14.2, 37.0]
+2026-01-30 22:55:38,981 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 22:55:38,982 - INFO - 📍 Processing Tile 294/561: [14.1, 37.0, 14.2, 37.1]
+2026-01-30 22:55:58,221 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.1500_task293.npy
+2026-01-30 22:55:58,223 - INFO - 📍 Processing Tile 295/561: [14.1, 37.1, 14.2, 37.2]
+2026-01-30 22:56:17,271 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.1500_task294.npy
+2026-01-30 22:56:17,273 - INFO - 📍 Processing Tile 296/561: [14.1, 37.2, 14.2, 37.3]
+2026-01-30 22:56:43,618 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.1500_task295.npy
+2026-01-30 22:56:43,621 - INFO - 📍 Processing Tile 297/561: [14.1, 37.3, 14.2, 37.4]
+2026-01-30 22:57:06,717 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.1500_task296.npy
+2026-01-30 22:57:06,720 - INFO - 📍 Processing Tile 298/561: [14.1, 37.4, 14.2, 37.5]
+2026-01-30 22:57:27,977 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.1500_task297.npy
+2026-01-30 22:57:27,980 - INFO - 📍 Processing Tile 299/561: [14.1, 37.5, 14.2, 37.6]
+2026-01-30 22:57:45,587 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.1500_task298.npy
+2026-01-30 22:57:45,589 - INFO - 📍 Processing Tile 300/561: [14.1, 37.6, 14.2, 37.7]
+2026-01-30 22:58:02,542 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.1500_task299.npy
+2026-01-30 22:58:02,544 - INFO - 📍 Processing Tile 301/561: [14.1, 37.7, 14.2, 37.8]
+2026-01-30 22:58:18,988 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.1500_task300.npy
+2026-01-30 22:58:18,990 - INFO - 📍 Processing Tile 302/561: [14.1, 37.8, 14.2, 37.9]
+2026-01-30 22:58:35,484 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.1500_task301.npy
+2026-01-30 22:58:35,487 - INFO - 📍 Processing Tile 303/561: [14.1, 37.9, 14.2, 38.0]
+2026-01-30 22:58:51,839 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.1500_task302.npy
+2026-01-30 22:58:51,841 - INFO - 📍 Processing Tile 304/561: [14.1, 38.0, 14.2, 38.1]
+2026-01-30 22:59:08,829 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.1500_task303.npy
+2026-01-30 22:59:08,831 - INFO - 📍 Processing Tile 305/561: [14.1, 38.1, 14.2, 38.2]
+2026-01-30 22:59:23,551 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.1500_task304.npy
+2026-01-30 22:59:23,553 - INFO - 📍 Processing Tile 306/561: [14.1, 38.2, 14.2, 38.3]
+2026-01-30 22:59:34,488 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.1500_task305.npy
+2026-01-30 22:59:34,491 - INFO - 📍 Processing Tile 307/561: [14.2, 36.6, 14.3, 36.7]
+2026-01-30 22:59:54,377 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_14.2500_task306.npy
+2026-01-30 22:59:54,380 - INFO - 📍 Processing Tile 308/561: [14.2, 36.7, 14.3, 36.8]
+2026-01-30 23:00:14,570 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.2500_task307.npy
+2026-01-30 23:00:14,572 - INFO - 📍 Processing Tile 309/561: [14.2, 36.8, 14.3, 36.9]
+2026-01-30 23:00:34,429 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.2500_task308.npy
+2026-01-30 23:00:34,431 - INFO - 📍 Processing Tile 310/561: [14.2, 36.9, 14.3, 37.0]
+2026-01-30 23:00:47,128 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:00:47,128 - INFO - 📍 Processing Tile 311/561: [14.2, 37.0, 14.3, 37.1]
+2026-01-30 23:01:05,099 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.2500_task310.npy
+2026-01-30 23:01:05,101 - INFO - 📍 Processing Tile 312/561: [14.2, 37.1, 14.3, 37.2]
+2026-01-30 23:01:25,069 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.2500_task311.npy
+2026-01-30 23:01:25,072 - INFO - 📍 Processing Tile 313/561: [14.2, 37.2, 14.3, 37.3]
+2026-01-30 23:01:49,820 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.2500_task312.npy
+2026-01-30 23:01:49,822 - INFO - 📍 Processing Tile 314/561: [14.2, 37.3, 14.3, 37.4]
+2026-01-30 23:02:09,231 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.2500_task313.npy
+2026-01-30 23:02:09,233 - INFO - 📍 Processing Tile 315/561: [14.2, 37.4, 14.3, 37.5]
+2026-01-30 23:02:29,489 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.2500_task314.npy
+2026-01-30 23:02:29,491 - INFO - 📍 Processing Tile 316/561: [14.2, 37.5, 14.3, 37.6]
+2026-01-30 23:02:50,137 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.2500_task315.npy
+2026-01-30 23:02:50,139 - INFO - 📍 Processing Tile 317/561: [14.2, 37.6, 14.3, 37.7]
+2026-01-30 23:03:09,524 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.2500_task316.npy
+2026-01-30 23:03:09,526 - INFO - 📍 Processing Tile 318/561: [14.2, 37.7, 14.3, 37.8]
+2026-01-30 23:03:28,375 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.2500_task317.npy
+2026-01-30 23:03:28,377 - INFO - 📍 Processing Tile 319/561: [14.2, 37.8, 14.3, 37.9]
+2026-01-30 23:03:48,295 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.2500_task318.npy
+2026-01-30 23:03:48,298 - INFO - 📍 Processing Tile 320/561: [14.2, 37.9, 14.3, 38.0]
+2026-01-30 23:04:06,978 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.2500_task319.npy
+2026-01-30 23:04:06,980 - INFO - 📍 Processing Tile 321/561: [14.2, 38.0, 14.3, 38.1]
+2026-01-30 23:04:27,182 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.2500_task320.npy
+2026-01-30 23:04:27,184 - INFO - 📍 Processing Tile 322/561: [14.2, 38.1, 14.3, 38.2]
+2026-01-30 23:04:46,169 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.2500_task321.npy
+2026-01-30 23:04:46,171 - INFO - 📍 Processing Tile 323/561: [14.2, 38.2, 14.3, 38.3]
+2026-01-30 23:05:04,568 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.2500_task322.npy
+2026-01-30 23:05:04,571 - INFO - 📍 Processing Tile 324/561: [14.3, 36.6, 14.4, 36.7]
+2026-01-30 23:05:27,642 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:05:27,642 - INFO - 📍 Processing Tile 325/561: [14.3, 36.7, 14.4, 36.8]
+2026-01-30 23:05:47,344 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.3500_task324.npy
+2026-01-30 23:05:47,347 - INFO - 📍 Processing Tile 326/561: [14.3, 36.8, 14.4, 36.9]
+2026-01-30 23:06:07,476 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.3500_task325.npy
+2026-01-30 23:06:07,478 - INFO - 📍 Processing Tile 327/561: [14.3, 36.9, 14.4, 37.0]
+2026-01-30 23:06:19,966 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.3500_task326.npy
+2026-01-30 23:06:19,968 - INFO - 📍 Processing Tile 328/561: [14.3, 37.0, 14.4, 37.1]
+2026-01-30 23:06:40,863 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.3500_task327.npy
+2026-01-30 23:06:40,865 - INFO - 📍 Processing Tile 329/561: [14.3, 37.1, 14.4, 37.2]
+2026-01-30 23:07:03,533 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.3500_task328.npy
+2026-01-30 23:07:03,535 - INFO - 📍 Processing Tile 330/561: [14.3, 37.2, 14.4, 37.3]
+2026-01-30 23:07:29,465 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.3500_task329.npy
+2026-01-30 23:07:29,467 - INFO - 📍 Processing Tile 331/561: [14.3, 37.3, 14.4, 37.4]
+2026-01-30 23:07:49,969 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.3500_task330.npy
+2026-01-30 23:07:49,971 - INFO - 📍 Processing Tile 332/561: [14.3, 37.4, 14.4, 37.5]
+2026-01-30 23:08:11,889 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.3500_task331.npy
+2026-01-30 23:08:11,891 - INFO - 📍 Processing Tile 333/561: [14.3, 37.5, 14.4, 37.6]
+2026-01-30 23:08:34,099 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.3500_task332.npy
+2026-01-30 23:08:34,101 - INFO - 📍 Processing Tile 334/561: [14.3, 37.6, 14.4, 37.7]
+2026-01-30 23:08:54,553 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.3500_task333.npy
+2026-01-30 23:08:54,555 - INFO - 📍 Processing Tile 335/561: [14.3, 37.7, 14.4, 37.8]
+2026-01-30 23:09:16,830 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.3500_task334.npy
+2026-01-30 23:09:16,832 - INFO - 📍 Processing Tile 336/561: [14.3, 37.8, 14.4, 37.9]
+2026-01-30 23:09:36,467 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.3500_task335.npy
+2026-01-30 23:09:36,469 - INFO - 📍 Processing Tile 337/561: [14.3, 37.9, 14.4, 38.0]
+2026-01-30 23:09:55,542 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.3500_task336.npy
+2026-01-30 23:09:55,544 - INFO - 📍 Processing Tile 338/561: [14.3, 38.0, 14.4, 38.1]
+2026-01-30 23:10:15,906 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.3500_task337.npy
+2026-01-30 23:10:15,908 - INFO - 📍 Processing Tile 339/561: [14.3, 38.1, 14.4, 38.2]
+2026-01-30 23:10:34,283 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.3500_task338.npy
+2026-01-30 23:10:34,286 - INFO - 📍 Processing Tile 340/561: [14.3, 38.2, 14.4, 38.3]
+2026-01-30 23:10:53,254 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.3500_task339.npy
+2026-01-30 23:10:53,257 - INFO - 📍 Processing Tile 341/561: [14.4, 36.6, 14.5, 36.7]
+2026-01-30 23:11:14,608 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_14.4500_task340.npy
+2026-01-30 23:11:14,610 - INFO - 📍 Processing Tile 342/561: [14.4, 36.7, 14.5, 36.8]
+2026-01-30 23:11:33,923 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.4500_task341.npy
+2026-01-30 23:11:33,926 - INFO - 📍 Processing Tile 343/561: [14.4, 36.8, 14.5, 36.9]
+2026-01-30 23:11:54,151 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.4500_task342.npy
+2026-01-30 23:11:54,153 - INFO - 📍 Processing Tile 344/561: [14.4, 36.9, 14.5, 37.0]
+2026-01-30 23:12:06,810 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.4500_task343.npy
+2026-01-30 23:12:06,813 - INFO - 📍 Processing Tile 345/561: [14.4, 37.0, 14.5, 37.1]
+2026-01-30 23:12:27,911 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.4500_task344.npy
+2026-01-30 23:12:27,914 - INFO - 📍 Processing Tile 346/561: [14.4, 37.1, 14.5, 37.2]
+2026-01-30 23:12:47,235 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.4500_task345.npy
+2026-01-30 23:12:47,238 - INFO - 📍 Processing Tile 347/561: [14.4, 37.2, 14.5, 37.3]
+2026-01-30 23:13:12,699 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.4500_task346.npy
+2026-01-30 23:13:12,701 - INFO - 📍 Processing Tile 348/561: [14.4, 37.3, 14.5, 37.4]
+2026-01-30 23:13:33,660 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.4500_task347.npy
+2026-01-30 23:13:33,662 - INFO - 📍 Processing Tile 349/561: [14.4, 37.4, 14.5, 37.5]
+2026-01-30 23:13:53,189 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.4500_task348.npy
+2026-01-30 23:13:53,191 - INFO - 📍 Processing Tile 350/561: [14.4, 37.5, 14.5, 37.6]
+2026-01-30 23:14:15,864 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.4500_task349.npy
+2026-01-30 23:14:15,867 - INFO - 📍 Processing Tile 351/561: [14.4, 37.6, 14.5, 37.7]
+2026-01-30 23:14:36,791 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.4500_task350.npy
+2026-01-30 23:14:36,794 - INFO - 📍 Processing Tile 352/561: [14.4, 37.7, 14.5, 37.8]
+2026-01-30 23:14:58,726 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.4500_task351.npy
+2026-01-30 23:14:58,728 - INFO - 📍 Processing Tile 353/561: [14.4, 37.8, 14.5, 37.9]
+2026-01-30 23:15:17,821 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.4500_task352.npy
+2026-01-30 23:15:17,824 - INFO - 📍 Processing Tile 354/561: [14.4, 37.9, 14.5, 38.0]
+2026-01-30 23:15:36,169 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.4500_task353.npy
+2026-01-30 23:15:36,172 - INFO - 📍 Processing Tile 355/561: [14.4, 38.0, 14.5, 38.1]
+2026-01-30 23:15:55,314 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.4500_task354.npy
+2026-01-30 23:15:55,317 - INFO - 📍 Processing Tile 356/561: [14.4, 38.1, 14.5, 38.2]
+2026-01-30 23:16:13,960 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.4500_task355.npy
+2026-01-30 23:16:13,962 - INFO - 📍 Processing Tile 357/561: [14.4, 38.2, 14.5, 38.3]
+2026-01-30 23:16:32,647 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.4500_task356.npy
+2026-01-30 23:16:32,649 - INFO - 📍 Processing Tile 358/561: [14.5, 36.6, 14.6, 36.7]
+2026-01-30 23:16:54,933 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:16:54,934 - INFO - 📍 Processing Tile 359/561: [14.5, 36.7, 14.6, 36.8]
+2026-01-30 23:17:17,269 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.5500_task358.npy
+2026-01-30 23:17:17,272 - INFO - 📍 Processing Tile 360/561: [14.5, 36.8, 14.6, 36.9]
+2026-01-30 23:17:41,789 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.5500_task359.npy
+2026-01-30 23:17:41,791 - INFO - 📍 Processing Tile 361/561: [14.5, 36.9, 14.6, 37.0]
+2026-01-30 23:17:54,610 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.5500_task360.npy
+2026-01-30 23:17:54,613 - INFO - 📍 Processing Tile 362/561: [14.5, 37.0, 14.6, 37.1]
+2026-01-30 23:18:18,281 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.5500_task361.npy
+2026-01-30 23:18:18,283 - INFO - 📍 Processing Tile 363/561: [14.5, 37.1, 14.6, 37.2]
+2026-01-30 23:18:42,119 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.5500_task362.npy
+2026-01-30 23:18:42,121 - INFO - 📍 Processing Tile 364/561: [14.5, 37.2, 14.6, 37.3]
+2026-01-30 23:19:08,249 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.5500_task363.npy
+2026-01-30 23:19:08,251 - INFO - 📍 Processing Tile 365/561: [14.5, 37.3, 14.6, 37.4]
+2026-01-30 23:19:35,193 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.5500_task364.npy
+2026-01-30 23:19:35,195 - INFO - 📍 Processing Tile 366/561: [14.5, 37.4, 14.6, 37.5]
+2026-01-30 23:19:58,891 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.5500_task365.npy
+2026-01-30 23:19:58,893 - INFO - 📍 Processing Tile 367/561: [14.5, 37.5, 14.6, 37.6]
+2026-01-30 23:20:24,991 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.5500_task366.npy
+2026-01-30 23:20:24,993 - INFO - 📍 Processing Tile 368/561: [14.5, 37.6, 14.6, 37.7]
+2026-01-30 23:20:48,816 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.5500_task367.npy
+2026-01-30 23:20:48,818 - INFO - 📍 Processing Tile 369/561: [14.5, 37.7, 14.6, 37.8]
+2026-01-30 23:21:14,367 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.5500_task368.npy
+2026-01-30 23:21:14,370 - INFO - 📍 Processing Tile 370/561: [14.5, 37.8, 14.6, 37.9]
+2026-01-30 23:21:35,382 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.5500_task369.npy
+2026-01-30 23:21:35,384 - INFO - 📍 Processing Tile 371/561: [14.5, 37.9, 14.6, 38.0]
+2026-01-30 23:21:57,421 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.5500_task370.npy
+2026-01-30 23:21:57,423 - INFO - 📍 Processing Tile 372/561: [14.5, 38.0, 14.6, 38.1]
+2026-01-30 23:22:21,301 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.5500_task371.npy
+2026-01-30 23:22:21,303 - INFO - 📍 Processing Tile 373/561: [14.5, 38.1, 14.6, 38.2]
+2026-01-30 23:22:43,105 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.5500_task372.npy
+2026-01-30 23:22:43,108 - INFO - 📍 Processing Tile 374/561: [14.5, 38.2, 14.6, 38.3]
+2026-01-30 23:23:03,922 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.5500_task373.npy
+2026-01-30 23:23:03,924 - INFO - 📍 Processing Tile 375/561: [14.6, 36.6, 14.7, 36.7]
+2026-01-30 23:23:24,592 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:23:24,592 - INFO - 📍 Processing Tile 376/561: [14.6, 36.7, 14.7, 36.8]
+2026-01-30 23:23:45,125 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.6500_task375.npy
+2026-01-30 23:23:45,127 - INFO - 📍 Processing Tile 377/561: [14.6, 36.8, 14.7, 36.9]
+2026-01-30 23:24:05,995 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.6500_task376.npy
+2026-01-30 23:24:05,997 - INFO - 📍 Processing Tile 378/561: [14.6, 36.9, 14.7, 37.0]
+2026-01-30 23:24:21,280 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.6500_task377.npy
+2026-01-30 23:24:21,282 - INFO - 📍 Processing Tile 379/561: [14.6, 37.0, 14.7, 37.1]
+2026-01-30 23:24:45,962 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.6500_task378.npy
+2026-01-30 23:24:45,964 - INFO - 📍 Processing Tile 380/561: [14.6, 37.1, 14.7, 37.2]
+2026-01-30 23:25:08,687 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.6500_task379.npy
+2026-01-30 23:25:08,690 - INFO - 📍 Processing Tile 381/561: [14.6, 37.2, 14.7, 37.3]
+2026-01-30 23:25:32,414 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.6500_task380.npy
+2026-01-30 23:25:32,417 - INFO - 📍 Processing Tile 382/561: [14.6, 37.3, 14.7, 37.4]
+2026-01-30 23:25:57,708 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.6500_task381.npy
+2026-01-30 23:25:57,710 - INFO - 📍 Processing Tile 383/561: [14.6, 37.4, 14.7, 37.5]
+2026-01-30 23:26:19,994 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.6500_task382.npy
+2026-01-30 23:26:19,997 - INFO - 📍 Processing Tile 384/561: [14.6, 37.5, 14.7, 37.6]
+2026-01-30 23:26:42,019 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.6500_task383.npy
+2026-01-30 23:26:42,021 - INFO - 📍 Processing Tile 385/561: [14.6, 37.6, 14.7, 37.7]
+2026-01-30 23:27:03,956 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.6500_task384.npy
+2026-01-30 23:27:03,958 - INFO - 📍 Processing Tile 386/561: [14.6, 37.7, 14.7, 37.8]
+2026-01-30 23:27:25,717 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.6500_task385.npy
+2026-01-30 23:27:25,719 - INFO - 📍 Processing Tile 387/561: [14.6, 37.8, 14.7, 37.9]
+2026-01-30 23:27:47,234 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.6500_task386.npy
+2026-01-30 23:27:47,236 - INFO - 📍 Processing Tile 388/561: [14.6, 37.9, 14.7, 38.0]
+2026-01-30 23:28:08,077 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.6500_task387.npy
+2026-01-30 23:28:08,079 - INFO - 📍 Processing Tile 389/561: [14.6, 38.0, 14.7, 38.1]
+2026-01-30 23:28:29,992 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.6500_task388.npy
+2026-01-30 23:28:29,994 - INFO - 📍 Processing Tile 390/561: [14.6, 38.1, 14.7, 38.2]
+2026-01-30 23:28:51,188 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.6500_task389.npy
+2026-01-30 23:28:51,190 - INFO - 📍 Processing Tile 391/561: [14.6, 38.2, 14.7, 38.3]
+2026-01-30 23:29:11,559 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.6500_task390.npy
+2026-01-30 23:29:11,562 - INFO - 📍 Processing Tile 392/561: [14.7, 36.6, 14.8, 36.7]
+2026-01-30 23:29:34,606 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:29:34,606 - INFO - 📍 Processing Tile 393/561: [14.7, 36.7, 14.8, 36.8]
+2026-01-30 23:29:56,523 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.7500_task392.npy
+2026-01-30 23:29:56,525 - INFO - 📍 Processing Tile 394/561: [14.7, 36.8, 14.8, 36.9]
+2026-01-30 23:30:21,868 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.7500_task393.npy
+2026-01-30 23:30:21,870 - INFO - 📍 Processing Tile 395/561: [14.7, 36.9, 14.8, 37.0]
+2026-01-30 23:30:37,896 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.7500_task394.npy
+2026-01-30 23:30:37,898 - INFO - 📍 Processing Tile 396/561: [14.7, 37.0, 14.8, 37.1]
+2026-01-30 23:31:04,477 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.7500_task395.npy
+2026-01-30 23:31:04,480 - INFO - 📍 Processing Tile 397/561: [14.7, 37.1, 14.8, 37.2]
+2026-01-30 23:31:30,317 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.7500_task396.npy
+2026-01-30 23:31:30,319 - INFO - 📍 Processing Tile 398/561: [14.7, 37.2, 14.8, 37.3]
+2026-01-30 23:31:59,422 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.7500_task397.npy
+2026-01-30 23:31:59,424 - INFO - 📍 Processing Tile 399/561: [14.7, 37.3, 14.8, 37.4]
+2026-01-30 23:32:26,790 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.7500_task398.npy
+2026-01-30 23:32:26,793 - INFO - 📍 Processing Tile 400/561: [14.7, 37.4, 14.8, 37.5]
+2026-01-30 23:32:51,786 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.7500_task399.npy
+2026-01-30 23:32:51,789 - INFO - 📍 Processing Tile 401/561: [14.7, 37.5, 14.8, 37.6]
+2026-01-30 23:33:15,977 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.7500_task400.npy
+2026-01-30 23:33:15,979 - INFO - 📍 Processing Tile 402/561: [14.7, 37.6, 14.8, 37.7]
+2026-01-30 23:33:39,733 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.7500_task401.npy
+2026-01-30 23:33:39,735 - INFO - 📍 Processing Tile 403/561: [14.7, 37.7, 14.8, 37.8]
+2026-01-30 23:34:05,371 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.7500_task402.npy
+2026-01-30 23:34:05,373 - INFO - 📍 Processing Tile 404/561: [14.7, 37.8, 14.8, 37.9]
+2026-01-30 23:34:28,558 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.7500_task403.npy
+2026-01-30 23:34:28,560 - INFO - 📍 Processing Tile 405/561: [14.7, 37.9, 14.8, 38.0]
+2026-01-30 23:34:49,946 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.7500_task404.npy
+2026-01-30 23:34:49,948 - INFO - 📍 Processing Tile 406/561: [14.7, 38.0, 14.8, 38.1]
+2026-01-30 23:35:14,738 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.7500_task405.npy
+2026-01-30 23:35:14,740 - INFO - 📍 Processing Tile 407/561: [14.7, 38.1, 14.8, 38.2]
+2026-01-30 23:35:39,054 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.7500_task406.npy
+2026-01-30 23:35:39,056 - INFO - 📍 Processing Tile 408/561: [14.7, 38.2, 14.8, 38.3]
+2026-01-30 23:36:01,598 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.7500_task407.npy
+2026-01-30 23:36:01,600 - INFO - 📍 Processing Tile 409/561: [14.8, 36.6, 14.9, 36.7]
+2026-01-30 23:36:19,840 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:36:19,840 - INFO - 📍 Processing Tile 410/561: [14.8, 36.7, 14.9, 36.8]
+2026-01-30 23:36:35,405 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_14.8500_task409.npy
+2026-01-30 23:36:35,407 - INFO - 📍 Processing Tile 411/561: [14.8, 36.8, 14.9, 36.9]
+2026-01-30 23:36:53,538 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_14.8500_task410.npy
+2026-01-30 23:36:53,540 - INFO - 📍 Processing Tile 412/561: [14.8, 36.9, 14.9, 37.0]
+2026-01-30 23:37:07,358 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_14.8500_task411.npy
+2026-01-30 23:37:07,360 - INFO - 📍 Processing Tile 413/561: [14.8, 37.0, 14.9, 37.1]
+2026-01-30 23:37:27,985 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_14.8500_task412.npy
+2026-01-30 23:37:27,987 - INFO - 📍 Processing Tile 414/561: [14.8, 37.1, 14.9, 37.2]
+2026-01-30 23:37:46,398 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.8500_task413.npy
+2026-01-30 23:37:46,400 - INFO - 📍 Processing Tile 415/561: [14.8, 37.2, 14.9, 37.3]
+2026-01-30 23:38:05,340 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.8500_task414.npy
+2026-01-30 23:38:05,342 - INFO - 📍 Processing Tile 416/561: [14.8, 37.3, 14.9, 37.4]
+2026-01-30 23:38:24,769 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.8500_task415.npy
+2026-01-30 23:38:24,771 - INFO - 📍 Processing Tile 417/561: [14.8, 37.4, 14.9, 37.5]
+2026-01-30 23:38:41,437 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.8500_task416.npy
+2026-01-30 23:38:41,439 - INFO - 📍 Processing Tile 418/561: [14.8, 37.5, 14.9, 37.6]
+2026-01-30 23:39:00,437 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.8500_task417.npy
+2026-01-30 23:39:00,439 - INFO - 📍 Processing Tile 419/561: [14.8, 37.6, 14.9, 37.7]
+2026-01-30 23:39:18,637 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.8500_task418.npy
+2026-01-30 23:39:18,639 - INFO - 📍 Processing Tile 420/561: [14.8, 37.7, 14.9, 37.8]
+2026-01-30 23:39:35,769 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.8500_task419.npy
+2026-01-30 23:39:35,771 - INFO - 📍 Processing Tile 421/561: [14.8, 37.8, 14.9, 37.9]
+2026-01-30 23:39:52,146 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.8500_task420.npy
+2026-01-30 23:39:52,148 - INFO - 📍 Processing Tile 422/561: [14.8, 37.9, 14.9, 38.0]
+2026-01-30 23:40:07,900 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.8500_task421.npy
+2026-01-30 23:40:07,902 - INFO - 📍 Processing Tile 423/561: [14.8, 38.0, 14.9, 38.1]
+2026-01-30 23:40:25,450 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_14.8500_task422.npy
+2026-01-30 23:40:25,452 - INFO - 📍 Processing Tile 424/561: [14.8, 38.1, 14.9, 38.2]
+2026-01-30 23:40:41,456 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.8500_task423.npy
+2026-01-30 23:40:41,458 - INFO - 📍 Processing Tile 425/561: [14.8, 38.2, 14.9, 38.3]
+2026-01-30 23:40:56,383 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.8500_task424.npy
+2026-01-30 23:40:56,385 - INFO - 📍 Processing Tile 426/561: [14.9, 36.6, 15.0, 36.7]
+2026-01-30 23:41:20,465 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:41:20,465 - INFO - 📍 Processing Tile 427/561: [14.9, 36.7, 15.0, 36.8]
+2026-01-30 23:41:41,697 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:41:41,697 - INFO - 📍 Processing Tile 428/561: [14.9, 36.8, 15.0, 36.9]
+2026-01-30 23:42:02,322 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:42:02,322 - INFO - 📍 Processing Tile 429/561: [14.9, 36.9, 15.0, 37.0]
+2026-01-30 23:42:27,015 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:42:27,015 - INFO - 📍 Processing Tile 430/561: [14.9, 37.0, 15.0, 37.1]
+2026-01-30 23:42:51,170 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:42:51,170 - INFO - 📍 Processing Tile 431/561: [14.9, 37.1, 15.0, 37.2]
+2026-01-30 23:43:16,312 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_14.9500_task430.npy
+2026-01-30 23:43:16,314 - INFO - 📍 Processing Tile 432/561: [14.9, 37.2, 15.0, 37.3]
+2026-01-30 23:43:41,283 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_14.9500_task431.npy
+2026-01-30 23:43:41,285 - INFO - 📍 Processing Tile 433/561: [14.9, 37.3, 15.0, 37.4]
+2026-01-30 23:44:07,876 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_14.9500_task432.npy
+2026-01-30 23:44:07,878 - INFO - 📍 Processing Tile 434/561: [14.9, 37.4, 15.0, 37.5]
+2026-01-30 23:44:30,602 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_14.9500_task433.npy
+2026-01-30 23:44:30,604 - INFO - 📍 Processing Tile 435/561: [14.9, 37.5, 15.0, 37.6]
+2026-01-30 23:44:54,921 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_14.9500_task434.npy
+2026-01-30 23:44:54,923 - INFO - 📍 Processing Tile 436/561: [14.9, 37.6, 15.0, 37.7]
+2026-01-30 23:45:19,189 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_14.9500_task435.npy
+2026-01-30 23:45:19,191 - INFO - 📍 Processing Tile 437/561: [14.9, 37.7, 15.0, 37.8]
+2026-01-30 23:45:44,686 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_14.9500_task436.npy
+2026-01-30 23:45:44,689 - INFO - 📍 Processing Tile 438/561: [14.9, 37.8, 15.0, 37.9]
+2026-01-30 23:46:08,845 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_14.9500_task437.npy
+2026-01-30 23:46:08,847 - INFO - 📍 Processing Tile 439/561: [14.9, 37.9, 15.0, 38.0]
+2026-01-30 23:46:31,570 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_14.9500_task438.npy
+2026-01-30 23:46:31,573 - INFO - 📍 Processing Tile 440/561: [14.9, 38.0, 15.0, 38.1]
+2026-01-30 23:46:50,321 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:46:50,321 - INFO - 📍 Processing Tile 441/561: [14.9, 38.1, 15.0, 38.2]
+2026-01-30 23:47:12,233 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_14.9500_task440.npy
+2026-01-30 23:47:12,235 - INFO - 📍 Processing Tile 442/561: [14.9, 38.2, 15.0, 38.3]
+2026-01-30 23:47:35,187 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_14.9500_task441.npy
+2026-01-30 23:47:35,189 - INFO - 📍 Processing Tile 443/561: [15.0, 36.6, 15.1, 36.7]
+2026-01-30 23:47:56,368 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_15.0500_task442.npy
+2026-01-30 23:47:56,371 - INFO - 📍 Processing Tile 444/561: [15.0, 36.7, 15.1, 36.8]
+2026-01-30 23:48:16,777 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_15.0500_task443.npy
+2026-01-30 23:48:16,780 - INFO - 📍 Processing Tile 445/561: [15.0, 36.8, 15.1, 36.9]
+2026-01-30 23:48:37,719 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_15.0500_task444.npy
+2026-01-30 23:48:37,721 - INFO - 📍 Processing Tile 446/561: [15.0, 36.9, 15.1, 37.0]
+2026-01-30 23:49:02,862 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_15.0500_task445.npy
+2026-01-30 23:49:02,864 - INFO - 📍 Processing Tile 447/561: [15.0, 37.0, 15.1, 37.1]
+2026-01-30 23:49:26,965 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_15.0500_task446.npy
+2026-01-30 23:49:26,967 - INFO - 📍 Processing Tile 448/561: [15.0, 37.1, 15.1, 37.2]
+2026-01-30 23:49:50,075 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_15.0500_task447.npy
+2026-01-30 23:49:50,077 - INFO - 📍 Processing Tile 449/561: [15.0, 37.2, 15.1, 37.3]
+2026-01-30 23:50:14,898 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_15.0500_task448.npy
+2026-01-30 23:50:14,900 - INFO - 📍 Processing Tile 450/561: [15.0, 37.3, 15.1, 37.4]
+2026-01-30 23:50:40,506 - INFO -   📤 Upload OK: raw_cubes/lat_37.3500_lon_15.0500_task449.npy
+2026-01-30 23:50:40,508 - INFO - 📍 Processing Tile 451/561: [15.0, 37.4, 15.1, 37.5]
+2026-01-30 23:51:02,679 - INFO -   📤 Upload OK: raw_cubes/lat_37.4500_lon_15.0500_task450.npy
+2026-01-30 23:51:02,681 - INFO - 📍 Processing Tile 452/561: [15.0, 37.5, 15.1, 37.6]
+2026-01-30 23:51:26,408 - INFO -   📤 Upload OK: raw_cubes/lat_37.5500_lon_15.0500_task451.npy
+2026-01-30 23:51:26,410 - INFO - 📍 Processing Tile 453/561: [15.0, 37.6, 15.1, 37.7]
+2026-01-30 23:51:49,964 - INFO -   📤 Upload OK: raw_cubes/lat_37.6500_lon_15.0500_task452.npy
+2026-01-30 23:51:49,966 - INFO - 📍 Processing Tile 454/561: [15.0, 37.7, 15.1, 37.8]
+2026-01-30 23:52:12,990 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_15.0500_task453.npy
+2026-01-30 23:52:12,993 - INFO - 📍 Processing Tile 455/561: [15.0, 37.8, 15.1, 37.9]
+2026-01-30 23:52:36,298 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_15.0500_task454.npy
+2026-01-30 23:52:36,300 - INFO - 📍 Processing Tile 456/561: [15.0, 37.9, 15.1, 38.0]
+2026-01-30 23:52:59,921 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_15.0500_task455.npy
+2026-01-30 23:52:59,923 - INFO - 📍 Processing Tile 457/561: [15.0, 38.0, 15.1, 38.1]
+2026-01-30 23:53:20,220 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.0500_task456.npy
+2026-01-30 23:53:20,222 - INFO - 📍 Processing Tile 458/561: [15.0, 38.1, 15.1, 38.2]
+2026-01-30 23:53:40,307 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.0500_task457.npy
+2026-01-30 23:53:40,309 - INFO - 📍 Processing Tile 459/561: [15.0, 38.2, 15.1, 38.3]
+2026-01-30 23:53:57,491 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:53:57,491 - INFO - 📍 Processing Tile 460/561: [15.1, 36.6, 15.2, 36.7]
+2026-01-30 23:54:20,825 - INFO -   📤 Upload OK: raw_cubes/lat_36.6500_lon_15.1500_task459.npy
+2026-01-30 23:54:20,827 - INFO - 📍 Processing Tile 461/561: [15.1, 36.7, 15.2, 36.8]
+2026-01-30 23:54:43,810 - INFO -   📤 Upload OK: raw_cubes/lat_36.7500_lon_15.1500_task460.npy
+2026-01-30 23:54:43,813 - INFO - 📍 Processing Tile 462/561: [15.1, 36.8, 15.2, 36.9]
+2026-01-30 23:55:07,379 - INFO -   📤 Upload OK: raw_cubes/lat_36.8500_lon_15.1500_task461.npy
+2026-01-30 23:55:07,381 - INFO - 📍 Processing Tile 463/561: [15.1, 36.9, 15.2, 37.0]
+2026-01-30 23:55:33,418 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_15.1500_task462.npy
+2026-01-30 23:55:33,421 - INFO - 📍 Processing Tile 464/561: [15.1, 37.0, 15.2, 37.1]
+2026-01-30 23:55:58,639 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_15.1500_task463.npy
+2026-01-30 23:55:58,641 - INFO - 📍 Processing Tile 465/561: [15.1, 37.1, 15.2, 37.2]
+2026-01-30 23:56:19,721 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:56:19,721 - INFO - 📍 Processing Tile 466/561: [15.1, 37.2, 15.2, 37.3]
+2026-01-30 23:56:41,118 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:56:41,118 - INFO - 📍 Processing Tile 467/561: [15.1, 37.3, 15.2, 37.4]
+2026-01-30 23:57:02,890 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:57:02,890 - INFO - 📍 Processing Tile 468/561: [15.1, 37.4, 15.2, 37.5]
+2026-01-30 23:57:20,085 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:57:20,085 - INFO - 📍 Processing Tile 469/561: [15.1, 37.5, 15.2, 37.6]
+2026-01-30 23:57:41,130 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:57:41,130 - INFO - 📍 Processing Tile 470/561: [15.1, 37.6, 15.2, 37.7]
+2026-01-30 23:58:01,830 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:58:01,831 - INFO - 📍 Processing Tile 471/561: [15.1, 37.7, 15.2, 37.8]
+2026-01-30 23:58:22,804 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:58:22,804 - INFO - 📍 Processing Tile 472/561: [15.1, 37.8, 15.2, 37.9]
+2026-01-30 23:58:43,394 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:58:43,394 - INFO - 📍 Processing Tile 473/561: [15.1, 37.9, 15.2, 38.0]
+2026-01-30 23:59:04,794 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_15.1500_task472.npy
+2026-01-30 23:59:04,796 - INFO - 📍 Processing Tile 474/561: [15.1, 38.0, 15.2, 38.1]
+2026-01-30 23:59:23,587 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.1500_task473.npy
+2026-01-30 23:59:23,589 - INFO - 📍 Processing Tile 475/561: [15.1, 38.1, 15.2, 38.2]
+2026-01-30 23:59:41,947 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:59:41,948 - INFO - 📍 Processing Tile 476/561: [15.1, 38.2, 15.2, 38.3]
+2026-01-30 23:59:57,947 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-30 23:59:57,947 - INFO - 📍 Processing Tile 477/561: [15.2, 36.6, 15.3, 36.7]
+2026-01-31 00:00:17,855 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:00:17,855 - INFO - 📍 Processing Tile 478/561: [15.2, 36.7, 15.3, 36.8]
+2026-01-31 00:00:36,665 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:00:36,665 - INFO - 📍 Processing Tile 479/561: [15.2, 36.8, 15.3, 36.9]
+2026-01-31 00:00:59,194 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:00:59,194 - INFO - 📍 Processing Tile 480/561: [15.2, 36.9, 15.3, 37.0]
+2026-01-31 00:01:22,573 - INFO -   📤 Upload OK: raw_cubes/lat_36.9500_lon_15.2500_task479.npy
+2026-01-31 00:01:22,576 - INFO - 📍 Processing Tile 481/561: [15.2, 37.0, 15.3, 37.1]
+2026-01-31 00:01:41,375 - INFO -   📤 Upload OK: raw_cubes/lat_37.0500_lon_15.2500_task480.npy
+2026-01-31 00:01:41,377 - INFO - 📍 Processing Tile 482/561: [15.2, 37.1, 15.3, 37.2]
+2026-01-31 00:02:06,684 - INFO -   📤 Upload OK: raw_cubes/lat_37.1500_lon_15.2500_task481.npy
+2026-01-31 00:02:06,686 - INFO - 📍 Processing Tile 483/561: [15.2, 37.2, 15.3, 37.3]
+2026-01-31 00:02:29,030 - INFO -   📤 Upload OK: raw_cubes/lat_37.2500_lon_15.2500_task482.npy
+2026-01-31 00:02:29,032 - INFO - 📍 Processing Tile 484/561: [15.2, 37.3, 15.3, 37.4]
+2026-01-31 00:02:51,317 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:02:51,317 - INFO - 📍 Processing Tile 485/561: [15.2, 37.4, 15.3, 37.5]
+2026-01-31 00:03:08,854 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:03:08,854 - INFO - 📍 Processing Tile 486/561: [15.2, 37.5, 15.3, 37.6]
+2026-01-31 00:03:29,223 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:03:29,223 - INFO - 📍 Processing Tile 487/561: [15.2, 37.6, 15.3, 37.7]
+2026-01-31 00:03:48,619 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:03:48,619 - INFO - 📍 Processing Tile 488/561: [15.2, 37.7, 15.3, 37.8]
+2026-01-31 00:04:09,698 - INFO -   📤 Upload OK: raw_cubes/lat_37.7500_lon_15.2500_task487.npy
+2026-01-31 00:04:09,700 - INFO - 📍 Processing Tile 489/561: [15.2, 37.8, 15.3, 37.9]
+2026-01-31 00:04:31,187 - INFO -   📤 Upload OK: raw_cubes/lat_37.8500_lon_15.2500_task488.npy
+2026-01-31 00:04:31,189 - INFO - 📍 Processing Tile 490/561: [15.2, 37.9, 15.3, 38.0]
+2026-01-31 00:04:50,353 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_15.2500_task489.npy
+2026-01-31 00:04:50,356 - INFO - 📍 Processing Tile 491/561: [15.2, 38.0, 15.3, 38.1]
+2026-01-31 00:05:15,690 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.2500_task490.npy
+2026-01-31 00:05:15,693 - INFO - 📍 Processing Tile 492/561: [15.2, 38.1, 15.3, 38.2]
+2026-01-31 00:05:40,478 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.2500_task491.npy
+2026-01-31 00:05:40,482 - INFO - 📍 Processing Tile 493/561: [15.2, 38.2, 15.3, 38.3]
+2026-01-31 00:06:03,159 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_15.2500_task492.npy
+2026-01-31 00:06:03,161 - INFO - 📍 Processing Tile 494/561: [15.3, 36.6, 15.4, 36.7]
+2026-01-31 00:06:24,566 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:06:24,566 - INFO - 📍 Processing Tile 495/561: [15.3, 36.7, 15.4, 36.8]
+2026-01-31 00:06:43,592 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:06:43,592 - INFO - 📍 Processing Tile 496/561: [15.3, 36.8, 15.4, 36.9]
+2026-01-31 00:07:04,436 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:07:04,436 - INFO - 📍 Processing Tile 497/561: [15.3, 36.9, 15.4, 37.0]
+2026-01-31 00:07:27,363 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:07:27,364 - INFO - 📍 Processing Tile 498/561: [15.3, 37.0, 15.4, 37.1]
+2026-01-31 00:07:45,056 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:07:45,056 - INFO - 📍 Processing Tile 499/561: [15.3, 37.1, 15.4, 37.2]
+2026-01-31 00:08:04,521 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:08:04,521 - INFO - 📍 Processing Tile 500/561: [15.3, 37.2, 15.4, 37.3]
+2026-01-31 00:08:23,749 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:08:23,749 - INFO - 📍 Processing Tile 501/561: [15.3, 37.3, 15.4, 37.4]
+2026-01-31 00:08:46,444 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:08:46,444 - INFO - 📍 Processing Tile 502/561: [15.3, 37.4, 15.4, 37.5]
+2026-01-31 00:09:03,403 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:09:03,403 - INFO - 📍 Processing Tile 503/561: [15.3, 37.5, 15.4, 37.6]
+2026-01-31 00:09:21,598 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:09:21,598 - INFO - 📍 Processing Tile 504/561: [15.3, 37.6, 15.4, 37.7]
+2026-01-31 00:09:39,553 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:09:39,553 - INFO - 📍 Processing Tile 505/561: [15.3, 37.7, 15.4, 37.8]
+2026-01-31 00:09:58,167 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:09:58,167 - INFO - 📍 Processing Tile 506/561: [15.3, 37.8, 15.4, 37.9]
+2026-01-31 00:10:17,155 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:10:17,155 - INFO - 📍 Processing Tile 507/561: [15.3, 37.9, 15.4, 38.0]
+2026-01-31 00:10:36,698 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_15.3500_task506.npy
+2026-01-31 00:10:36,700 - INFO - 📍 Processing Tile 508/561: [15.3, 38.0, 15.4, 38.1]
+2026-01-31 00:10:59,140 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.3500_task507.npy
+2026-01-31 00:10:59,142 - INFO - 📍 Processing Tile 509/561: [15.3, 38.1, 15.4, 38.2]
+2026-01-31 00:11:22,374 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.3500_task508.npy
+2026-01-31 00:11:22,376 - INFO - 📍 Processing Tile 510/561: [15.3, 38.2, 15.4, 38.3]
+2026-01-31 00:11:42,908 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_15.3500_task509.npy
+2026-01-31 00:11:42,910 - INFO - 📍 Processing Tile 511/561: [15.4, 36.6, 15.5, 36.7]
+2026-01-31 00:12:04,952 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:12:04,952 - INFO - 📍 Processing Tile 512/561: [15.4, 36.7, 15.5, 36.8]
+2026-01-31 00:12:26,212 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:12:26,212 - INFO - 📍 Processing Tile 513/561: [15.4, 36.8, 15.5, 36.9]
+2026-01-31 00:12:48,230 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:12:48,230 - INFO - 📍 Processing Tile 514/561: [15.4, 36.9, 15.5, 37.0]
+2026-01-31 00:13:11,343 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:13:11,343 - INFO - 📍 Processing Tile 515/561: [15.4, 37.0, 15.5, 37.1]
+2026-01-31 00:13:32,685 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:13:32,685 - INFO - 📍 Processing Tile 516/561: [15.4, 37.1, 15.5, 37.2]
+2026-01-31 00:13:53,466 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:13:53,466 - INFO - 📍 Processing Tile 517/561: [15.4, 37.2, 15.5, 37.3]
+2026-01-31 00:14:14,520 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:14:14,520 - INFO - 📍 Processing Tile 518/561: [15.4, 37.3, 15.5, 37.4]
+2026-01-31 00:14:35,741 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:14:35,741 - INFO - 📍 Processing Tile 519/561: [15.4, 37.4, 15.5, 37.5]
+2026-01-31 00:14:53,560 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:14:53,560 - INFO - 📍 Processing Tile 520/561: [15.4, 37.5, 15.5, 37.6]
+2026-01-31 00:15:13,343 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:15:13,343 - INFO - 📍 Processing Tile 521/561: [15.4, 37.6, 15.5, 37.7]
+2026-01-31 00:15:33,382 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:15:33,382 - INFO - 📍 Processing Tile 522/561: [15.4, 37.7, 15.5, 37.8]
+2026-01-31 00:15:54,124 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:15:54,124 - INFO - 📍 Processing Tile 523/561: [15.4, 37.8, 15.5, 37.9]
+2026-01-31 00:16:14,394 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:16:14,394 - INFO - 📍 Processing Tile 524/561: [15.4, 37.9, 15.5, 38.0]
+2026-01-31 00:16:34,973 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:16:34,973 - INFO - 📍 Processing Tile 525/561: [15.4, 38.0, 15.5, 38.1]
+2026-01-31 00:16:59,223 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.4500_task524.npy
+2026-01-31 00:16:59,225 - INFO - 📍 Processing Tile 526/561: [15.4, 38.1, 15.5, 38.2]
+2026-01-31 00:17:24,043 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.4500_task525.npy
+2026-01-31 00:17:24,045 - INFO - 📍 Processing Tile 527/561: [15.4, 38.2, 15.5, 38.3]
+2026-01-31 00:17:48,036 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_15.4500_task526.npy
+2026-01-31 00:17:48,038 - INFO - 📍 Processing Tile 528/561: [15.5, 36.6, 15.6, 36.7]
+2026-01-31 00:18:10,004 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:18:10,004 - INFO - 📍 Processing Tile 529/561: [15.5, 36.7, 15.6, 36.8]
+2026-01-31 00:18:27,098 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:18:27,098 - INFO - 📍 Processing Tile 530/561: [15.5, 36.8, 15.6, 36.9]
+2026-01-31 00:18:42,375 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:18:42,375 - INFO - 📍 Processing Tile 531/561: [15.5, 36.9, 15.6, 37.0]
+2026-01-31 00:19:02,547 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:19:02,547 - INFO - 📍 Processing Tile 532/561: [15.5, 37.0, 15.6, 37.1]
+2026-01-31 00:19:20,767 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:19:20,767 - INFO - 📍 Processing Tile 533/561: [15.5, 37.1, 15.6, 37.2]
+2026-01-31 00:19:40,758 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:19:40,759 - INFO - 📍 Processing Tile 534/561: [15.5, 37.2, 15.6, 37.3]
+2026-01-31 00:20:00,911 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:20:00,911 - INFO - 📍 Processing Tile 535/561: [15.5, 37.3, 15.6, 37.4]
+2026-01-31 00:20:18,066 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:20:18,066 - INFO - 📍 Processing Tile 536/561: [15.5, 37.4, 15.6, 37.5]
+2026-01-31 00:20:36,447 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:20:36,447 - INFO - 📍 Processing Tile 537/561: [15.5, 37.5, 15.6, 37.6]
+2026-01-31 00:20:55,775 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:20:55,775 - INFO - 📍 Processing Tile 538/561: [15.5, 37.6, 15.6, 37.7]
+2026-01-31 00:21:13,443 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:21:13,443 - INFO - 📍 Processing Tile 539/561: [15.5, 37.7, 15.6, 37.8]
+2026-01-31 00:21:33,087 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:21:33,087 - INFO - 📍 Processing Tile 540/561: [15.5, 37.8, 15.6, 37.9]
+2026-01-31 00:21:53,897 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:21:53,897 - INFO - 📍 Processing Tile 541/561: [15.5, 37.9, 15.6, 38.0]
+2026-01-31 00:22:14,275 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:22:14,275 - INFO - 📍 Processing Tile 542/561: [15.5, 38.0, 15.6, 38.1]
+2026-01-31 00:22:36,536 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:22:36,537 - INFO - 📍 Processing Tile 543/561: [15.5, 38.1, 15.6, 38.2]
+2026-01-31 00:22:58,472 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.5500_task542.npy
+2026-01-31 00:22:58,475 - INFO - 📍 Processing Tile 544/561: [15.5, 38.2, 15.6, 38.3]
+2026-01-31 00:23:22,447 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_15.5500_task543.npy
+2026-01-31 00:23:22,449 - INFO - 📍 Processing Tile 545/561: [15.6, 36.6, 15.7, 36.7]
+2026-01-31 00:23:44,225 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:23:44,225 - INFO - 📍 Processing Tile 546/561: [15.6, 36.7, 15.7, 36.8]
+2026-01-31 00:24:04,110 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:24:04,111 - INFO - 📍 Processing Tile 547/561: [15.6, 36.8, 15.7, 36.9]
+2026-01-31 00:24:24,735 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:24:24,735 - INFO - 📍 Processing Tile 548/561: [15.6, 36.9, 15.7, 37.0]
+2026-01-31 00:24:45,029 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:24:45,029 - INFO - 📍 Processing Tile 549/561: [15.6, 37.0, 15.7, 37.1]
+2026-01-31 00:25:02,601 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:25:02,601 - INFO - 📍 Processing Tile 550/561: [15.6, 37.1, 15.7, 37.2]
+2026-01-31 00:25:23,328 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:25:23,329 - INFO - 📍 Processing Tile 551/561: [15.6, 37.2, 15.7, 37.3]
+2026-01-31 00:25:41,217 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:25:41,217 - INFO - 📍 Processing Tile 552/561: [15.6, 37.3, 15.7, 37.4]
+2026-01-31 00:25:57,720 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:25:57,720 - INFO - 📍 Processing Tile 553/561: [15.6, 37.4, 15.7, 37.5]
+2026-01-31 00:26:17,992 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:26:17,992 - INFO - 📍 Processing Tile 554/561: [15.6, 37.5, 15.7, 37.6]
+2026-01-31 00:26:38,327 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:26:38,327 - INFO - 📍 Processing Tile 555/561: [15.6, 37.6, 15.7, 37.7]
+2026-01-31 00:26:58,853 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:26:58,853 - INFO - 📍 Processing Tile 556/561: [15.6, 37.7, 15.7, 37.8]
+2026-01-31 00:27:20,753 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:27:20,753 - INFO - 📍 Processing Tile 557/561: [15.6, 37.8, 15.7, 37.9]
+2026-01-31 00:27:41,340 - INFO -   🌊 Tile scartato (Mare o Vuoto).
+2026-01-31 00:27:41,341 - INFO - 📍 Processing Tile 558/561: [15.6, 37.9, 15.7, 38.0]
+2026-01-31 00:28:03,032 - INFO -   📤 Upload OK: raw_cubes/lat_37.9500_lon_15.6500_task557.npy
+2026-01-31 00:28:03,034 - INFO - 📍 Processing Tile 559/561: [15.6, 38.0, 15.7, 38.1]
+2026-01-31 00:28:27,965 - INFO -   📤 Upload OK: raw_cubes/lat_38.0500_lon_15.6500_task558.npy
+2026-01-31 00:28:27,967 - INFO - 📍 Processing Tile 560/561: [15.6, 38.1, 15.7, 38.2]
+2026-01-31 00:28:46,829 - INFO -   📤 Upload OK: raw_cubes/lat_38.1500_lon_15.6500_task559.npy
+2026-01-31 00:28:46,831 - INFO - 📍 Processing Tile 561/561: [15.6, 38.2, 15.7, 38.3]
+2026-01-31 00:29:05,062 - INFO -   📤 Upload OK: raw_cubes/lat_38.2500_lon_15.6500_task560.npy
+2026-01-31 00:29:05,065 - INFO - 🏁 Download Completato!
+2026-01-31 00:29:05,065 - INFO - Totale Cubi Salvati su MinIO: 328

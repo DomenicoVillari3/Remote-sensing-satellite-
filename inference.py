@@ -150,9 +150,27 @@ def get_bbox_from_point(lat, lon, size=0.05):
     # Ritorna [min_lon, min_lat, max_lon, max_lat]
     return [lon - half, lat - half, lon + half, lat + half]
 
+
+def get_sub_bboxes(large_bbox, step=0.2):
+    """Divide un grande BBox in sotto-BBox più piccoli."""
+    min_lon, min_lat, max_lon, max_lat = large_bbox
+    bboxes = []
+    for lon in np.arange(min_lon, max_lon, step):
+        for lat in np.arange(min_lat, max_lat, step):
+            bboxes.append([
+                lon, 
+                lat, 
+                min(lon + step, max_lon), 
+                min(lat + step, max_lat)
+            ])
+    return bboxes
+
+
 if __name__ == "__main__":
     pipeline = SicilyInferencePipeline() # Carica il modello Prithvi
     
+
+    '''
     # Esempio: Test sui Vigneti di Marsala
     ponto_marsala = [37.810, 12.510]
     bbox_test = get_bbox_from_point(ponto_marsala[0], ponto_marsala[1], size=0.05)
@@ -174,3 +192,60 @@ if __name__ == "__main__":
         output_name="test_agrumeti_catania.tif", 
         output_img=True
     )
+    punto_lentini = [37.285, 14.915] 
+    bbox_lentini = get_bbox_from_point(punto_lentini[0], punto_lentini[1], size=0.04)
+
+    print("🍋 Avvio test su mix Acqua/Agrumeti (Lentini)...")
+    pipeline.run_inference(
+        bbox=bbox_lentini, 
+        output_name="test_lentini_water_agri.tif", 
+        output_img=True
+    )
+
+    # ZONA: Pantano Longarini (Acqua naturale + Serre intensive)
+    punto_pachino = [36.715, 15.010]
+    bbox_pachino = get_bbox_from_point(punto_pachino[0], punto_pachino[1], size=0.03)
+
+    print("🍅 Avvio test su mix Acqua/Serre (Pachino)...")
+    pipeline.run_inference(
+        bbox=bbox_pachino, 
+        output_name="test_pachino_greenhouses.tif", 
+        output_img=True
+    )
+    punto_centrale = [38.22960634140802, 15.414907979230158] 
+    bbox_regionale = get_bbox_from_point(punto_centrale[0], punto_centrale[1], size=0.25)
+
+    print("🌍 Avvio INFERENZA REGIONALE (Piana di Catania)...")
+    print(f"Dimensioni stimata area: ~27km x 27km")
+
+    pipeline.run_inference(
+        bbox=bbox_regionale, 
+        output_name="test_regionale_sicilia_est.tif", 
+        output_img=True
+    )'''
+
+    # ZONA: Sicilia Orientale (100x100 km)
+    # Include: Etna, Piana di Catania, Siracusa, Enna e i principali laghi.
+    # Coordinate approssimative: [min_lon, min_lat, max_lon, max_lat]
+   # --- TEST AREA ESTESA: ENNA & DINTORNI ---
+    # Centro: Contrada Figotto
+    punto_centrale = [37.51015991536745, 14.262956081139988]
+    
+    # Definiamo un'area "Large" di circa 16.5km x 16.5km (size=0.15)
+    # Questa dimensione è ottima per catturare la varietà del paesaggio ennese
+    bbox_estesa = get_bbox_from_point(punto_centrale[0], punto_centrale[1], size=0.20)
+
+    print(f"Avvio test su AREA ESTESA (Enna - Pergusa - Dittaino)...")
+    print(f"BBox: {bbox_estesa}")
+    
+    # Se l'area è molto grande e la tua GPU (es. 4090) ha problemi di memoria,
+    # puoi usare la tua funzione get_sub_bboxes per processarla a blocchi.
+    # In questo caso, procediamo con l'inferenza diretta:
+    pipeline.run_inference(
+        bbox=bbox_estesa, 
+        output_name="test_enna_regionale_esteso.tif", 
+        output_img=True
+    )
+
+   
+   
