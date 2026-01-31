@@ -12,6 +12,8 @@ import matplotlib.patches as mpatches
 from pathlib import Path
 from tqdm import tqdm
 import warnings
+import pystac_client
+import stackstac
 
 # ==========================================
 # 1. SETUP IMPORT (Gestione percorsi)
@@ -46,6 +48,9 @@ class SicilyInferencePoint:
         
         self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
         self.chip_size = 224 # Dimensione patch per il modello
+        
+        # Configurazione per download STAC
+        self.assets = ["blue", "green", "red", "nir08", "swir16", "swir22"]
         
         # Connessione MinIO
         self.s3_client = boto3.client(
@@ -90,50 +95,153 @@ class SicilyInferencePoint:
     def find_tile_containing_point(self, lat, lon):
         """
         Cerca su MinIO quale tile contiene le coordinate date.
+        Ritorna (key, bbox) se trovato, altrimenti (None, None)
         """
-        print(f"🔎 Ricerca Tile per Lat: {lat}, Lon: {lon} ...")
+        print(f"🔎 Ricerca Tile per Lat: {lat}, Lon: {lon} su MinIO...")
         
-        paginator = self.s3_client.get_paginator('list_objects_v2')
-        pages = paginator.paginate(Bucket=self.bucket_name, Prefix="raw_cubes/")
-        
-        for page in pages:
-            if 'Contents' not in page: continue
+        try:
+            paginator = self.s3_client.get_paginator('list_objects_v2')
+            pages = paginator.paginate(Bucket=self.bucket_name, Prefix="raw_cubes/")
             
-            for obj in page['Contents']:
-                head = self.s3_client.head_object(Bucket=self.bucket_name, Key=obj['Key'])
-                meta = head['Metadata']
+            for page in pages:
+                if 'Contents' not in page: continue
                 
-                if 'bbox' in meta:
-                    try:
-                        bbox = json.loads(meta['bbox'])
-                        
-                        if (bbox[0] <= lon <= bbox[2]) and (bbox[1] <= lat <= bbox[3]):
-                            print(f"✅ Trovato Tile: {obj['Key']}")
-                            return obj['Key'], bbox
-                    except:
-                        continue
+                for obj in page['Contents']:
+                    head = self.s3_client.head_object(Bucket=self.bucket_name, Key=obj['Key'])
+                    meta = head['Metadata']
+                    
+                    if 'bbox' in meta:
+                        try:
+                            bbox = json.loads(meta['bbox'])
+                            
+                            if (bbox[0] <= lon <= bbox[2]) and (bbox[1] <= lat <= bbox[3]):
+                                print(f"✅ Trovato Tile su MinIO: {obj['Key']}")
+                                buffer = io.BytesIO()
+                                self.s3_client.download_fileobj(self.bucket_name, obj['Key'], buffer)
+                                buffer.seek(0)
+                                
+                                cube = np.load(buffer)
+                                # ==========================================
+                                # 🔥 CONTROLLO INTEGRITÀ (ANTI-NERO) 🔥
+                                # ==========================================
+                                non_zero = np.count_nonzero(cube)
+                                total_px = cube.size
+                                empty_ratio = 1.0 - (non_zero / total_px)
+                                
+                                if empty_ratio > 0.5: # Se più del 50% è nero/vuoto
+                                    print(f"⚠️  ATTENZIONE: Il file in cache è vuoto al {empty_ratio:.1%}. Riscrico...")
+                                    break
+                                return obj['Key'], bbox
+                            
+                        except:
+                            continue
+        except Exception as e:
+            print(f"⚠️  Errore durante la ricerca su MinIO: {e}")
         
-        print("❌ Nessun tile trovato per queste coordinate (verifica di aver scaricato l'area).")
+        print("❌ Nessun tile trovato su MinIO per queste coordinate.")
         return None, None
 
-    def download_tile(self, key):
+    def download_tile_from_minio(self, key):
         """
-        🔧 FIX 1: Scarica il file .npy da MinIO e converte correttamente a float32
+        Scarica il file .npy da MinIO e converte correttamente a float32
         """
-        print(f"⬇️  Download: {key} ...")
+        print(f"⬇️  Download da MinIO: {key} ...")
         buffer = io.BytesIO()
         self.s3_client.download_fileobj(self.bucket_name, key, buffer)
         buffer.seek(0)
         
         # ✅ CORREZIONE: uint16 -> float32 (mantiene i valori originali)
         cube = np.load(buffer).astype(np.float32)
+        print(f"   📦 Cubo caricato: {cube.shape}, Range: [{cube.min():.0f}, {cube.max():.0f}]")
         return cube  # Shape: (4, 6, H, W)
+
+    def get_bbox_from_point(self, lat, lon, size=0.1):
+        """
+        Crea un BBox centrato sul punto di interesse.
+        size=0.1 gradi ≈ 11km x 11km (adeguato per l'inferenza)
+        """
+        half = size / 2
+        return [lon - half, lat - half, lon + half, lat + half]
+
+    def download_cube_on_the_fly(self, bbox):
+        """
+        Scarica il cubo 4D direttamente da STAC (identico al downloader MinIO).
+        Ritorna numpy array (4, 6, H, W) in float32.
+        """
+        print(f"🛰️  Download On-The-Fly da STAC per BBox: {bbox}")
+        
+        seasonal_periods = {
+            'winter': "2023-01-01/2023-02-28",
+            'spring': "2023-04-15/2023-05-30",
+            'summer': "2023-07-01/2023-08-15",
+            'autumn': "2023-10-01/2023-11-15"
+        }
+        ordered_seasons = ['winter', 'spring', 'summer', 'autumn']
+        stac_items = []
+        
+        try:
+            catalog = pystac_client.Client.open("https://earth-search.aws.element84.com/v1")
+            
+            for season in ordered_seasons:
+                print(f"   🔍 Ricerca stagione: {season}...")
+                search = catalog.search(
+                    collections=["sentinel-2-l2a"],
+                    bbox=bbox,
+                    datetime=seasonal_periods[season],
+                    query={"eo:cloud_cover": {"lt": 20}}
+                )
+                items = search.item_collection()
+                
+                if not len(items):
+                    print(f"   ⚠️  ATTENZIONE: Nessuna immagine trovata per {season}")
+                    print(f"   → Questo può causare dati incompleti. Prova ad aumentare il BBox o la tolleranza cloud.")
+                    return None
+                
+                # Prendi la migliore (meno nuvole)
+                best_item = min(items, key=lambda x: x.properties['eo:cloud_cover'])
+                cloud_cover = best_item.properties['eo:cloud_cover']
+                print(f"   ✅ {season}: {cloud_cover:.1f}% cloud cover")
+                stac_items.append(best_item)
+                
+            # Stack temporale (4, 6, H, W)
+            print("   📥 Stacking delle immagini...")
+            data = stackstac.stack(
+                stac_items,
+                assets=self.assets,
+                bounds_latlon=bbox,
+                resolution=10,  # 10m/pixel (identico al downloader)
+                epsg=32633,     # UTM Zone 33N (Sicilia)
+                fill_value=0,
+                rescale=False
+            )
+            
+            if data.sizes['time'] < 4:
+                print(f"   ❌ Errore: Solo {data.sizes['time']} timesteps trovati (servono 4)")
+                return None
+            
+            # Compute e converti a float32
+            cube = data.astype("float32").compute().values
+            print(f"   ✅ Download completato: {cube.shape}, Range: [{cube.min():.0f}, {cube.max():.0f}]")
+            return cube
+        
+        except Exception as e:
+            print(f"   ❌ Errore download STAC: {e}")
+            return None
 
     def smart_crop(self, cube, bbox_tile, target_lat, target_lon, crop_size_px=800):
         """
         Ritaglia una finestra centrata sul punto di interesse.
+        Se bbox_tile è None, usa l'intero cubo (caso download on-the-fly).
         """
         _, _, H, W = cube.shape
+        
+        if bbox_tile is None:
+            # Caso download on-the-fly: bbox_tile è il BBox usato per il download
+            # In questo caso, NON serve crop, usiamo tutto
+            print(f"✂️  Nessun crop necessario (download on-the-fly): {cube.shape}")
+            return cube, None
+        
+        # Caso MinIO: facciamo crop centrato sul punto
         min_lon, min_lat, max_lon, max_lat = bbox_tile
         
         # 1. Mappatura Coordinate -> Pixel
@@ -174,27 +282,52 @@ class SicilyInferencePoint:
         return cropped_cube, new_bbox
 
     def run_inference(self, lat, lon, region_name="Query_Result"):
-        # 1. Trova il Tile
+        """
+        Pipeline completa con fallback automatico:
+        1. Cerca su MinIO
+        2. Se non trova, scarica on-the-fly da STAC
+        3. Esegue inferenza
+        """
+        
+        # ==========================================
+        # STRATEGIA 1: CERCA SU MINIO
+        # ==========================================
         key, bbox_tile = self.find_tile_containing_point(lat, lon)
-        if key is None: return
-
-        # 2. Scarica (ora in float32 corretto)
-        full_cube = self.download_tile(key)
         
-        # 3. Ritaglio (Crop)
-        cube, bbox_crop = self.smart_crop(full_cube, bbox_tile, lat, lon, crop_size_px=800)
+        if key is not None:
+            # ✅ TROVATO SU MINIO
+            print(f"📦 Utilizzo dati da MinIO...")
+            cube_full = self.download_tile_from_minio(key)
+            cube, bbox_crop = self.smart_crop(cube_full, bbox_tile, lat, lon, crop_size_px=800)
+            source = "MinIO"
+        else:
+            # ❌ NON TROVATO SU MINIO → FALLBACK
+            print(f"\n{'='*60}")
+            print(f"🔄 FALLBACK: Download on-the-fly da STAC")
+            print(f"{'='*60}\n")
+            
+            # Crea un BBox centrato sul punto (0.1° ≈ 11km)
+            bbox_download = self.get_bbox_from_point(lat, lon, size=0.1)
+            
+            # Scarica da STAC
+            cube = self.download_cube_on_the_fly(bbox_download)
+            
+            if cube is None:
+                print("❌ ERRORE: Impossibile scaricare i dati. Verifica le coordinate o la copertura cloud.")
+                return
+            
+            bbox_crop = bbox_download  # Usiamo il BBox di download come riferimento
+            source = "STAC (On-The-Fly)"
         
         # ==========================================
-        # 🔧 FIX 2: USA L'INTERO CUBO TEMPORALE (4 timesteps)
+        # PREPARAZIONE DATI PER INFERENZA
         # ==========================================
-        # PRIMA: input_img = cube[2] ❌ (solo estate)
-        # ORA: usiamo tutto il cubo (T, C, H, W) ✅
-        
         T, C, h_orig, w_orig = cube.shape  # Dovrebbe essere (4, 6, H, W)
         
-        print(f"📊 Cubo caricato: {cube.shape} (T={T}, C={C}, H={h_orig}, W={w_orig})")
+        print(f"\n📊 Cubo finale: {cube.shape} (T={T}, C={C}, H={h_orig}, W={w_orig})")
+        print(f"📍 Sorgente: {source}")
         
-        # 5. Padding Reflect (per gestire bordi inferenza)
+        # Padding Reflect (per gestire bordi inferenza)
         pad_h = (self.chip_size - h_orig % self.chip_size) % self.chip_size
         pad_w = (self.chip_size - w_orig % self.chip_size) % self.chip_size
         
@@ -204,8 +337,10 @@ class SicilyInferencePoint:
         
         prediction_map = np.zeros((h_pad, w_pad), dtype=np.uint8)
 
-        # 6. Inferenza Sliding Window
-        print("🧠 Elaborazione Neurale (con temporalità completa)...")
+        # ==========================================
+        # INFERENZA SLIDING WINDOW
+        # ==========================================
+        print(f"🧠 Elaborazione Neurale (con temporalità completa)...")
         with torch.no_grad():
             for y in tqdm(range(0, h_pad, self.chip_size), desc="Rows"):
                 for x in range(0, w_pad, self.chip_size):
@@ -224,20 +359,72 @@ class SicilyInferencePoint:
                     
                     prediction_map[y:y+self.chip_size, x:x+self.chip_size] = pred
 
-        # 7. Unpad (Ritaglio finale)
+        # ==========================================
+        # POST-PROCESSING E OUTPUT
+        # ==========================================
+        # Unpad (Ritaglio finale)
         final_mask = prediction_map[:h_orig, :w_orig]
+        # Filtra automaticamente il mare usando il canale NIR
+        nir_summer = cube[2, 3, :h_orig, :w_orig]
+        water_mask = nir_summer < 400  # Acqua ha NIR < 400
+        final_mask[water_mask] = 0     # Azzera predizioni sul mare
         
-        # 8. Estrai RGB per visualizzazione (Estate = indice 2)
+        # Estrai RGB per visualizzazione (Estate = indice 2)
         final_rgb = cube[2, [2, 1, 0], :, :].transpose(1, 2, 0)  # (H, W, 3)
 
-        # 9. Output e Report
-        print(f"💾 Salvataggio risultati per: {region_name}")
+        # Output e Report
+        print(f"\n💾 Salvataggio risultati per: {region_name}")
+        print(f"   Sorgente dati: {source}")
         
-        self.create_visual_report(final_rgb, final_mask, region_name)
+        self.create_visual_report(final_rgb, final_mask, region_name, source)
         self.save_geotiff(final_mask, bbox_crop, region_name)
         self.print_stats(final_mask, region_name)
+        
+        # Opzionale: Salva su MinIO per future query (se era download on-the-fly)
+        if source == "STAC (On-The-Fly)":
+            self.save_to_minio_cache(cube, bbox_crop, lat, lon)
 
-    def create_visual_report(self, rgb, mask, name):
+    def save_to_minio_cache(self, cube, bbox, lat, lon):
+        """
+        Salva il cubo scaricato on-the-fly su MinIO per future query.
+        """
+        try:
+            print("\n💾 Salvataggio cache su MinIO per future query...")
+            
+            # Serializza (converte a uint16 per risparmiare spazio)
+            buffer = io.BytesIO()
+            np.save(buffer, cube.astype("uint16"))
+            buffer.seek(0)
+
+            # Metadati
+            center_lat = (bbox[1] + bbox[3]) / 2
+            center_lon = (bbox[0] + bbox[2]) / 2
+
+            metadata = {
+                'bbox': json.dumps(bbox),
+                'center_lat': str(center_lat),
+                'center_lon': str(center_lon),
+                'task_id': 'onthefly',
+                'shape': str(cube.shape)
+            }
+
+            # Naming
+            lat_short = f"{center_lat:.4f}"
+            lon_short = f"{center_lon:.4f}"
+            object_name = f"raw_cubes/lat_{lat_short}_lon_{lon_short}_onthefly.npy"
+            
+            self.s3_client.upload_fileobj(
+                buffer, 
+                self.bucket_name, 
+                object_name,
+                ExtraArgs={'Metadata': metadata}
+            )
+            print(f"   ✅ Cache salvata: {object_name}")
+            
+        except Exception as e:
+            print(f"   ⚠️  Impossibile salvare cache: {e}")
+
+    def create_visual_report(self, rgb, mask, name, source="Unknown"):
         # Normalizzazione RGB 2-98%
         p2, p98 = np.percentile(rgb, (2, 98))
         rgb_norm = np.clip((rgb - p2) / (p98 - p2 + 1e-6), 0, 1)
@@ -258,6 +445,9 @@ class SicilyInferencePoint:
         # Legenda
         patches = [mpatches.Patch(color=np.array(c)/255, label=n) for i, (c, n) in enumerate(zip(CLASS_COLORS, CLASS_NAMES)) if i > 0]
         fig.legend(handles=patches, loc='lower center', ncol=len(patches)//2 + 1, bbox_to_anchor=(0.5, 0.02), fontsize=12)
+        
+        # Aggiungi info sorgente
+        fig.suptitle(f"Analisi: {name} | Sorgente: {source}", fontsize=16, y=0.98)
         
         out_path = f"inference_results/reports/{name}_report.png"
         plt.savefig(out_path, dpi=150, bbox_inches='tight')
@@ -285,22 +475,51 @@ class SicilyInferencePoint:
             print(f"  - {CLASS_NAMES[cls_id]:<15}: {ha:>8.2f} ha")
 
 # ==========================================
-# ESEMPIO: PUNTO DI INTERESSE
+# ESEMPI DI UTILIZZO
 # ==========================================
 if __name__ == "__main__":
-    
+    '''
     pipeline = SicilyInferencePoint()
     
-    # ESEMPIO: Coordinate Pachino (zona agricola)
-    target_lat = 37.380
-    target_lon = 14.910
+    print("\n" + "="*80)
+    print("🌍 SISTEMA DI INFERENZA SICILIA CON FALLBACK AUTOMATICO")
+    print("="*80)
+    print("\nFunzionalità:")
+    print("1️⃣  Cerca dati pre-scaricati su MinIO")
+    print("2️⃣  Se non trova → Download automatico on-the-fly da STAC")
+    print("3️⃣  Cache automatica per future query")
+    print("="*80 + "\n")
     
-    print("\n" + "="*60)
-    print(f"📍 QUERY UTENTE: Lat {target_lat}, Lon {target_lon}")
-    print("="*60)
+    # ==========================================
+    # TEST 1: Coordinate probabilmente su MinIO (se hai eseguito il downloader)
+    # ==========================================
+    print("\n🧪 TEST 1: Area probabilmente cached (Pachino)")
+    target_lat_1 = 36.715
+    target_lon_1 = 15.010
     
     pipeline.run_inference(
-        lat=target_lat, 
-        lon=target_lon, 
-        region_name="Analisi_Pachino"
+        lat=target_lat_1, 
+        lon=target_lon_1, 
+        region_name="Test_Pachino_Cache"
     )
+    
+    # ==========================================
+    # TEST 2: Coordinate probabilmente NON su MinIO (fuori dalla griglia)
+    # ==========================================
+    print("\n" + "="*80)
+    print("🧪 TEST 2: Area fuori cache (Palermo - Download on-the-fly)")
+    print("="*80 + "\n")
+    
+    target_lat_2 = 38.115
+    target_lon_2 = 13.361
+    
+    pipeline.run_inference(
+        lat=target_lat_2, 
+        lon=target_lon_2, 
+        region_name="Test_Palermo_OnTheFly"
+    )
+    
+    print("\n" + "="*80)
+    print("✅ TESTING COMPLETATO")
+    print("="*80)
+    '''

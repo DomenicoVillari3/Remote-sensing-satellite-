@@ -1,0 +1,33 @@
+scenarios = [
+        # --- CLASSE: VIGNETI (Marsala/Trapani) ---
+        # Zona: Entroterra di Marsala, densità altissima di vigneti per vino Marsala DOC
+        {"name": "01_Marsala_Vigneti", "lat": 37.8350, "lon": 12.5320},
+        
+        # --- CLASSE: AGRUMI (Piana di Catania) ---
+        # Zona: Palagonia/Scordia, famosa per le arance rosse (Tarocco). 
+        # Attenzione: qui il modello non deve confondersi con "Frutteto" generico.
+        {"name": "02_Palagonia_Arance", "lat": 37.3380, "lon": 14.7650},
+        
+        # --- CLASSE: SERRE/ORTAGGI (Fascia Trasformata) ---
+        # Zona: Santa Croce Camerina / Vittoria. È la "sea of plastic", visibilissima.
+        # Il modello dovrebbe vedere "Ortaggi" o strutture artificiali.
+        {"name": "03_Ragusa_Serre", "lat": 36.8500, "lon": 14.5200},
+        
+        # --- CLASSE: GRANO/SEMINATIVI (Entroterra) ---
+        # Zona: Valle del Dittaino (Enna). Grandi distese di grano duro.
+        # In estate potrebbero apparire come "Incolto" o "Grano" (giallo/arato).
+        {"name": "04_Dittaino_Grano", "lat": 37.5200, "lon": 14.4500},
+        
+        # --- CLASSE: OLIVETI (Valle del Belice) ---
+        # Zona: Castelvetrano/Partanna. Zona dell'Oliva Nocellara del Belice.
+        {"name": "05_Castelvetrano_Olivi", "lat": 37.6600, "lon": 12.8200},
+        
+        # --- CLASSE: PISTACCHIO/FRUTTETO (Etna) ---
+        # Zona: Bronte, su terreno lavico (sciara). Test difficile per il modello
+        # per distinguere la vegetazione rada sulla roccia scura.
+        {"name": "06_Bronte_Pistacchio", "lat": 37.8050, "lon": 14.8150},
+        
+        # --- CLASSE: SALINE/ACQUA (Trapani) ---
+        # Zona: Riserva delle Saline di Trapani. Test per vedere se maschera l'acqua.
+        {"name": "07_Trapani_Saline", "lat": 37.9850, "lon": 12.5100}
+    ]
