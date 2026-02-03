@@ -7,6 +7,7 @@ import warnings
 import boto3
 import json
 import io
+from PIL import Image
 
 warnings.filterwarnings('ignore')
 
@@ -37,6 +38,7 @@ class SicilyRegionalDownloader:
 
         self.assets = ["blue", "green", "red", "nir08", "swir16", "swir22"]
         self.total_cubes_saved = 0
+        self.total_images_saved = 0
 
     def get_sub_bboxes(self, large_bbox, step=0.1):
         min_lon, min_lat, max_lon, max_lat = large_bbox
@@ -155,15 +157,47 @@ class SicilyRegionalDownloader:
             
         return False
 
-    def upload_cube_to_minio(self, img_cube, bbox, task_id):
-        try:
-            buffer = io.BytesIO()
-            np.save(buffer, img_cube.astype("uint16"))
-            buffer.seek(0)
+    def percentile_stretch(self, img, p_low=2, p_high=98):
+        """
+        🆕 Normalizzazione percentile per visualizzazione ottimale
+        """
+        p_low_val, p_high_val = np.percentile(img, (p_low, p_high))
+        img_stretched = np.clip((img - p_low_val) / (p_high_val - p_low_val + 1e-6), 0, 1)
+        return (img_stretched * 255).astype(np.uint8)
 
+    def create_rgb_image(self, img_cube):
+        """
+        🆕 Crea immagine RGB visualizzabile dal cubo 4D
+        
+        Input: (4, 6, H, W) [Time, Bands, Height, Width]
+        Output: PIL.Image RGB (stagione estiva)
+        """
+        # Estrai stagione estiva (indice 2)
+        summer_cube = img_cube[2]  # Shape: (6, H, W)
+        
+        # Estrai bande RGB (Blue=0, Green=1, Red=2)
+        blue = summer_cube[0]
+        green = summer_cube[1]
+        red = summer_cube[2]
+        
+        # Stack come RGB
+        rgb = np.stack([red, green, blue], axis=-1)  # (H, W, 3)
+        
+        # Normalizzazione per visualizzazione
+        rgb_normalized = self.percentile_stretch(rgb)
+        
+        # Converti in PIL Image
+        return Image.fromarray(rgb_normalized, mode='RGB')
+
+    def upload_cube_to_minio(self, img_cube, bbox, task_id):
+        """
+        ✅ MODIFICATO: Carica sia NPY che PNG su MinIO
+        """
+        try:
             center_lat = (bbox[1] + bbox[3]) / 2
             center_lon = (bbox[0] + bbox[2]) / 2
 
+            # Metadati comuni
             metadata = {
                 'bbox': json.dumps(bbox),
                 'center_lat': str(center_lat),
@@ -174,22 +208,59 @@ class SicilyRegionalDownloader:
 
             lat_short = f"{center_lat:.4f}"
             lon_short = f"{center_lon:.4f}"
-            object_name = f"raw_cubes/lat_{lat_short}_lon_{lon_short}_task{task_id}.npy"
+            
+            # ===== 1. SALVA NPY (Dati grezzi 4D) =====
+            npy_buffer = io.BytesIO()
+            np.save(npy_buffer, img_cube.astype("uint16"))
+            npy_buffer.seek(0)
+            
+            npy_key = f"raw_cubes/lat_{lat_short}_lon_{lon_short}_task{task_id}.npy"
             
             self.s3_client.upload_fileobj(
-                buffer, 
+                npy_buffer, 
                 self.bucket_name, 
-                object_name,
+                npy_key,
                 ExtraArgs={'Metadata': metadata}
             )
-            logger.info(f"  📤 Upload OK: {object_name}")
+            logger.info(f"  📦 NPY salvato: {npy_key}")
             self.total_cubes_saved += 1
+            
+            # ===== 2. SALVA PNG (Preview RGB) =====
+            try:
+                rgb_image = self.create_rgb_image(img_cube)
+                
+                png_buffer = io.BytesIO()
+                rgb_image.save(png_buffer, format='PNG', optimize=True)
+                png_buffer.seek(0)
+                
+                png_key = f"rgb_images/lat_{lat_short}_lon_{lon_short}_task{task_id}.png"
+                
+                # Aggiungi info immagine ai metadata
+                png_metadata = metadata.copy()
+                png_metadata['image_type'] = 'rgb_summer'
+                png_metadata['image_size'] = f"{rgb_image.width}x{rgb_image.height}"
+                png_metadata['source_npy'] = npy_key
+                
+                self.s3_client.upload_fileobj(
+                    png_buffer,
+                    self.bucket_name,
+                    png_key,
+                    ExtraArgs={
+                        'Metadata': png_metadata,
+                        'ContentType': 'image/png'
+                    }
+                )
+                logger.info(f"  🖼️  PNG salvato: {png_key} ({rgb_image.width}×{rgb_image.height} px)")
+                self.total_images_saved += 1
+                
+            except Exception as e:
+                logger.warning(f"  ⚠️  PNG non creato (errore: {e}), ma NPY salvato correttamente")
             
         except Exception as e:
             logger.error(f"  ❌ Errore Upload MinIO: {e}")
 
     def run(self):
-        logger.info("🚀 Avvio Download Regionale Sicilia -> MinIO")
+        logger.info("🚀 Avvio Download Regionale Sicilia -> MinIO (NPY + PNG)")
         
         sicily_bbox = (12.40, 36.60, 15.70, 38.30)
         tiles = self.get_sub_bboxes(sicily_bbox, step=0.1)
@@ -210,8 +281,15 @@ class SicilyRegionalDownloader:
             
             self.upload_cube_to_minio(cube, bbox, task_id=i)
 
+        logger.info("\n" + "="*70)
         logger.info("🏁 Download Completato!")
-        logger.info(f"Totale Cubi Salvati su MinIO: {self.total_cubes_saved}")
+        logger.info("="*70)
+        logger.info(f"📦 Cubi NPY salvati: {self.total_cubes_saved}")
+        logger.info(f"🖼️  Immagini PNG salvate: {self.total_images_saved}")
+        logger.info(f"📁 Bucket: {self.bucket_name}")
+        logger.info(f"   ├── raw_cubes/  ({self.total_cubes_saved} .npy files)")
+        logger.info(f"   └── rgb_images/ ({self.total_images_saved} .png files)")
+        logger.info("="*70 + "\n")
 
 if __name__ == "__main__":
     downloader = SicilyRegionalDownloader()
