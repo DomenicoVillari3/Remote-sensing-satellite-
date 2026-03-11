@@ -114,9 +114,8 @@ def generate_stats_text(region_name):
     tif_path = f"inference_results/tif/{region_name}_map.tif"
     
     if not os.path.exists(tif_path):
-        return "⚠️ Statistiche non disponibili"
+        return "⚠️ **Statistiche non disponibili**"
     
-    # Carica la maschera
     import rasterio
     with rasterio.open(tif_path) as src:
         mask = src.read(1)
@@ -124,26 +123,38 @@ def generate_stats_text(region_name):
     # Calcola statistiche
     unique, counts = np.unique(mask, return_counts=True)
     
-    stats_lines = ["📊 **STATISTICHE AREE RILEVATE**\n"]
-    stats_lines.append("=" * 50)
+    # 1. Calcolo del totale prima del loop (essenziale per percentuali corrette)
+    total_pixels = sum(count for cls_id, count in zip(unique, counts) if cls_id != 0)
+    if total_pixels == 0:
+        return "ℹ️ Nessuna area agricola rilevata in questa zona."
+        
+    total_ha_final = (total_pixels * 100) / 10000 
     
-    total_ha = 0
+    # 2. Formattazione Tabellare per Gradio Markdown
+    stats_lines = [
+        f"### 📊 ANALISI SUPERFICI: {region_name.replace('demo_', '')}",
+        "| Classe | Superficie (ha) | % su Totale |",
+        "| :--- | :---: | :---: |"
+    ]
+    
     for cls_id, count in zip(unique, counts):
-        if cls_id == 0:  # Skip background
+        if cls_id == 0:  # Salta background
             continue
         
-        hectares = (count * 100) / 10000  # 100m²/pixel → ettari
-        total_ha += hectares
+        hectares = (count * 100) / 10000
+        percentage = (hectares / total_ha_final * 100)
         
-        # Trova il colore corrispondente
-        color_hex = "#{:02x}{:02x}{:02x}".format(*CLASS_COLORS[cls_id])
-        
-        stats_lines.append(
-            f"🟢 **{CLASS_NAMES[cls_id]}**: {hectares:.2f} ha ({(hectares/total_ha*100):.1f}%)"
-        )
+        # FIX: Accesso alla lista CLASS_NAMES usando l'indice invece di .get()
+        # Usiamo un try/except per sicurezza se l'ID classe non esiste nella lista
+        try:
+            name = CLASS_NAMES[cls_id]
+        except IndexError:
+            name = f"Classe {cls_id}"
+            
+        stats_lines.append(f"| **{name}** | {hectares:.2f} | {percentage:.1f}% |")
     
-    stats_lines.append("=" * 50)
-    stats_lines.append(f"**TOTALE AREA CLASSIFICATA**: {total_ha:.2f} ha")
+    stats_lines.append("---")
+    stats_lines.append(f"*TOTALE AREA CLASSIFICATA**: `{total_ha_final:.2f} ha`")
     
     return "\n".join(stats_lines)
 
@@ -173,10 +184,9 @@ def create_demo_interface():
         # Header
         gr.Markdown(
             """
-            # 🌍 ALMA DIGIT: Piattaforma di Monitoraggio Satellitare
-            ## Progetto INTERREG | Analisi Territoriale Avanzata con AI
-            ###Classificazione automatica su dati Sentinel-2
-            
+            # 🌍 Piattaforma di Monitoraggio Satellitare
+            ## Analisi Territoriale Avanzata con AI | Classificazione automatica su dati Sentinel-2
+            ---
             
             **Classi rilevabili:** Olivo, Vigneto, Agrumi, Frutteto, Grano, Legumi, Ortaggi, Incolto
             """
@@ -266,15 +276,6 @@ def create_demo_interface():
             fn=run_query,
             inputs=[lat_input, lon_input, name_input, preset_dropdown],
             outputs=[rgb_output, seg_output, overlay_output, stats_output]
-        )
-        
-        # Footer
-        gr.Markdown(
-            """
-            ---
-            **Sviluppato con:** PyTorch • Prithvi • Sentinel-2 • Gradio  
-            **Modello:** Fine-tuned su dataset agricolo Sicilia (2023)
-            """
         )
     
     return demo

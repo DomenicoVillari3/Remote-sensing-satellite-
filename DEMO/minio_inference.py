@@ -14,6 +14,8 @@ from tqdm import tqdm
 import warnings
 import pystac_client
 import stackstac
+from PIL import Image
+
 
 # ==========================================
 # 1. SETUP IMPORT (Gestione percorsi)
@@ -384,6 +386,30 @@ class SicilyInferencePoint:
         if source == "STAC (On-The-Fly)":
             self.save_to_minio_cache(cube, bbox_crop, lat, lon)
 
+    def create_rgb_image_from_cube(self, img_cube):
+            """
+            🆕 Crea immagine RGB visualizzabile dal cubo 4D
+            
+            Input: (4, 6, H, W) [Time, Bands, Height, Width]
+            Output: PIL.Image RGB (stagione estiva)
+            """
+            # Estrai stagione estiva (indice 2)
+            summer_cube = img_cube[2]  # Shape: (6, H, W)
+            
+            # Estrai bande RGB (Blue=0, Green=1, Red=2)
+            blue = summer_cube[0]
+            green = summer_cube[1]
+            red = summer_cube[2]
+            
+            # Stack come RGB
+            rgb = np.stack([red, green, blue], axis=-1)  # (H, W, 3)
+            
+            # Normalizzazione per visualizzazione
+            rgb_normalized = self.percentile_stretch(rgb)
+            
+            # Converti in PIL Image
+            return Image.fromarray(rgb_normalized, mode='RGB')
+
     def save_to_minio_cache(self, cube, bbox, lat, lon):
         """
         Salva il cubo scaricato on-the-fly su MinIO per future query.
@@ -420,6 +446,35 @@ class SicilyInferencePoint:
                 ExtraArgs={'Metadata': metadata}
             )
             print(f"   ✅ Cache salvata: {object_name}")
+
+            try:
+                rgb_image = self.create_rgb_image_from_cube(cube)
+                
+                png_buffer = io.BytesIO()
+                rgb_image.save(png_buffer, format='PNG', optimize=True)
+                png_buffer.seek(0)
+                
+                png_key = f"rgb_images/lat_{lat_short}_lon_{lon_short}_onthefly.png"
+                
+                png_metadata = metadata.copy()
+                png_metadata['image_type'] = 'rgb_summer'
+                png_metadata['image_size'] = f"{rgb_image.width}x{rgb_image.height}"
+                png_metadata['source_npy'] = object_name
+                
+                self.s3_client.upload_fileobj(
+                    png_buffer,
+                    self.bucket_name,
+                    png_key,
+                    ExtraArgs={
+                        'Metadata': png_metadata,
+                        'ContentType': 'image/png'
+                    }
+                )
+                print(f"   🖼️  PNG salvato: {png_key} ({rgb_image.width}×{rgb_image.height} px)")
+                
+            except Exception as e:
+                print(f"   ⚠️  PNG non creato (errore: {e}), ma NPY salvato correttamente")
+            
             
         except Exception as e:
             print(f"   ⚠️  Impossibile salvare cache: {e}")
