@@ -88,4 +88,5 @@ def recover_lists():
 if __name__=="__main__":
     #analisi_distr()
     #analisi_normalizzazione()
-    recover_lists()
+    #recover_lists()
+    pass

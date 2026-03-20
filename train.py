@@ -196,9 +196,9 @@ def train():
     
     if files_exist:
         print("📁 Caricamento split esistenti da file .txt...")
-        with open("train_files.txt", "r") as f: train_f = [l.strip() for l in f]
-        with open("val_files.txt", "r") as f: val_f = [l.strip() for l in f]
-        with open("test_files.txt", "r") as f: test_f = [l.strip() for l in f]
+        with open("./dataset/train_files.txt", "r") as f: train_f = [l.strip() for l in f]
+        with open("./dataset/val_files.txt", "r") as f: val_f = [l.strip() for l in f]
+        with open("./dataset/test_files.txt", "r") as f: test_f = [l.strip() for l in f]
     else:
         train_f, val_f, test_f = get_stratified_split()
   
