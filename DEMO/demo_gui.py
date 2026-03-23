@@ -33,10 +33,22 @@ class DemoConfig:
         "🍊 Agrumeti Catania": (37.380, 14.910),
         #"🍷 Vigneti Marsala": (37.810, 12.510),
         #"🫒 Oliveti Ragusa": (36.926, 14.726),
-        "🍅 Serre Pachino": (36.715, 15.010),
+
+        #"🍅 Serre Pachino": (36.715, 15.010),
         "🌾 Grano Enna": (37.567, 14.279),
-        "🏔️ Etna (Mix)": (37.751, 15.004),
+        #"🏔️ Etna (Mix)": (37.751, 15.004),
         "🏖️ Palermo Costa": (38.115, 13.361),
+        "🌾 Seminativo – Caltanissetta":    (37.490, 14.060),
+        "🍊 Agrumeti – Lentini":            (37.285, 14.990),
+       # "🍑 Frutteti – Bronte":             (37.790, 14.830),
+
+         # --- Malta ---
+        "🇲🇹 Terreni agricoli – Mosta":     (35.910, 14.425),
+        #"🇲🇹 Colture – Rabat":              (35.880, 14.400),
+        #"🇲🇹 Gozo – Xewkija":              (36.033, 14.260),
+       # "🇲🇹 Gozo – Nadur":                 (36.040, 14.290),
+       # "🇲🇹 Siġġiewi":                     (35.855, 14.435),
+       # "🇲🇹 Dingli Cliffs":                (35.860, 14.385),
     }
     
     # Palette colori per la legenda
