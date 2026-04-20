@@ -7,7 +7,7 @@
     },
     "paths": {
         "input_dir": "/home/almadigit/CropSemanticSegmentation/output1/SmartFood/crop_data",
-        "model_save_path": "/home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best.pth"
+        "model_save_path": "/home/almadigit/CropSemanticSegmentation/Remote-sensing-satellite-/prithvi_4090_best_8_classes.pth"
     },
     "data_specs": {
         "img_size": 224,

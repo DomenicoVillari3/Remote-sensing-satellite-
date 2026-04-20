@@ -357,6 +357,22 @@ class SicilyInferencePoint:
                     t_chip = (t_chip - self.means) / (self.stds + 1e-6)
                     
                     logits = self.model(t_chip)
+
+                    # Prior aggiustato per Sicilia: penalizza Grano, premia Olivo/Agrumi
+                    sicilia_prior = torch.tensor([
+                        0.41,   # Sfondo
+                        0.15,   # Olivo    ← alzato
+                        0.05,   # Vite
+                        0.07,   # Agrumi   ← alzato
+                        0.06,   # Frutteto
+                        0.08,   # Grano    ← abbassato da 0.17
+                        0.03,   # Legumi
+                        0.02,   # Ortaggi
+                        0.05,   # Incolto
+                    ], device=self.device)
+
+                    logits = logits - torch.log(sicilia_prior + 1e-8).view(1, 9, 1, 1)  # ← reshaping critico
+
                     pred = logits.argmax(dim=1).squeeze().cpu().numpy()
                     
                     prediction_map[y:y+self.chip_size, x:x+self.chip_size] = pred

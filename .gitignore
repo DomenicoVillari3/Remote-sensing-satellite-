@@ -6,3 +6,4 @@ minio_data/
 reports/
 inference_results/*
 *.tif
+.env
